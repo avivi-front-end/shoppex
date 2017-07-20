@@ -47,7 +47,9 @@ function slidersInit() {
             infinite: true,
             speed: 500,
             fade: true,
-            cssEase: 'linear'
+            cssEase: 'linear',
+            autoplay: true,
+            autoplaySpeed: 5000,
         });
         $(document).on('click', '.js-fade-next', function () {
             slider.slick('slickNext');
@@ -63,6 +65,8 @@ function slidersInit() {
             arrows: false,
             infinite: true,
             slidesToShow: 6,
+            autoplay: true,
+            autoplaySpeed: 2000,
             slidesToScroll: 1
 
         });

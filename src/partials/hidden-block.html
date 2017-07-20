@@ -9,35 +9,91 @@
         </div>
     </div>
 
-    <div id="call-popup">
-        <form action="ajax.php" name="" class="contact-form">
-            <div class="contact-form-title">
-                <h5>Lorem ipsum dolor.</h5>
+    <div id="reg-popup" class="popup">
+        <div class="popup__title">
+            <div class="popup__img">
+                <img src="images/popreg.png">
             </div>
-            <div class="contact-form-row cfix">
-                <div class="contact-form-item">
-                    <div class="contact-form-item-input form_row">
-                        <div class="form_input">
-                            <input type="text" name="contact_name" required="required" value="" placeholder="Ваше Имя">
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-item">
-                    <div class="contact-form-item-input form_row">
-                        <div class="form_input">
-                            <input type="text" name="contact_tel" value="" required="required" placeholder="Ваш номер" class="tel-mask">
-                        </div>
-                    </div>
+            <h3>Регистрация</h3>
+        </div>
+        <form action="ajax.php" class="popup__form">
+            <div class="form_row popup__row">
+                <span>e-mail:</span>
+                <div class="form_input">
+                    <input type="text" name="contact_name" required="required" value="">
                 </div>
             </div>
-            <div class="contact-form-row cfix">
-                <div class="contact-form-item">
-                    <button type="submit" class="contact-submit">
-                        <span>Отправить заявку</span>
-                    </button>
+            <div class="form_row popup__row">
+                <span>Пароль:</span>
+                <div class="form_input">
+                    <input type="password" id="password" name="pass" value="" required="required">
                 </div>
             </div>
+            <div class="form_row popup__row">
+                <span>Повторить пароль:</span>
+                <div class="form_input">
+                    <input type="password" id="re_password" name="repass" value="" required="required">
+                </div>
+            </div>
+            <div class="popup__row">
+                <p><label class="styled"><input type="checkbox" required="required"><i></i>Я ознакомлен и согласен с </label><a href="#">Условиями сервиса</a></p>
+            </div>
+            <button type="submit" class="button">
+                <span>создать личный кабинет</span>
+            </button>
         </form>
+        <div class="popup__footer">
+            <div class="popup__frow">
+                <span>зарегистрироваться с помощью:</span>
+                <a href="#" class="social-icon" ><img data-object-fit src="images/fb.png" alt=""></a>
+                <a href="#" class="social-icon" ><img data-object-fit src="images/vk.png" alt=""></a>
+            </div>
+            <div class="popup__row">
+                <span>Уже зарегистрированы?</span>
+                <a data-fancybox data-src="#enter-popup" href="javascript:;" class="button"><span>войти в кабинет</span></a>
+            </div>
+        </div>
+    </div>
+    <div id="enter-popup" class="popup">
+        <div class="popup__title">
+            <div class="popup__img">
+                <img src="images/popent.png">
+            </div>
+            <h3>Войти в кабинет</h3>
+        </div>
+        <form action="ajax.php" class="popup__form">
+            <div class="form_row popup__row">
+                <span>e-mail:</span>
+                <div class="form_input">
+                    <input type="text" name="contact_name" required="required" value="">
+                </div>
+            </div>
+            <div class="form_row popup__row">
+                <span>Пароль:</span>
+                <div class="form_input">
+                    <input type="password"  name="pass" value="" required="required">
+                </div>
+            </div>
+            <div class="popup__row">
+              <span></span>
+                <p class="popup__forgot">
+                    <a href="#">Забыли пароль?</a>
+                </p>
+
+            </div>
+            <button type="submit" class="button">
+                <span>войти в кабинет</span>
+            </button>
+            <p><a data-fancybox data-src="#enter-popup" href="javascript:;" class="popup__reghref"><img src="images/reghref.png" alt=""><span>зарегистрироваться</span></a></p>
+        </form>
+        <div class="popup__footer">
+            <div class="popup__frow">
+                <span>Или войти с помощью:</span>
+                <a href="#" class="social-icon" ><img data-object-fit src="images/fb.png" alt=""></a>
+                <a href="#" class="social-icon" ><img data-object-fit src="images/vk.png" alt=""></a>
+            </div>
+
+        </div>
     </div>
 
 </div>
