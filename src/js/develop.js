@@ -117,7 +117,65 @@ function tabs(){
 
     });
 }
+function placeholder() {
+    var input = $('.js-placeholder');
+    if(input.length > 0){
+        input.focus(function () {
+            input.next('.placeholder').addClass('hide');
+        });
+        input.blur(function () {
+            if(input.val().length < 1){
+                input.next().removeClass('hide');
+            }
+
+        });
+    }
+}
+function generateRow(){
+        $(document).on('click', '.js-generate-butt', function () {
+            var i = $('.js-one-order-item').length;
+            var html =  '<div class="lk-card__trow neworder__trow js-one-order-item"><div class="neworder__tcell"><div class="neworder__input">'+
+                '<input type="text" placeholder="Введите товар" name="order['+i+'][name]" required="required">'+
+                '</div></div><div class="neworder__tcell neworder__tcell--url"><div class="neworder__input">'+
+                '<input type="text" placeholder="Введите ссылку" name="order['+i+'][url]" required="required">'+
+                '</div></div><div class="neworder__tcell neworder__tcell--count"><div class="neworder__input neworder__input--center">'+
+                '<input type="text" placeholder="" name="order['+i+'][count]" required="required">'+
+                '</div></div><div class="neworder__tcell neworder__tcell--price"><div class="neworder__input neworder__input--center">'+
+                '<input type="text" placeholder="" name="order['+i+'][price]" required="required">'+
+                '</div></div><div class="neworder__tcell neworder__tcell--by"><label class="styled">'+
+                '<input type="checkbox" name="order['+i+'][by]"><i></i>'+
+                '</label></div></div>';
+            $(this).before(html);
+        });
+}
+function calculetAllOrders() {
+    var items = $('.js-one-order-item');
+    if(items.length > 0 ){
+        var total = 0;
+        items.each(function () {
+            var count = parseInt($(this).find('input[attr$="count"]').val());
+        });
+    }
+}
+function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#imgInp").change(function(){
+    readURL(this);
+});
+
 $(document).ready(function () {
+    generateRow();
+    placeholder();
     tabs();
     setTimeout(function () {
         selectStyler();
@@ -126,4 +184,5 @@ $(document).ready(function () {
     dropdown();
     slidersInit();
     clock();
+
 });
