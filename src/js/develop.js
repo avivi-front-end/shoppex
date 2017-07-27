@@ -42,7 +42,6 @@ function dropdown() {
         });
     })
 }
-
 function slidersInit() {
     var slider = $('.js-fade-slider');
     if(slider.length > 0){
@@ -131,41 +130,146 @@ function placeholder() {
         });
     }
 }
+/* scripts for add new item     START*/
 function generateRow(){
-        $(document).on('click', '.js-generate-butt', function () {
-            var i = $('.js-one-order-item').length;
-            var html =  '<div class="lk-card__trow neworder__trow js-one-order-item"><div class="neworder__tcell"><div class="neworder__input">'+
-                '<input type="text" placeholder="Введите товар" name="order['+i+'][name]" required="required">'+
-                '</div></div><div class="neworder__tcell neworder__tcell--url"><div class="neworder__input">'+
-                '<input type="text" placeholder="Введите ссылку" name="order['+i+'][url]" required="required">'+
-                '</div></div><div class="neworder__tcell neworder__tcell--count"><div class="neworder__input neworder__input--center">'+
-                '<input type="text" placeholder="" name="order['+i+'][count]" required="required">'+
-                '</div></div><div class="neworder__tcell neworder__tcell--price"><div class="neworder__input neworder__input--center">'+
-                '<input type="text" placeholder="" name="order['+i+'][price]" required="required">'+
-                '</div></div><div class="neworder__tcell neworder__tcell--by"><label class="styled">'+
-                '<input type="checkbox" name="order['+i+'][by]"><i></i>'+
-                '</label></div></div>';
-            $(this).before(html);
-        });
+    var i = 1;
+    $(document).on('click', '.js-generate-butt', function () {
+        var elem =  $('.js-etalon').clone();
+        elem.find('.neworder__trow').addClass('js-one-order-item');
+        elem.find('input[name=name]').attr({'required':'required', 'name':'order['+i+'][name]'});
+        elem.find('input[name=url]').attr({'required':'required', 'name':'order['+i+'][url]'});
+        elem.find('input[name=count]').attr({'required':'required', 'name':'order['+i+'][count]'});
+        elem.find('input[name=price]').attr({'required':'required', 'name':'order['+i+'][price]'});
+        elem.find('input[name=by]').attr({'required':'required', 'name':'order['+i+'][by]'});
+        var html = elem.html();
+        $(this).before(html);
+        i++;
+        chexkForDelItem();
+    });
 }
 function calculetAllOrders() {
     var items = $('.js-one-order-item');
     if(items.length > 0 ){
         var total = 0;
         items.each(function () {
-            var count = parseInt($(this).find('input[attr$="count"]').val());
+            var count = parseInt($(this).find('input[name$="[count]"]').val());
+            var price = parseInt($(this).find('input[name$="[price]"]').val());
+            total += (price*count);
+        });
+        if(isNaN(total)){total = 0;}
+        if(total == 0){
+            $('.js-after-calculate').addClass('disabled');
+            $('.js-after-calculate input').removeAttr('required');
+        }else{
+            $('.js-after-calculate').removeClass('disabled');
+            $('.js-after-calculate input').attr('required','required');
+        }
+        $('.js-total-price').text(('$'+total));
+        var percent = parseInt($('.js-total-percent').attr('data-percent'));
+        var res = (total * percent)/100;
+        $('.js-total-percent').text(('$'+res.toFixed(2)));
+    }
+}
+function inputNumber() {
+    $(document).on('click', '.js-number-minus', function () {
+        var val = getVal($(this));
+        val--;
+        val = val < 1 ? 1 : val;
+        $(this).closest('.js-input-number').find('input').val(val);
+        calculetAllOrders();
+    });
+    $(document).on('click', '.js-number-plus', function () {
+        var val = getVal($(this));
+        val++;
+        $(this).closest('.js-input-number').find('input').val(val);
+        calculetAllOrders();
+    });
+    function getVal(butt) {
+        var val =  parseInt(butt.closest('.js-input-number').find('input').val());
+        val = (typeof val == "number" && !isNaN(val)) ? val : 0;
+        return val;
+    }
+    $(document).on('keypress', '.js-input-number', function (evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+            return true;
+    })
+    $(document).on('keypress', 'input[name$="[price]"]', function (evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+        return true;
+    });
+    $(document).on('keyup', 'input[name$="[price]"], input[name$="[count]"]', function () {
+        calculetAllOrders();
+    })
+}
+function delItemOrder() {
+    $(document).on('click', '.js-delete-item', function () {
+        if($(this).hasClass('disabled')) return false;
+        $(this).closest('.js-one-order-item').remove();
+        chexkForDelItem();
+        calculetAllOrders();
+    })
+}
+function chexkForDelItem(){
+    var i = $('.js-delete-item').length;
+    if(i > 2){
+        $('.js-delete-item').removeClass('disabled');
+    }else{
+        $('.js-delete-item').addClass('disabled');
+    }
+}
+/* scripts for add new item    END*/
+function autosumDopService(){
+    $(document).on('change', '.js-for-autosum input[type=checkbox]', function () {
+        var total = 0;
+        $('.js-for-autosum input[type=checkbox]').each(function () {
+            if($(this).prop('checked')){
+                total += parseInt($(this).closest('.js-for-autosum').find('[data-price]').attr('data-price'));
+            }
+        });
+        $('.js-for-autosum-total').text('$'+total);
+    })
+}
+function styledSelect(){
+    var select = $('.styled__select select');
+    if (select.length > 0){
+        select.styler({
+            selectSmartPositioning:false
         });
     }
 }
-function readURL(input) {
+function trackLogick() {
+    $(document).on('keyup', '.js-track-input', function (){
+        var input = $(this);
+        if($(this).val().length > 0){
+            $('.js-track-checkbox').prop('checked', false);
+            input.closest('.neworder__desccell').removeClass('disabled');
+            input.attr('required', 'required');
+        }
+    });
+    $(document).on('click', '.js-track-checkbox', function () {
+        console.log($(this).prop('checked'));
+        if($(this).prop('checked') != true){
+            $('.js-track-checkbox').prop('checked', false);
+            $('.js-track-input').closest('.neworder__desccell').removeClass('disabled');
+            $('.js-track-input').attr('required', 'required');
+        }else{
+            $('.js-track-checkbox').prop('checked', false);
+            $(this).prop('checked', true);
+            $('.js-track-input').closest('.neworder__desccell').addClass('disabled');
+            $('.js-track-input').removeAttr('required');
+            $('.js-track-input').val('');
 
+        }
+    } );
+}
+function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-
         reader.onload = function (e) {
             $('#blah').attr('src', e.target.result);
         }
-
         reader.readAsDataURL(input.files[0]);
     }
 }
@@ -174,6 +278,10 @@ $("#imgInp").change(function(){
 });
 
 $(document).ready(function () {
+    trackLogick()
+    styledSelect();
+    autosumDopService();
+    delItemOrder();
     generateRow();
     placeholder();
     tabs();
@@ -184,5 +292,5 @@ $(document).ready(function () {
     dropdown();
     slidersInit();
     clock();
-
+    inputNumber();
 });

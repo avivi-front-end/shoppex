@@ -41,7 +41,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="lk-scelet__right js-tab-container">
+                    <div class="lk-scelet__right">
                         <form action="" class="neworder">
                             <div class="title">
                                 <h3>Создать заказ</h3>
@@ -59,7 +59,7 @@
                                             <div class="neworder__desccell">
                                                 <div class="neworder__title"><span>Интернет-магазин:<b>*</b></span></div>
                                                 <div class="neworder__input">
-                                                    <input type="text" placeholder="Введите название магазина" name="" required="required">
+                                                    <input type="text" placeholder="Введите название магазина" name="order_name" required="required">
                                                 </div>
                                             </div>
                                             <div class="neworder__desccell">
@@ -71,7 +71,7 @@
                                             <div class="neworder__desccell">
                                                 <div class="neworder__title"><span>Трек номер:<b>*</b></span></div>
                                                 <div class="neworder__input">
-                                                    <input type="text" placeholder="Введите трек-номер" name="" required="required">
+                                                    <input type="text" placeholder="Введите трек-номер" name="order_track" required="required" class="js-track-input">
                                                 </div>
                                             </div>
                                             <div class="neworder__desccell">
@@ -81,12 +81,12 @@
                                         </div>
                                         <div class="neworder__descrow neworder__descrow--one">
                                             <label class="styled styled--flexc">
-                                                <input type="checkbox"><i></i><span>Внесу трек-номер позже</span>
+                                                <input type="checkbox" name="order_track-later" class="js-track-checkbox"><i></i><span>Внесу трек-номер позже</span>
                                             </label>
                                         </div>
                                         <div class="neworder__descrow neworder__descrow--one">
                                             <label class="styled styled--flexc">
-                                                <input type="checkbox"><i></i><span>Посылка без трек-номера</span>
+                                                <input type="checkbox" name="order_track-disable" class="js-track-checkbox"><i></i><span>Посылка без трек-номера</span>
                                             </label>
                                         </div>
                                         <div class="lk-card__table neworder__table js-generate-new-row">
@@ -94,13 +94,69 @@
                                                 <div class="lk-card__tcell">товары в посылке</div>
                                             </div>
                                             <div class="lk-card__trow neworder__thead">
+                                                <div class="neworder__tcell neworder__tcell--del"></div>
                                                 <div class="neworder__tcell"><div class="neworder__title"><span>Наименование товара:<b>*</b></span></div></div>
                                                 <div class="neworder__tcell neworder__tcell--url"><div class="neworder__title"><span>Ссылка на товар:<b>*</b></span></div></div>
                                                 <div class="neworder__tcell neworder__tcell--count"><div class="neworder__title"><span>Шт.<b>*</b></span></div></div>
                                                 <div class="neworder__tcell neworder__tcell--price"><div class="neworder__title"><span>Цена, $<b>*</b></span></div></div>
                                                 <div class="neworder__tcell neworder__tcell--by"><div class="neworder__title"><span>Товар б/у</span></div></div>
                                             </div>
+                                            <div class="js-etalon">
+                                                <div class="lk-card__trow neworder__trow">
+                                                    <div class="neworder__tcell neworder__tcell--del">
+                                                        <div class="neworder__delrow js-delete-item">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="9px">
+                                                                <path fill-rule="evenodd"  d="M9.010,8.278 L8.278,9.010 L4.500,5.233 L0.722,9.010 L-0.010,8.278 L3.767,4.500 L-0.010,0.722 L0.722,-0.010 L4.500,3.767 L8.278,-0.010 L9.010,0.722 L5.233,4.500 L9.010,8.278 Z"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="neworder__tcell">
+                                                        <div class="neworder__input">
+                                                            <input type="text" placeholder="Введите товар" name="name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="neworder__tcell neworder__tcell--url">
+                                                        <div class="neworder__input">
+                                                            <input type="text" placeholder="Введите ссылку" name="url">
+                                                        </div>
+                                                    </div>
+                                                    <div class="neworder__tcell neworder__tcell--count">
+                                                        <div class="neworder__input neworder__input--center js-input-number">
+                                                            <div class="js-number-minus">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="2px">
+                                                                    <path fill-rule="evenodd"
+                                                                          d="M5.000,-0.000 L7.001,-0.000 C7.136,-0.000 7.253,0.049 7.352,0.148 C7.451,0.247 7.501,0.364 7.501,0.500 L7.501,1.500 C7.501,1.635 7.451,1.753 7.352,1.852 C7.253,1.951 7.136,2.000 7.000,2.000 L5.000,2.000 M5.000,2.000 L1.000,2.000 C0.864,2.000 0.747,1.951 0.648,1.852 C0.549,1.753 0.500,1.635 0.500,1.500 L0.500,0.500 C0.500,0.364 0.549,0.247 0.648,0.148 C0.747,0.049 0.864,-0.000 1.000,-0.000 L5.000,-0.000 "/>
+                                                                </svg>
+                                                            </div>
+                                                            <input type="text" placeholder="" name="count" value="1">
+                                                            <div class="js-number-plus">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"  width="8px" height="8px">
+                                                                    <path fill-rule="evenodd"
+                                                                          d="M7.501,4.500 C7.501,4.635 7.451,4.753 7.352,4.852 C7.253,4.951 7.136,5.000 7.000,5.000 L5.000,5.000 L5.000,7.000 C5.000,7.136 4.951,7.253 4.852,7.352 C4.753,7.451 4.636,7.500 4.500,7.500 L3.500,7.500 C3.365,7.500 3.247,7.451 3.148,7.352 C3.049,7.253 3.000,7.136 3.000,7.000 L3.000,5.000 L1.000,5.000 C0.864,5.000 0.747,4.951 0.648,4.852 C0.549,4.753 0.500,4.635 0.500,4.500 L0.500,3.500 C0.500,3.364 0.549,3.247 0.648,3.148 C0.747,3.049 0.864,3.000 1.000,3.000 L3.000,3.000 L3.000,1.000 C3.000,0.864 3.049,0.747 3.148,0.648 C3.247,0.549 3.365,0.499 3.500,0.499 L4.500,0.499 C4.636,0.499 4.753,0.549 4.852,0.648 C4.951,0.747 5.000,0.864 5.000,1.000 L5.000,3.000 L7.001,3.000 C7.136,3.000 7.253,3.049 7.352,3.148 C7.451,3.247 7.501,3.364 7.501,3.500 L7.501,4.500 Z"/>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="neworder__tcell neworder__tcell--price">
+                                                        <div class="neworder__input neworder__input--center">
+                                                            <input type="text" placeholder="" name="price">
+                                                        </div>
+                                                    </div>
+                                                    <div class="neworder__tcell neworder__tcell--by">
+                                                        <label class="styled">
+                                                            <input type="checkbox" name="by"><i></i>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="lk-card__trow neworder__trow js-one-order-item">
+                                                <div class="neworder__tcell neworder__tcell--del">
+                                                    <div class="neworder__delrow js-delete-item disabled">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9px" height="9px">
+                                                            <path fill-rule="evenodd"  d="M9.010,8.278 L8.278,9.010 L4.500,5.233 L0.722,9.010 L-0.010,8.278 L3.767,4.500 L-0.010,0.722 L0.722,-0.010 L4.500,3.767 L8.278,-0.010 L9.010,0.722 L5.233,4.500 L9.010,8.278 Z"/>
+                                                        </svg>
+                                                    </div>
+                                                </div>
                                                 <div class="neworder__tcell">
                                                     <div class="neworder__input">
                                                         <input type="text" placeholder="Введите товар" name="order[0][name]" required="required">
@@ -112,8 +168,20 @@
                                                     </div>
                                                 </div>
                                                 <div class="neworder__tcell neworder__tcell--count">
-                                                     <div class="neworder__input neworder__input--center">
-                                                        <input type="text" placeholder="" name="order[0][count]" required="required">
+                                                     <div class="neworder__input neworder__input--center js-input-number">
+                                                         <div class="js-number-minus">
+                                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="2px">
+                                                                 <path fill-rule="evenodd"
+                                                                       d="M5.000,-0.000 L7.001,-0.000 C7.136,-0.000 7.253,0.049 7.352,0.148 C7.451,0.247 7.501,0.364 7.501,0.500 L7.501,1.500 C7.501,1.635 7.451,1.753 7.352,1.852 C7.253,1.951 7.136,2.000 7.000,2.000 L5.000,2.000 M5.000,2.000 L1.000,2.000 C0.864,2.000 0.747,1.951 0.648,1.852 C0.549,1.753 0.500,1.635 0.500,1.500 L0.500,0.500 C0.500,0.364 0.549,0.247 0.648,0.148 C0.747,0.049 0.864,-0.000 1.000,-0.000 L5.000,-0.000 "/>
+                                                             </svg>
+                                                         </div>
+                                                        <input type="text" placeholder="" name="order[0][count]" value="1" required="required">
+                                                         <div class="js-number-plus">
+                                                             <svg xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"  width="8px" height="8px">
+                                                                 <path fill-rule="evenodd"
+                                                                       d="M7.501,4.500 C7.501,4.635 7.451,4.753 7.352,4.852 C7.253,4.951 7.136,5.000 7.000,5.000 L5.000,5.000 L5.000,7.000 C5.000,7.136 4.951,7.253 4.852,7.352 C4.753,7.451 4.636,7.500 4.500,7.500 L3.500,7.500 C3.365,7.500 3.247,7.451 3.148,7.352 C3.049,7.253 3.000,7.136 3.000,7.000 L3.000,5.000 L1.000,5.000 C0.864,5.000 0.747,4.951 0.648,4.852 C0.549,4.753 0.500,4.635 0.500,4.500 L0.500,3.500 C0.500,3.364 0.549,3.247 0.648,3.148 C0.747,3.049 0.864,3.000 1.000,3.000 L3.000,3.000 L3.000,1.000 C3.000,0.864 3.049,0.747 3.148,0.648 C3.247,0.549 3.365,0.499 3.500,0.499 L4.500,0.499 C4.636,0.499 4.753,0.549 4.852,0.648 C4.951,0.747 5.000,0.864 5.000,1.000 L5.000,3.000 L7.001,3.000 C7.136,3.000 7.253,3.049 7.352,3.148 C7.451,3.247 7.501,3.364 7.501,3.500 L7.501,4.500 Z"/>
+                                                             </svg>
+                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="neworder__tcell neworder__tcell--price">
@@ -128,10 +196,7 @@
                                                 </div>
                                             </div>
                                             <div class="neworder__addrow js-generate-butt">
-                                                <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                        width="12px" height="12px">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12px" height="12px">
                                                     <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
                                                           d="M11.196,2.988 C10.660,2.069 9.932,1.341 9.012,0.804 C8.093,0.267 7.089,-0.001 6.000,-0.001 C4.911,-0.001 3.907,0.267 2.988,0.804 C2.069,1.341 1.341,2.069 0.804,2.988 C0.267,3.907 -0.001,4.911 -0.001,6.000 C-0.001,7.089 0.267,8.093 0.804,9.012 C1.341,9.931 2.068,10.659 2.988,11.196 C3.907,11.733 4.911,12.001 6.000,12.001 C7.089,12.001 8.093,11.733 9.012,11.196 C9.932,10.660 10.659,9.932 11.196,9.012 C11.733,8.093 12.001,7.089 12.001,6.000 C12.001,4.911 11.733,3.907 11.196,2.988 ZM9.501,6.500 C9.501,6.636 9.451,6.753 9.352,6.852 C9.253,6.951 9.136,7.000 9.000,7.000 L7.000,7.000 L7.000,9.000 C7.000,9.136 6.951,9.253 6.852,9.352 C6.753,9.451 6.636,9.501 6.500,9.501 L5.500,9.501 C5.365,9.501 5.247,9.451 5.148,9.352 C5.049,9.253 5.000,9.136 5.000,9.000 L5.000,7.000 L3.000,7.000 C2.864,7.000 2.747,6.951 2.648,6.852 C2.549,6.753 2.500,6.636 2.500,6.500 L2.500,5.500 C2.500,5.364 2.549,5.247 2.648,5.148 C2.747,5.049 2.864,5.000 3.000,5.000 L5.000,5.000 L5.000,3.000 C5.000,2.864 5.049,2.747 5.148,2.648 C5.247,2.549 5.365,2.500 5.500,2.500 L6.500,2.500 C6.636,2.500 6.753,2.549 6.852,2.648 C6.951,2.747 7.000,2.864 7.000,3.000 L7.000,5.000 L9.001,5.000 C9.136,5.000 9.253,5.049 9.352,5.148 C9.451,5.247 9.501,5.364 9.501,5.500 L9.501,6.500 Z"/>
                                                 </svg>
@@ -141,19 +206,18 @@
                                                 <div class="lk-card__tcell">Общая стоимость товаров в посылке:</div>
                                                 <div class="lk-card__tcell"></div>
                                                 <div class="lk-card__tcell"></div>
-                                                <div class="lk-card__tcell">$140</div>
+                                                <div class="lk-card__tcell js-total-price">0</div>
                                             </div>
                                             <div class="lk-card__trow lk-card__tadd">
                                                 <div class="lk-card__tcell">Ориентировачная сумма таможенных платежей (~32%)</div>
                                                 <div class="lk-card__tcell"></div>
                                                 <div class="lk-card__tcell"></div>
-                                                <div class="lk-card__tcell">$62,4</div>
+                                                <div class="lk-card__tcell js-total-percent" data-percent="32">0</div>
                                             </div>
                                         </div>
                                         <div class="neworder__descrow neworder__descrow--one">
-                                            <label class="styled styled--flex">
-                                                <input type="checkbox"><i></i><span>Я проинформирован о том, что необходимо будет оплатить таможенные платежи, согласно законодательству
-</span>
+                                            <label class="styled styled--flex js-after-calculate disabled">
+                                                <input type="checkbox" name="order_acept"><i></i><span>Я проинформирован о том, что необходимо будет оплатить таможенные платежи, согласно законодательству<b>*</b></span>
                                             </label>
                                         </div>
                                         <div class="lk-card__table neworder__table">
@@ -234,42 +298,42 @@
                                                 <div class="lk-card__tcell"></div>
                                                 <div class="lk-card__tcell">стоимость</div>
                                             </div>
-                                            <div class="lk-card__trow neworder__doprow">
+                                            <div class="lk-card__trow neworder__doprow js-for-autosum">
                                                 <div class="lk-card__tcell">
                                                     <label class="styled styled--flexc">
-                                                        <input type="checkbox"><i></i><span>переупаковка</span>
+                                                        <input type="checkbox" name="order_dop1"><i></i><span>переупаковка</span>
                                                     </label>
                                                 </div>
                                                 <div class="lk-card__tcell"></div>
                                                 <div class="lk-card__tcell"></div>
-                                                <div class="lk-card__tcell">$140</div>
+                                                <div class="lk-card__tcell" data-price="110">$110</div>
                                             </div>
-                                            <div class="lk-card__trow neworder__doprow">
+                                            <div class="lk-card__trow neworder__doprow js-for-autosum">
                                                 <div class="lk-card__tcell">
                                                     <label class="styled styled--flexc">
-                                                        <input type="checkbox"><i></i><span>фото</span>
+                                                        <input type="checkbox" name="order_dop2"><i></i><span>фото</span>
                                                     </label>
                                                 </div>
                                                 <div class="lk-card__tcell"></div>
                                                 <div class="lk-card__tcell"></div>
-                                                <div class="lk-card__tcell">$140</div>
+                                                <div class="lk-card__tcell" data-price="120">$120</div>
                                             </div>
-                                            <div class="lk-card__trow neworder__doprow">
+                                            <div class="lk-card__trow neworder__doprow js-for-autosum">
                                                 <div class="lk-card__tcell">
                                                     <label class="styled styled--flexc">
-                                                        <input type="checkbox"><i></i><span>праздничная упаковка</span>
+                                                        <input type="checkbox" name="order_dop3"><i></i><span>праздничная упаковка</span>
                                                     </label>
                                                 </div>
                                                 <div class="lk-card__tcell"></div>
                                                 <div class="lk-card__tcell"></div>
-                                                <div class="lk-card__tcell">$140</div>
+                                                <div class="lk-card__tcell" data-price="140">$140</div>
                                             </div>
 
                                             <div class="lk-card__trow lk-card__tfin">
                                                 <div class="lk-card__tcell">Общая стоимость дополнительных услуг:</div>
                                                 <div class="lk-card__tcell"></div>
                                                 <div class="lk-card__tcell"></div>
-                                                <div class="lk-card__tcell">$140</div>
+                                                <div class="lk-card__tcell js-for-autosum-total">0</div>
                                             </div>
                                         </div>
                                         <div class="lk-card__table neworder__table">
@@ -363,22 +427,42 @@
                                             </div>
 
                                         </div>
+                                        <div class="lk-card__price">
+                                            <div class="neworder__adress">
+                                                <div class="neworder__title"><span>Адрес доставки:<b>*</b></span></div>
+                                                <div class="styled__select">
+                                                    <select name="order_adres">
+                                                        <option value="1" selected>г.Хмельницкий ул.Пушкина Шиномонтаж</option>
+                                                        <option value="1">г.Хмельницкий ул.Виницкое Шоссе Марися</option>
+                                                        <option value="1">г.Хмельницкий ул.Пушкина Шиномонтаж</option>
+                                                        <option value="1">г.Хмельницкий ул.Виницкое Шоссе Марися</option>
+                                                        <option value="1">г.Хмельницкий ул.Пушкина Шиномонтаж</option>
+                                                        <option value="1">г.Хмельницкий ул.Виницкое Шоссе Марися</option>
+                                                        <option value="1">г.Хмельницкий ул.Виницкое Шоссе Марися</option>
+                                                        <option value="1">г.Хмельницкий ул.Пушкина Шиномонтаж</option>
+                                                        <option value="1">г.Хмельницкий ул.Виницкое Шоссе Марися</option>
+                                                        <option value="1">г.Хмельницкий ул.Пушкина Шиномонтаж</option>
+                                                        <option value="1">г.Хмельницкий ул.Виницкое Шоссе Марися</option>
+                                                    </select>
+                                                </div>
+                                                <strong>или</strong>
+                                            </div>
+                                            <a href="#" class="button"><span>создать новый адрес</span></a>
+                                        </div>
+
 
                                     </div>
 
                                 </div>
                             </div>
                             <div class="neworder__submit">
-                                <div class="neworder__cancel">
-                                    <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            width="14px" height="14px">
+                                <a href="#" class="neworder__cancel">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14px" height="14px">
                                         <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
                                               d="M7.000,0.000 C3.150,0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,0.000 7.000,0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/>
                                     </svg>
                                     <span>отмена</span>
-                                </div>
+                                </a>
                                 <button class="button"><span>создать заказ</span></button>
                             </div>
                         </form>
