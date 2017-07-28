@@ -275,7 +275,8 @@ function readURL(input) {
     if (input.files && input.files[0]) {
         var nt = document.createElement('input');
         nt.setAttribute("type", "file");
-        nt.setAttribute("name", "files[]");
+        var index = $(input).closest('.neworder__filerow').index() - 1;
+        nt.setAttribute("name", 'files['+index+'][]');
         nt.setAttribute("accept", "image/jpeg,image/png,image/gif,application/pdf");
         var reader = new FileReader();
         reader.onload = function (e) {
