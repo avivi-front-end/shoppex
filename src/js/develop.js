@@ -153,7 +153,7 @@ function calculetAllOrders() {
         var total = 0;
         items.each(function () {
             var count = parseInt($(this).find('input[name$="[count]"]').val());
-            var price = parseInt($(this).find('input[name$="[price]"]').val());
+            var price = parseFloat(parseFloat($(this).find('input[name$="[price]"]').val()).toFixed(2));
             total += (price*count);
         });
         if(isNaN(total)){total = 0;}
@@ -238,6 +238,12 @@ function styledSelect(){
             selectSmartPositioning:false
         });
     }
+    var select2 = $('.form_input select');
+    if (select2.length > 0){
+        select2.styler({
+            selectSmartPositioning:false
+        });
+    }
 }
 function trackLogick() {
     $(document).on('keyup', '.js-track-input', function (){
@@ -265,19 +271,41 @@ function trackLogick() {
     } );
 }
 function readURL(input) {
+    var preloader ='<div class="preloadfile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preloadfile__svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="rgb(255,222,0)" stroke-width="5" fill="transparent"    /><circle cx="12" cy="12" r="10"  stroke="rgb(79,82,95)" stroke-width="5" class="preloadfile__circle"/></svg><div class="preloadfile__del"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="14px" height="14px"><path fill-rule="evenodd"  fill="rgb(64, 67, 78)" d="M7.000,-0.000 C3.150,-0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,-0.000 7.000,-0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/></svg></div></div>'
     if (input.files && input.files[0]) {
+        var nt = document.createElement('input');
+        nt.setAttribute("type", "file");
+        nt.setAttribute("name", "files[]");
+        nt.setAttribute("accept", "image/jpeg,image/png,image/gif,application/pdf");
         var reader = new FileReader();
         reader.onload = function (e) {
-            $('#blah').attr('src', e.target.result);
+            var div = document.createElement('div');
+            $(div).addClass('neworder__uploaded');
+            var img = document.createElement('img');
+            $(img).attr('src', e.target.result);
+            if(input.files[0].type == "application/pdf"){$(img).attr('src', 'images/pdff.jpg');}
+            $(img).attr('data-object-fit','');
+            $(div).append(img);
+            $(div).append(preloader);
+            $(input).closest('.neworder__filerow').find('.neworder__thumbs').append(div);
+            input.before(nt);
+            $(div).append(input);
         }
         reader.readAsDataURL(input.files[0]);
+
     }
 }
-$("#imgInp").change(function(){
-    readURL(this);
-});
 
+function delFileFromInput() {
+    $(document).on('click', '.preloadfile__del', function () {
+        $(this).closest('.neworder__uploaded').remove();
+    });
+}
 $(document).ready(function () {
+    $(document).on('change', '.js-input-file input',function(){
+        readURL(this);
+    });
+    delFileFromInput();
     trackLogick()
     styledSelect();
     autosumDopService();
