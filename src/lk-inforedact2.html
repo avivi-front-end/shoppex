@@ -1,10 +1,324 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
+//= partials/head.html
+
+<div class="global-wrapper">
+    <!--header start-->
+    //= partials/header.html
+    <!--header end-->
+    <div class="main">
+        <div class="lk-scelet">
+            <div class="mbox">
+                <div class="lk-scelet__wrap">
+                    <div class="lk-scelet__left">
+                        <div class="lk-ballancer">
+                            <div class="lk-ballancer__row lk-ballancer__row--head">
+                                <div class="lk-ballancer__cell">
+                                    <img src="images/b1.png" alt="">
+                                    Баланс
+                                </div>
+                                <div class="lk-ballancer__cell">
+                                    <img src="images/b2.png" alt="">
+                                    Бонусы
+                                </div>
+                            </div>
+                            <div class="lk-ballancer__row">
+                                <div class="lk-ballancer__cell">$9999.99</div>
+                                <div class="lk-ballancer__cell">$9.99</div>
+                            </div>
+                        </div>
+                        <div class="lk-menu">
+                            <div class="lk-menu__button">
+                                <a href="#" class="button"><span>Новый заказ</span></a>
+                            </div>
+                            <ul>
+                                <li><a href="#" class="active">Мои заказы </a></li>
+                                <li><a href="#">мой адрес в сша</a></li>
+                                <li><a href="#">личные данные</a></li>
+                                <li><a href="#">адресная книга</a></li>
+                                <li><a href="#">действия со счетом</a></li>
+                                <li><a href="#">дополнительные услуги</a></li>
+                                <li><a href="#">избранные магазины</a></li>
+                                <li><a href="#">ограничения транспортировки (опасные грузы)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lk-scelet__right">
+                        <form class="editinfo">
+                            <div class="title">
+                                <h3>Редактировать личные данные</h3>
+                            </div>
+                            <div class="editinfo__wraper">
+                                <div class="editinfo__content">
+                                    <div class="editinfo__row">
+                                        <div class="editinfo__tab">
+                                            <div class="editinfo__title">личные данные на кириллице</div>
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info">Имя <b>*</b></div>
+                                                <div class="neworder__input">
+                                                    <input type="text" placeholder="" name="" required="required">
+                                                </div>
+                                            </div>
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info">Фамилия<b>*</b></div>
+                                                <div class="neworder__input">
+                                                    <input type="text" placeholder="" name="" required="required">
+                                                </div>
+                                            </div>
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info">Отчество<b>*</b></div>
+                                                <div class="neworder__input">
+                                                    <input type="text" placeholder="" name="" required="required">
+                                                </div>
+                                            </div>
+                                            <div class="editinfo__subcell">
+                                                <div class="editinfo__cell">
+                                                    <div class="editinfo__info">Дата рождения*<b>*</b></div>
+                                                    <div class="editinfo__subrow">
+                                                        <div class="editinfo__select">
+                                                            <select name="" data-placeholder="День">
+                                                                <option value=""></option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                                <option value="5">05</option>
+                                                                <option value="6">06</option>
+                                                                <option value="7">07</option>
+                                                                <option value="8">08</option>
+                                                                <option value="9">09</option>
+                                                                <option value="10">10</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="editinfo__select editinfo__select--month">
+                                                            <select name="" data-placeholder="Месяц">
+                                                                <option value=""></option>
+                                                                <option value="1">01</option>
+                                                                <option value="2">02</option>
+                                                                <option value="3">03</option>
+                                                                <option value="4">04</option>
+                                                                <option value="5">05</option>
+                                                                <option value="6">06</option>
+                                                                <option value="7">07</option>
+                                                                <option value="8">08</option>
+                                                                <option value="9">09</option>
+                                                                <option value="10">10</option>
+                                                                <option value="11">11</option>
+                                                                <option value="12">12</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="editinfo__select">
+                                                            <select name="" data-placeholder="Год">
+                                                                <option value=""></option>
+                                                                <option value="1">1234</option>
+                                                                <option value="1">1234</option>
+                                                                <option value="1">1234</option>
+                                                                <option value="1">1234</option>
+                                                                <option value="1">1234</option>
+                                                                <option value="1">1234</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="editinfo__cell editinfo__cell--gender">
+                                                    <div class="editinfo__info editinfo__info--norequired">Пол<b>*</b></div>
+                                                    <div class="editinfo__select editinfo__select--norequired editinfo__select--gender">
+                                                        <select name="" data-placeholder="--">
+                                                            <option value=""></option>
+                                                            <option value="1">01</option>
+                                                            <option value="2">02</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info">Номер телефона<b>*</b></div>
+                                                <div class="neworder__input">
+                                                    <input type="text" required="required" placeholder="" name="" class="tel-mask-ru">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="editinfo__tab">
+                                            <div class="editinfo__title">личные данные на латинице</div>
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info">Имя <b>*</b></div>
+                                                <div class="neworder__input">
+                                                    <input type="text" placeholder="" name="" required="required">
+                                                </div>
+                                            </div>
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info">Фамилия<b>*</b></div>
+                                                <div class="neworder__input">
+                                                    <input type="text" placeholder="" name="" required="required">
+                                                </div>
+                                            </div>
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info editinfo__info--norequired">Отчество<b>*</b></div>
+                                                <div class="neworder__input neworder__input--norequired">
+                                                    <input type="text" placeholder="" name="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="editinfo__row">
+                                        <div class="editinfo__tab">
+                                            <div class="editinfo__title">паспортные данные</div>
+
+                                            <div class="editinfo__subcell">
+                                                <div class="editinfo__cell editinfo__cell--small">
+                                                    <div class="editinfo__info">Серия<b>*</b></div>
+                                                    <div class="neworder__input">
+                                                        <input type="text" required="required" placeholder="" name=" ">
+                                                    </div>
+                                                </div>
+                                                <div class="editinfo__cell editinfo__cell--half">
+                                                    <div class="editinfo__info">Номер<b>*</b></div>
+                                                    <div class="neworder__input">
+                                                        <input type="text" required="required" placeholder="" name=" ">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info">Кем выдан<b>*</b></div>
+                                                <div class="neworder__input">
+                                                    <input type="text" required="required" placeholder="" name=" ">
+                                                </div>
+                                            </div>
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info">Дата рождения<b>*</b></div>
+                                                <div class="editinfo__subrow">
+                                                    <div class="editinfo__select">
+                                                        <select name="" data-placeholder="День">
+                                                            <option value=""></option>
+                                                            <option value="1">01</option>
+                                                            <option value="2">02</option>
+                                                            <option value="3">03</option>
+                                                            <option value="4">04</option>
+                                                            <option value="5">05</option>
+                                                            <option value="6">06</option>
+                                                            <option value="7">07</option>
+                                                            <option value="8">08</option>
+                                                            <option value="9">09</option>
+                                                            <option value="10">10</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="editinfo__select editinfo__select--month">
+                                                        <select name="" data-placeholder="Месяц">
+                                                            <option value=""></option>
+                                                            <option value="1">01</option>
+                                                            <option value="2">02</option>
+                                                            <option value="3">03</option>
+                                                            <option value="4">04</option>
+                                                            <option value="5">05</option>
+                                                            <option value="6">06</option>
+                                                            <option value="7">07</option>
+                                                            <option value="8">08</option>
+                                                            <option value="9">09</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="editinfo__select">
+                                                        <select name="" data-placeholder="Год">
+                                                            <option value=""></option>
+                                                            <option value="1">1234</option>
+                                                            <option value="1">1234</option>
+                                                            <option value="1">1234</option>
+                                                            <option value="1">1234</option>
+                                                            <option value="1">1234</option>
+                                                            <option value="1">1234</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info">ИНН<b>*</b></div>
+                                                <div class="neworder__input">
+                                                    <input type="text" required="required" placeholder="" name=" ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="editinfo__tab">
+                                            <div class="editinfo__title">адрес регистрации</div>
+                                            <div class="editinfo__subcell">
+                                                <div class="editinfo__cell editinfo__cell--small">
+                                                    <div class="editinfo__info">Индекс<b>*</b></div>
+                                                    <div class="neworder__input">
+                                                        <input type="text" required="required" placeholder="" name=" ">
+                                                    </div>
+                                                </div>
+                                                <div class="editinfo__cell editinfo__cell--half">
+                                                    <div class="editinfo__info">Область<b>*</b></div>
+                                                    <div class="neworder__input">
+                                                        <input type="text" required="required" placeholder="" name=" ">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info editinfo__info--norequired">Район<b>*</b></div>
+                                                <div class="neworder__input neworder__input--norequired">
+                                                    <input type="text"   placeholder="" name=" ">
+                                                </div>
+                                            </div>
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info">Город<b>*</b></div>
+                                                <div class="neworder__input">
+                                                    <input type="text" required="required" placeholder="" name=" ">
+                                                </div>
+                                            </div>
+                                            <div class="editinfo__cell">
+                                                <div class="editinfo__info">Улица<b>*</b></div>
+                                                <div class="neworder__input">
+                                                    <input type="text" required="required" placeholder="" name=" ">
+                                                </div>
+                                            </div>
+                                            <div class="editinfo__subrow">
+                                                <div class="editinfo__cell editinfo__cell--small">
+                                                    <div class="editinfo__info">Дом<b>*</b></div>
+                                                    <div class="neworder__input">
+                                                        <input type="text" required="required" placeholder="" name=" ">
+                                                    </div>
+                                                </div>
+                                                <div class="editinfo__cell editinfo__cell--small">
+                                                    <div class="editinfo__info editinfo__info--norequired">Корпус<b>*</b></div>
+                                                    <div class="neworder__input neworder__input--norequired">
+                                                        <input type="text"  placeholder="" name=" ">
+                                                    </div>
+                                                </div>
+                                                <div class="editinfo__cell editinfo__cell--small">
+                                                    <div class="editinfo__info editinfo__info--norequired">Квартира<b>*</b></div>
+                                                    <div class="neworder__input neworder__input--norequired">
+                                                        <input type="text"   placeholder="" name=" ">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="neworder__submit">
+                                    <a href="#" class="neworder__cancel">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14px" height="14px">
+                                            <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                                                  d="M7.000,0.000 C3.150,0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,0.000 7.000,0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/>
+                                        </svg>
+                                        <span>отмена</span>
+                                    </a>
+                                    <button class="button"><span>сохранить</span></button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--hidden start-->
+    //= partials/hidden-block.html
+    <!--hidden end-->
+    <!--footer start-->
+    //= partials/footer.html
+    <!--footer end-->
+</div>
 </body>
 </html>

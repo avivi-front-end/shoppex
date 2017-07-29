@@ -144,13 +144,7 @@ function popNext(popupId){
         $.fancybox.close(popupId);
     },2000);
 }
-/*маска на инпуте*/
-function Maskedinput(){
-    if($('.tel-mask')){
-        $('.tel-mask').mask('+9 (999) 999-99-99 ');
-    }
-}
 $(document).ready(function(){
    validate('#call-popup .contact-form', {submitFunction:validationCall});
-   Maskedinput();
+
 });
