@@ -375,7 +375,7 @@ h3{ font-size: 24px; font-weight: 400;}
         input[type=checkbox] + i{border-color:#ffde00; }
         span{ color: #40434e; font-size: 14px; text-transform: uppercase; font-weight: 700;}
     }
-    &__select{ width: 100%;
+    &__select{ width: 100%; position: relative;
         select{ width: 100%;}
         .jq-selectbox{ width: 100%;}
         .jq-selectbox__select{background: transparent; border:1px solid #ffde00; border-radius: 0; height: 37px; line-height: 37px;text-shadow: none; box-shadow: none;}
@@ -575,7 +575,7 @@ h3{ font-size: 24px; font-weight: 400;}
     }
     &__description{    padding: 14px 15px; width: 100%;}
     &__input{ width: 100%; position: relative;
-        input{ height: 37px; width: 100%; border:1px solid #ffde00; line-height: 37px; padding:0 15px;font-weight: 300; color: #40434e; font-size: 14px;}
+        input{ height: 37px; width: 100%; border:1px solid #ffde00; line-height: 37px; padding:0 6px;font-weight: 300; color: #40434e; font-size: 14px;}
         &--center{
             input{text-align: center;}
         }
@@ -728,6 +728,16 @@ h3{ font-size: 24px; font-weight: 400;}
     &__radios{    padding: 8px 0 7px;
         label{ margin-right: 50px;}
     }
+    &__woman,
+    &__man{ position: relative;
+        &:before{ content: ''; background-image: url(../images/g1.png); width: 9px; height: 20px; display: block; position: absolute; left: 10px; top: 5px;}
+        &.jq-selectbox{
+            &:before{ top: 8px;}
+        }
+    }
+    &__woman{
+        &:before{ background-image: url(../images/q2.png); }
+    }
 }
 .adressbook{
     &__row{ display: flex; justify-content: flex-start; align-items: flex-start; border-bottom:2px solid #efefef; padding: 17px 0 17px;
@@ -741,8 +751,12 @@ h3{ font-size: 24px; font-weight: 400;}
 .informer { cursor: pointer; position: relative;
     &:hover .tooltip { display: block; }
 }
-.tooltip{ position: absolute; left:50%; transform:translateX(-50%); background-color: #fff; box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13); border-radius: 2px; max-width: 240px; bottom: calc(100% + 5px); display: none; padding: 2px 8px; z-index: 999; font-size: 12px; text-transform: none; font-weight: 400;
+.tooltip{ position: absolute; left:50%; transform:translateX(-50%); background-color: #fff; box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13); border-radius: 2px; max-width: 240px; bottom: calc(100% + 5px); display: none; padding: 6px 8px; z-index: 999; font-size: 12px; text-transform: none; font-weight: 400; line-height: 1.26;
     &--onerow{ white-space: nowrap;}
+    &--allwidth{ width: 100%; }
 }
 .js-cc-btn{ margin-left: 12px;}
-
+.jq-selectbox li{ font-size: 14px; color: #40434e; font-weight: 400; font-family:'Roboto';
+    &.selected,
+    &:hover{color: #40434e; background-color: #f3f3f3;}
+}

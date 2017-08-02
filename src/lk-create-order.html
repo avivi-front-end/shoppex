@@ -129,7 +129,7 @@
                                                                               d="M5.000,-0.000 L7.001,-0.000 C7.136,-0.000 7.253,0.049 7.352,0.148 C7.451,0.247 7.501,0.364 7.501,0.500 L7.501,1.500 C7.501,1.635 7.451,1.753 7.352,1.852 C7.253,1.951 7.136,2.000 7.000,2.000 L5.000,2.000 M5.000,2.000 L1.000,2.000 C0.864,2.000 0.747,1.951 0.648,1.852 C0.549,1.753 0.500,1.635 0.500,1.500 L0.500,0.500 C0.500,0.364 0.549,0.247 0.648,0.148 C0.747,0.049 0.864,-0.000 1.000,-0.000 L5.000,-0.000 "/>
                                                                     </svg>
                                                                 </div>
-                                                                <input type="text" placeholder="" name="count" value="1">
+                                                                <input type="text" placeholder="" name="count" maxlength="2" value="1">
                                                                 <div class="js-number-plus">
                                                                     <svg xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"  width="8px" height="8px">
                                                                         <path fill-rule="evenodd"
@@ -140,7 +140,7 @@
                                                         </div>
                                                         <div class="neworder__tcell neworder__tcell--price">
                                                             <div class="neworder__input neworder__input--center">
-                                                                <input type="text" placeholder="" name="price">
+                                                                <input type="text" placeholder="" maxlength="7" name="price">
                                                             </div>
                                                         </div>
                                                         <div class="neworder__tcell neworder__tcell--by">
@@ -176,7 +176,7 @@
                                                                           d="M5.000,-0.000 L7.001,-0.000 C7.136,-0.000 7.253,0.049 7.352,0.148 C7.451,0.247 7.501,0.364 7.501,0.500 L7.501,1.500 C7.501,1.635 7.451,1.753 7.352,1.852 C7.253,1.951 7.136,2.000 7.000,2.000 L5.000,2.000 M5.000,2.000 L1.000,2.000 C0.864,2.000 0.747,1.951 0.648,1.852 C0.549,1.753 0.500,1.635 0.500,1.500 L0.500,0.500 C0.500,0.364 0.549,0.247 0.648,0.148 C0.747,0.049 0.864,-0.000 1.000,-0.000 L5.000,-0.000 "/>
                                                                 </svg>
                                                             </div>
-                                                            <input type="text" placeholder="" name="order[0][count]" value="1" required="required">
+                                                            <input type="text" placeholder="" name="order[0][count]" value="1" maxlength="2" required="required">
                                                             <div class="js-number-plus">
                                                                 <svg xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"  width="8px" height="8px">
                                                                     <path fill-rule="evenodd"
@@ -187,7 +187,7 @@
                                                     </div>
                                                     <div class="neworder__tcell neworder__tcell--price">
                                                         <div class="neworder__input neworder__input--center">
-                                                            <input type="text" placeholder="" name="order[0][price]" required="required">
+                                                            <input type="text" placeholder="" name="order[0][price]" maxlength="7" required="required">
                                                         </div>
                                                     </div>
                                                     <div class="neworder__tcell neworder__tcell--by">
@@ -431,19 +431,20 @@
                                             <div class="lk-card__price">
                                                 <div class="neworder__adress">
                                                     <div class="neworder__title"><span>Адрес доставки:<b>*</b></span></div>
-                                                    <div class="styled__select">
+                                                    <div class="styled__select js-show-tooltip">
+                                                        <div class="tooltip tooltip--allwidth"></div>
                                                         <select name="order_adres">
-                                                            <option value="1" selected>г.Хмельницкий ул.Пушкина Шиномонтаж</option>
-                                                            <option value="1">г.Хмельницкий ул.Виницкое Шоссе Марися</option>
-                                                            <option value="1">г.Хмельницкий ул.Пушкина Шиномонтаж</option>
-                                                            <option value="1">г.Хмельницкий ул.Виницкое Шоссе Марися</option>
-                                                            <option value="1">г.Хмельницкий ул.Пушкина Шиномонтаж</option>
-                                                            <option value="1">г.Хмельницкий ул.Виницкое Шоссе Марися</option>
-                                                            <option value="1">г.Хмельницкий ул.Виницкое Шоссе Марися</option>
-                                                            <option value="1">г.Хмельницкий ул.Пушкина Шиномонтаж</option>
-                                                            <option value="1">г.Хмельницкий ул.Виницкое Шоссе Марися</option>
-                                                            <option value="1">г.Хмельницкий ул.Пушкина Шиномонтаж</option>
-                                                            <option value="1">г.Хмельницкий ул.Виницкое Шоссе Марися</option>
+                                                            <option value="1" selected>г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
+                                                            <option value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
+                                                            <option value="1">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
+                                                            <option value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
+                                                            <option value="1">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
+                                                            <option value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
+                                                            <option value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
+                                                            <option value="1">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
+                                                            <option value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
+                                                            <option value="1">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
+                                                            <option value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
                                                         </select>
                                                     </div>
                                                     <strong>или</strong>

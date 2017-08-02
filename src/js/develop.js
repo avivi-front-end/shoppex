@@ -351,10 +351,31 @@ function copyToClipboard() {
         }
     });
 }
+function showTooltip() {
+    var elem = $('.js-show-tooltip');
+    if(elem.length > 0){
+        $(document).on('mouseenter', '.js-show-tooltip', function () {
+            var tip = $(this).find('.tooltip');
+            var text = $(this).find('.jq-selectbox__select-text').text();
+            tip.text(text);
+            tip.css('display','block');
+        });
+        $(document).on('mouseleave', '.js-show-tooltip', function () {
+            var tip = $(this).find('.tooltip');
+            tip.css('display','none');
+        });
+        $(document).on('mouseenter', '.js-show-tooltip .jq-selectbox li', function () {
+            var tip = $(this).closest('.js-show-tooltip').find('.tooltip');
+            var text = $(this).text();
+            tip.text(text);
+        });
+    }
+}
 $(document).ready(function () {
     $(document).on('change', '.js-input-file input',function(){
         readURL(this);
     });
+    showTooltip();
     copyToClipboard();
     maskedInput();
     delFileFromInput();
