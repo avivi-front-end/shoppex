@@ -1,0 +1,485 @@
+//= partials/head.html
+
+<div class="global-wrapper">
+    <!--header start-->
+    //= partials/header.html
+    <!--header end-->
+    <div class="main">
+        <div class="lk-scelet">
+            <div class="mbox">
+                <div class="lk-scelet__wrap">
+                    <div class="lk-scelet__left">
+                        <div class="lk-ballancer">
+                            <div class="lk-ballancer__row lk-ballancer__row--head">
+                                <div class="lk-ballancer__cell">
+                                    <img src="images/b1.png" alt="">
+                                    Баланс
+                                </div>
+                                <div class="lk-ballancer__cell">
+                                    <img src="images/b2.png" alt="">
+                                    Бонусы
+                                </div>
+                            </div>
+                            <div class="lk-ballancer__row">
+                                <div class="lk-ballancer__cell">$9999.99</div>
+                                <div class="lk-ballancer__cell">$9.99</div>
+                            </div>
+                        </div>
+                        <div class="lk-menu">
+                            <div class="lk-menu__button">
+                                <a href="#" class="button"><span>Новый заказ</span></a>
+                            </div>
+                            <ul>
+                                <li><a href="#" class="active">Мои заказы </a></li>
+                                <li><a href="#">мой адрес в сша</a></li>
+                                <li><a href="#">личные данные</a></li>
+                                <li><a href="#">адресная книга</a></li>
+                                <li><a href="#">действия со счетом</a></li>
+                                <li><a href="#">дополнительные услуги</a></li>
+                                <li><a href="#">избранные магазины</a></li>
+                                <li><a href="#">ограничения транспортировки (опасные грузы)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lk-scelet__right">
+                        <div class="editinfo adresspage">
+                            <div class="adresspage__title">
+                                <div class="title">
+                                    <h3>Адресная книга</h3>
+                                </div>
+                                <button class="button js-add-card-adres" type="button"><span>Добавить адрес</span></button>
+                            </div>
+                            <div class="adresspage__content">
+                                <form class="adresspage__card adresspage__card--start">
+                                    <div class="adresspage__top">
+                                        <div class="neworder__title-input adresspage__titedit">
+                                            <label>
+                                                <input type="text" class="js-placeholder">
+                                                <span class="placeholder">Название адреса<b>*</b></span>
+                                            </label>
+                                            <label class="styled"><input type="checkbox"><i></i><span>Задать как адрес по умолчанию</span></label>
+                                        </div>
+
+                                    </div>
+                                    <div class="adresspage__workspace">
+                                        <div class="adresspage__slides">
+                                            <div class="adresspage__edit">
+                                                <div class="editinfo__subrow editinfo__subrow--center js-for-radio-next">
+                                                    <div class="editinfo__info">Тип контакта<b>*</b></div>
+                                                    <div class="editinfo__subrow editinfo__radios">
+                                                        <label class="styled styled--required styled--flexc">
+                                                            <input type="radio" name="qwre32" checked="checked" value="1" class="js-check-for-show"><i></i><b>Курьерская доставка</b>
+                                                        </label> <!-- in different CARD make different NAME in this radio -->
+                                                        <label class="styled styled--required styled--flexc">
+                                                            <input type="radio" name="qwre32" value="0" class="js-check-for-show"><i></i><b>Отделение Новой Пошты</b><img src="images/np.png" alt="">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="editinfo__change"></div>
+                                            </div>
+
+                                        </div>
+                                        <div class="adresspage__buttons">
+                                            <div class="adresspage__butt js-cancel-card-adres">
+                                               <p><span>отмена</span>
+                                                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14px" height="14px">
+                                                       <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                                                             d="M7.000,0.000 C3.150,0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,0.000 7.000,0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/>
+                                                   </svg></p>
+                                            </div>
+                                            <button class="adresspage__butt">
+                                                <p>
+                                                    <span>сохранить</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="10px">
+                                                        <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                                                              d="M12.764,1.381 L11.623,0.237 C11.467,0.080 11.277,0.001 11.053,0.001 C10.830,0.001 10.639,0.080 10.483,0.237 L4.982,5.766 L2.517,3.283 C2.361,3.126 2.170,3.048 1.947,3.048 C1.723,3.048 1.533,3.126 1.377,3.283 L0.236,4.428 C0.080,4.585 0.002,4.776 0.002,5.000 C0.002,5.224 0.080,5.415 0.236,5.572 L3.272,8.619 L4.412,9.763 C4.569,9.920 4.759,9.999 4.982,9.999 C5.206,9.999 5.396,9.920 5.552,9.763 L6.693,8.619 L12.764,2.526 C12.920,2.369 12.999,2.178 12.999,1.954 C12.999,1.729 12.920,1.538 12.764,1.381 Z"/>
+                                                    </svg>
+                                                </p>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <form class="adresspage__card">
+                                    <div class="adresspage__top">
+                                        <div class="js-redact-block">
+                                            <div class="neworder__title-input adresspage__titedit">
+                                                <label>
+                                                    <input type="text" class="js-placeholder">
+                                                    <span class="placeholder">Название адреса<b>*</b></span>
+                                                </label>
+                                                <label class="styled"><input type="checkbox" checked="checked"><i></i><span>Задать как адрес по умолчанию</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="js-normal-block">
+                                            <div class="adresspage__titdone">
+                                                <p>Отделение возле дома</p>
+                                                <div class="adresspage__yellow">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15px" height="15px">
+                                                        <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                                                              d="M4.425,6.075 L3.375,7.125 L6.750,10.500 L14.250,3.000 L13.200,1.950 L6.750,8.400 L4.425,6.075 ZM13.500,7.500 C13.500,10.800 10.800,13.500 7.500,13.500 C4.200,13.500 1.500,10.800 1.500,7.500 C1.500,4.200 4.200,1.500 7.500,1.500 C8.100,1.500 8.625,1.575 9.150,1.725 L10.350,0.525 C9.450,0.225 8.475,0.000 7.500,0.000 C3.375,0.000 0.000,3.375 0.000,7.500 C0.000,11.625 3.375,15.000 7.500,15.000 C11.625,15.000 15.000,11.625 15.000,7.500 L13.500,7.500 Z"/>
+                                                    </svg>
+                                                    <span>Адрес по умолчанию</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="adresspage__workspace">
+                                        <div class="adresspage__slides">
+                                            <div class="js-redact-block">
+                                                <div class="adresspage__edit">
+                                                    <div class="editinfo__subrow editinfo__subrow--center js-for-radio-next">
+                                                        <div class="editinfo__info">Тип контакта<b>*</b></div>
+                                                        <div class="editinfo__subrow editinfo__radios">
+                                                            <label class="styled styled--required styled--flexc">
+                                                                <input type="radio" name="qwre" checked="checked" value="1" class="js-check-for-show"><i></i><b>Курьерская доставка</b>
+                                                            </label><!-- in different CARD make different NAME in this radio -->
+                                                            <label class="styled styled--required styled--flexc">
+                                                                <input type="radio" name="qwre" value="0" class="js-check-for-show"><i></i><b>Отделение Новой Пошты</b><img src="images/np.png" alt="">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="editinfo__change"></div>
+                                                </div>
+                                            </div>
+                                            <div class="js-normal-block">
+                                                <div class="adresspage__info">
+                                                    <div class="editinfo__subrow editinfo__subrow--censtar">
+                                                        <div class="editinfo__info">Тип контакта</div>
+                                                        <p>Курьерская доставка</p>
+                                                    </div>
+                                                    <div class="editinfo__subrow">
+                                                        <div class="editinfo__cell editinfo__cell--small">
+                                                            <div class="editinfo__info">Индекс</div>
+                                                            <p>123123</p>
+                                                        </div>
+                                                        <div class="editinfo__cell editinfo__cell--oblsel">
+                                                            <div class="editinfo__info">Область</div>
+                                                            <p>Днепропетровская</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="editinfo__subrow">
+                                                        <div class="editinfo__cell editinfo__cell--full">
+                                                            <div class="editinfo__info">Район</div>
+                                                            <p>Криворожский</p>
+                                                        </div>
+                                                        <div class="editinfo__cell editinfo__cell--full">
+                                                            <div class="editinfo__info">Город</div>
+                                                            <p>карьерный</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="editinfo__subrow">
+                                                        <div class="editinfo__cell editinfo__cell--full">
+                                                            <div class="editinfo__info">Улица</div>
+                                                            <p>транспортная</p>
+                                                        </div>
+                                                        <div class="editinfo__cell editinfo__cell--small">
+                                                            <div class="editinfo__info">Дом</div>
+                                                            <p>2</p>
+                                                        </div>
+                                                        <div class="editinfo__cell editinfo__cell--small">
+                                                            <div class="editinfo__info ">Корпус</div>
+                                                            <p>3</p>
+                                                        </div>
+                                                        <div class="editinfo__cell editinfo__cell--small">
+                                                            <div class="editinfo__info ">Квартира</div>
+                                                            <p>4</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="adresspage__buttons">
+                                            <div class="js-redact-block">
+                                                <div class="adresspage__butt js-cancell-adress">
+                                                    <p> <span>отмена</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14px" height="14px">
+                                                            <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                                                                  d="M7.000,0.000 C3.150,0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,0.000 7.000,0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/>
+                                                        </svg></p>
+                                                </div>
+
+                                                <button class="adresspage__butt">
+                                                    <p>
+                                                        <span>сохранить</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="10px">
+                                                            <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                                                                  d="M12.764,1.381 L11.623,0.237 C11.467,0.080 11.277,0.001 11.053,0.001 C10.830,0.001 10.639,0.080 10.483,0.237 L4.982,5.766 L2.517,3.283 C2.361,3.126 2.170,3.048 1.947,3.048 C1.723,3.048 1.533,3.126 1.377,3.283 L0.236,4.428 C0.080,4.585 0.002,4.776 0.002,5.000 C0.002,5.224 0.080,5.415 0.236,5.572 L3.272,8.619 L4.412,9.763 C4.569,9.920 4.759,9.999 4.982,9.999 C5.206,9.999 5.396,9.920 5.552,9.763 L6.693,8.619 L12.764,2.526 C12.920,2.369 12.999,2.178 12.999,1.954 C12.999,1.729 12.920,1.538 12.764,1.381 Z"/>
+                                                        </svg>
+                                                    </p>
+                                                </button>
+                                            </div>
+                                            <div class="js-normal-block">
+                                                <div class="adresspage__butt js-redact-adress">
+                                                    <p><span>редактировать</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="13px" height="13px">
+                                                            <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                                                                  d="M8.072,2.169 L10.717,4.827 L4.023,11.554 L1.380,8.896 L8.072,2.169 ZM12.724,1.528 L11.544,0.343 C11.088,-0.115 10.348,-0.115 9.891,0.343 L8.761,1.478 L11.406,4.136 L12.724,2.812 C13.077,2.456 13.077,1.883 12.724,1.528 ZM-0.004,12.631 C-0.052,12.849 0.144,13.044 0.360,12.991 L3.307,12.273 L0.664,9.616 L-0.004,12.631 Z"/>
+                                                        </svg></p>
+                                                </div>
+                                                <a  data-fancybox data-src="#del-adres-popup" href="javascript:;" class="adresspage__butt">
+                                                    <p><span>Удалить</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14px" height="14px">
+                                                            <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                                                                  d="M7.000,0.000 C3.150,0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,0.000 7.000,0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/>
+                                                        </svg></p>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <form class="adresspage__card">
+                                    <div class="adresspage__top">
+                                        <div class="js-redact-block">
+                                            <div class="neworder__title-input adresspage__titedit">
+                                                <label>
+                                                    <input type="text" class="js-placeholder">
+                                                    <span class="placeholder">Название адреса<b>*</b></span>
+                                                </label>
+                                                <label class="styled"><input type="checkbox"><i></i><span>Задать как адрес по умолчанию</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="js-normal-block">
+                                            <div class="adresspage__titdone">
+                                                <p>Отделение возле дома</p>
+                                                <div class="adresspage__yellow">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="adresspage__workspace">
+                                        <div class="adresspage__slides">
+                                            <div class="js-redact-block">
+                                                <div class="adresspage__edit">
+                                                    <div class="editinfo__subrow editinfo__subrow--center js-for-radio-next">
+                                                        <div class="editinfo__info">Тип контакта<b>*</b></div>
+                                                        <div class="editinfo__subrow editinfo__radios">
+                                                            <label class="styled styled--required styled--flexc">
+                                                                <input type="radio" name="qwre2"  value="1" class="js-check-for-show"><i></i><b>Курьерская доставка</b>
+                                                            </label><!-- in different CARD make different NAME in this radio -->
+                                                            <label class="styled styled--required styled--flexc">
+                                                                <input type="radio" name="qwre2" checked="checked" value="0" class="js-check-for-show"><i></i><b>Отделение Новой Пошты</b><img src="images/np.png" alt="">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="editinfo__change"></div>
+                                                </div>
+                                            </div>
+                                            <div class="js-normal-block">
+                                                <div class="adresspage__info">
+                                                    <div class="editinfo__subrow editinfo__subrow&#45;&#45;censtar">
+                                                        <div class="editinfo__info">Тип контакта</div>
+                                                        <p>Отделение Новой Пошты<img src="images/np.png" alt=""></p>
+                                                    </div>
+                                                    <div class="editinfo__subrow">
+                                                        <div class="editinfo__cell editinfo__cell&#45;&#45;obl">
+                                                            <div class="editinfo__info">Область</div>
+                                                            <p>Днепропетровская</p>
+                                                        </div>
+                                                        <div class="editinfo__cell editinfo__cell&#45;&#45;city">
+                                                            <div class="editinfo__info">Город</div>
+                                                            <p>карьерный</p>
+                                                        </div>
+                                                        <div class="editinfo__cell editinfo__cell&#45;&#45;number">
+                                                            <div class="editinfo__info">Отделение</div>
+                                                            <p>№18 (до 3 кг)</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="adresspage__buttons">
+                                            <div class="js-redact-block">
+                                                <div class="adresspage__butt js-cancell-adress">
+                                                    <p> <span>отмена</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14px" height="14px">
+                                                            <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                                                                  d="M7.000,0.000 C3.150,0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,0.000 7.000,0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/>
+                                                        </svg></p>
+                                                </div>
+
+                                                <button class="adresspage__butt">
+                                                    <p>
+                                                        <span>сохранить</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px" height="10px">
+                                                            <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                                                                  d="M12.764,1.381 L11.623,0.237 C11.467,0.080 11.277,0.001 11.053,0.001 C10.830,0.001 10.639,0.080 10.483,0.237 L4.982,5.766 L2.517,3.283 C2.361,3.126 2.170,3.048 1.947,3.048 C1.723,3.048 1.533,3.126 1.377,3.283 L0.236,4.428 C0.080,4.585 0.002,4.776 0.002,5.000 C0.002,5.224 0.080,5.415 0.236,5.572 L3.272,8.619 L4.412,9.763 C4.569,9.920 4.759,9.999 4.982,9.999 C5.206,9.999 5.396,9.920 5.552,9.763 L6.693,8.619 L12.764,2.526 C12.920,2.369 12.999,2.178 12.999,1.954 C12.999,1.729 12.920,1.538 12.764,1.381 Z"/>
+                                                        </svg>
+                                                    </p>
+                                                </button>
+                                            </div>
+                                            <div class="js-normal-block">
+                                                <div class="adresspage__butt js-redact-adress">
+                                                    <p><span>редактировать</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="13px" height="13px">
+                                                            <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                                                                  d="M8.072,2.169 L10.717,4.827 L4.023,11.554 L1.380,8.896 L8.072,2.169 ZM12.724,1.528 L11.544,0.343 C11.088,-0.115 10.348,-0.115 9.891,0.343 L8.761,1.478 L11.406,4.136 L12.724,2.812 C13.077,2.456 13.077,1.883 12.724,1.528 ZM-0.004,12.631 C-0.052,12.849 0.144,13.044 0.360,12.991 L3.307,12.273 L0.664,9.616 L-0.004,12.631 Z"/>
+                                                        </svg></p>
+                                                </div>
+                                                <a  data-fancybox data-src="#del-adres-popup" href="javascript:;" class="adresspage__butt">
+                                                    <p><span>Удалить</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14px" height="14px">
+                                                            <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                                                                  d="M7.000,0.000 C3.150,0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,0.000 7.000,0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/>
+                                                        </svg></p>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="for-tabs-hidden-block">
+                            <div class="passport">
+                                <div class="editinfo__subrow">
+                                    <div class="editinfo__cell editinfo__cell--small">
+                                        <div class="editinfo__info">Индекс<b>*</b></div>
+                                        <div class="neworder__input">
+                                            <input type="text" required="required" placeholder="" name=" ">
+                                        </div>
+                                    </div>
+                                    <div class="editinfo__cell editinfo__cell--oblsel">
+                                        <div class="editinfo__info">Область<b>*</b></div>
+                                        <div class="editinfo__select editinfo__select--full js-noinit">
+                                            <select name="" data-placeholder=" ">
+                                                <option value=""></option>
+                                                <option value="1">01</option>
+                                                <option value="2">02</option>
+                                                <option value="3">03</option>
+                                                <option value="4">04</option>
+                                                <option value="5">05</option>
+                                                <option value="6">06</option>
+                                                <option value="7">07</option>
+                                                <option value="8">08</option>
+                                                <option value="9">09</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="editinfo__subrow">
+                                    <div class="editinfo__cell editinfo__cell--full">
+                                        <div class="editinfo__info">Район</div>
+                                        <div class="neworder__input neworder__input--norequired">
+                                            <input type="text"  placeholder="" name=" ">
+                                        </div>
+                                    </div>
+                                    <div class="editinfo__cell editinfo__cell--full">
+                                        <div class="editinfo__info">Город<b>*</b></div>
+                                        <div class="neworder__input">
+                                            <input type="text" required="required" placeholder="" name=" ">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="editinfo__subrow">
+                                    <div class="editinfo__cell editinfo__cell--full">
+                                        <div class="editinfo__info">Улица<b>*</b></div>
+                                        <div class="neworder__input">
+                                            <input type="text" required="required" placeholder="" name=" ">
+                                        </div>
+                                    </div>
+                                    <div class="editinfo__cell editinfo__cell--small">
+                                        <div class="editinfo__info">Дом<b>*</b></div>
+                                        <div class="neworder__input">
+                                            <input type="text" required="required" placeholder="" name=" ">
+                                        </div>
+                                    </div>
+                                    <div class="editinfo__cell editinfo__cell--small">
+                                        <div class="editinfo__info editinfo__info--norequired">Корпус<b>*</b></div>
+                                        <div class="neworder__input neworder__input--norequired">
+                                            <input type="text"  placeholder="" name=" ">
+                                        </div>
+                                    </div>
+                                    <div class="editinfo__cell editinfo__cell--small">
+                                        <div class="editinfo__info editinfo__info--norequired">Квартира<b>*</b></div>
+                                        <div class="neworder__input neworder__input--norequired">
+                                            <input type="text"   placeholder="" name=" ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="id-card">
+                                <div class="editinfo__subrow">
+                                    <div class="editinfo__cell editinfo__cell--obl">
+                                        <div class="editinfo__info">Область<b>*</b></div>
+                                        <div class="editinfo__select editinfo__select--full js-noinit">
+                                            <select name="" data-placeholder=" ">
+                                                <option value=""></option>
+                                                <option value="1">01</option>
+                                                <option value="2">02</option>
+                                                <option value="3">03</option>
+                                                <option value="4">04</option>
+                                                <option value="5">05</option>
+                                                <option value="6">06</option>
+                                                <option value="7">07</option>
+                                                <option value="8">08</option>
+                                                <option value="9">09</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="editinfo__cell editinfo__cell--city">
+                                        <div class="editinfo__info">Город<b>*</b></div>
+                                        <div class="editinfo__select editinfo__select--full js-noinit">
+                                            <select name="" data-placeholder=" ">
+                                                <option value=""></option>
+                                                <option value="1">01</option>
+                                                <option value="2">02</option>
+                                                <option value="3">03</option>
+                                                <option value="4">04</option>
+                                                <option value="5">05</option>
+                                                <option value="6">06</option>
+                                                <option value="7">07</option>
+                                                <option value="8">08</option>
+                                                <option value="9">09</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="editinfo__cell editinfo__cell--number">
+                                        <div class="editinfo__info">Отделение<b>*</b></div>
+                                        <div class="editinfo__select editinfo__select--full js-noinit">
+                                            <select name="" data-placeholder=" ">
+                                                <option value=""></option>
+                                                <option value="1">01</option>
+                                                <option value="2">02</option>
+                                                <option value="3">03</option>
+                                                <option value="4">04</option>
+                                                <option value="5">05</option>
+                                                <option value="6">06</option>
+                                                <option value="7">07</option>
+                                                <option value="8">08</option>
+                                                <option value="9">09</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--hidden start-->
+    //= partials/hidden-block.html
+    <!--hidden end-->
+    <!--footer start-->
+    //= partials/footer.html
+    <!--footer end-->
+</div>
+</body>
+</html>
