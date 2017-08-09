@@ -9,22 +9,7 @@
             <div class="mbox">
                 <div class="lk-scelet__wrap">
                     <div class="lk-scelet__left">
-                        <div class="lk-ballancer">
-                            <div class="lk-ballancer__row lk-ballancer__row--head">
-                                <div class="lk-ballancer__cell">
-                                    <img src="images/b1.png" alt="">
-                                    Баланс
-                                </div>
-                                <div class="lk-ballancer__cell">
-                                    <img src="images/b2.png" alt="">
-                                    Бонусы
-                                </div>
-                            </div>
-                            <div class="lk-ballancer__row">
-                                <div class="lk-ballancer__cell">$9999.99</div>
-                                <div class="lk-ballancer__cell">$9.99</div>
-                            </div>
-                        </div>
+                        //= partials/balance.html
                         <div class="lk-menu">
                             <div class="lk-menu__button">
                                 <a href="#" class="button"><span>Новый заказ</span></a>
@@ -205,128 +190,75 @@
                                             <div class="lk-card__tcell settings__cell">Sms уведомления</div>
 
                                             <div class="settings__cell--nowidth">
-                                               Все <label class="tumbler js-all-tumbler">
-                                                    <input type="checkbox" name="sms[]">
-                                                    <div class="tumbler__wrap">
-                                                        <div class="tumbler__no">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="8px">
-                                                                <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"  d="M7.500,6.520 L6.520,7.500 L4.000,4.980 L1.480,7.500 L0.500,6.520 L3.020,4.000 L0.500,1.480 L1.480,0.500 L4.000,3.020 L6.520,0.500 L7.500,1.480 L4.980,4.000 L7.500,6.520 Z"/>
-                                                            </svg>
-                                                        </div>
-                                                        <div class="tumbler__yes">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px">
-                                                                <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                                                                      d="M7.855,0.829 L7.153,0.142 C7.057,0.048 6.940,0.001 6.802,0.001 C6.664,0.001 6.547,0.048 6.451,0.142 L3.066,3.459 L1.549,1.970 C1.453,1.876 1.336,1.829 1.198,1.829 C1.060,1.829 0.943,1.876 0.847,1.970 L0.145,2.657 C0.049,2.751 0.001,2.865 0.001,3.000 C0.001,3.135 0.049,3.249 0.145,3.343 L2.013,5.171 L2.715,5.858 C2.811,5.952 2.928,5.999 3.066,5.999 C3.204,5.999 3.321,5.952 3.417,5.858 L4.119,5.171 L7.855,1.516 C7.951,1.421 7.999,1.307 7.999,1.172 C7.999,1.037 7.951,0.923 7.855,0.829 Z"/>
-                                                            </svg>
-                                                        </div>
-                                                    </div>
-                                                </label>
+                                               Все 
+                                                <div class="switch__wrap js-all-tumbler">
+                                                    <label class="switch">
+                                                        <input type="checkbox" name="sms[]">
+                                                        <div class="switch__item"></div>
+                                                        <span class="switch__bg"></span>
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="settings__row settings__row--sb settings__row--border">
                                             <div class="settings__cell settings__cell--big">
                                                 <p>Получать последние новости</p>
                                             </div>
-                                            <label class="tumbler">
-                                                <input type="checkbox" name="sms[]">
-                                                <div class="tumbler__wrap">
-                                                    <div class="tumbler__no">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="8px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"  d="M7.500,6.520 L6.520,7.500 L4.000,4.980 L1.480,7.500 L0.500,6.520 L3.020,4.000 L0.500,1.480 L1.480,0.500 L4.000,3.020 L6.520,0.500 L7.500,1.480 L4.980,4.000 L7.500,6.520 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="tumbler__yes">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                                                                  d="M7.855,0.829 L7.153,0.142 C7.057,0.048 6.940,0.001 6.802,0.001 C6.664,0.001 6.547,0.048 6.451,0.142 L3.066,3.459 L1.549,1.970 C1.453,1.876 1.336,1.829 1.198,1.829 C1.060,1.829 0.943,1.876 0.847,1.970 L0.145,2.657 C0.049,2.751 0.001,2.865 0.001,3.000 C0.001,3.135 0.049,3.249 0.145,3.343 L2.013,5.171 L2.715,5.858 C2.811,5.952 2.928,5.999 3.066,5.999 C3.204,5.999 3.321,5.952 3.417,5.858 L4.119,5.171 L7.855,1.516 C7.951,1.421 7.999,1.307 7.999,1.172 C7.999,1.037 7.951,0.923 7.855,0.829 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <div class="switch__wrap js-switch">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="sms[]">
+                                                    <div class="switch__item"></div>
+                                                    <span class="switch__bg"></span>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="settings__row settings__row--sb settings__row--border">
                                             <div class="settings__cell settings__cell--big">
                                                 <p>Уведомлять про последние акции</p>
                                             </div>
-                                            <label class="tumbler">
-                                                <input type="checkbox" name="sms[]">
-                                                <div class="tumbler__wrap">
-                                                    <div class="tumbler__no">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="8px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"  d="M7.500,6.520 L6.520,7.500 L4.000,4.980 L1.480,7.500 L0.500,6.520 L3.020,4.000 L0.500,1.480 L1.480,0.500 L4.000,3.020 L6.520,0.500 L7.500,1.480 L4.980,4.000 L7.500,6.520 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="tumbler__yes">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                                                                  d="M7.855,0.829 L7.153,0.142 C7.057,0.048 6.940,0.001 6.802,0.001 C6.664,0.001 6.547,0.048 6.451,0.142 L3.066,3.459 L1.549,1.970 C1.453,1.876 1.336,1.829 1.198,1.829 C1.060,1.829 0.943,1.876 0.847,1.970 L0.145,2.657 C0.049,2.751 0.001,2.865 0.001,3.000 C0.001,3.135 0.049,3.249 0.145,3.343 L2.013,5.171 L2.715,5.858 C2.811,5.952 2.928,5.999 3.066,5.999 C3.204,5.999 3.321,5.952 3.417,5.858 L4.119,5.171 L7.855,1.516 C7.951,1.421 7.999,1.307 7.999,1.172 C7.999,1.037 7.951,0.923 7.855,0.829 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <div class="switch__wrap js-switch">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="sms[]">
+                                                    <div class="switch__item"></div>
+                                                    <span class="switch__bg"></span>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="settings__row settings__row--sb settings__row--border">
                                             <div class="settings__cell settings__cell--big">
                                                 <p>Уведомлять про начисление бонусов</p>
                                             </div>
-                                            <label class="tumbler">
-                                                <input type="checkbox" name="sms[]">
-                                                <div class="tumbler__wrap">
-                                                    <div class="tumbler__no">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="8px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"  d="M7.500,6.520 L6.520,7.500 L4.000,4.980 L1.480,7.500 L0.500,6.520 L3.020,4.000 L0.500,1.480 L1.480,0.500 L4.000,3.020 L6.520,0.500 L7.500,1.480 L4.980,4.000 L7.500,6.520 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="tumbler__yes">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                                                                  d="M7.855,0.829 L7.153,0.142 C7.057,0.048 6.940,0.001 6.802,0.001 C6.664,0.001 6.547,0.048 6.451,0.142 L3.066,3.459 L1.549,1.970 C1.453,1.876 1.336,1.829 1.198,1.829 C1.060,1.829 0.943,1.876 0.847,1.970 L0.145,2.657 C0.049,2.751 0.001,2.865 0.001,3.000 C0.001,3.135 0.049,3.249 0.145,3.343 L2.013,5.171 L2.715,5.858 C2.811,5.952 2.928,5.999 3.066,5.999 C3.204,5.999 3.321,5.952 3.417,5.858 L4.119,5.171 L7.855,1.516 C7.951,1.421 7.999,1.307 7.999,1.172 C7.999,1.037 7.951,0.923 7.855,0.829 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <div class="switch__wrap js-switch">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="sms[]">
+                                                    <div class="switch__item"></div>
+                                                    <span class="switch__bg"></span>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="settings__row settings__row--sb settings__row--border">
                                             <div class="settings__cell settings__cell--big">
                                                 <p>Уведомлять про отправление посылки из США</p>
                                             </div>
-                                            <label class="tumbler">
-                                                <input type="checkbox" name="sms[]">
-                                                <div class="tumbler__wrap">
-                                                    <div class="tumbler__no">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="8px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"  d="M7.500,6.520 L6.520,7.500 L4.000,4.980 L1.480,7.500 L0.500,6.520 L3.020,4.000 L0.500,1.480 L1.480,0.500 L4.000,3.020 L6.520,0.500 L7.500,1.480 L4.980,4.000 L7.500,6.520 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="tumbler__yes">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                                                                  d="M7.855,0.829 L7.153,0.142 C7.057,0.048 6.940,0.001 6.802,0.001 C6.664,0.001 6.547,0.048 6.451,0.142 L3.066,3.459 L1.549,1.970 C1.453,1.876 1.336,1.829 1.198,1.829 C1.060,1.829 0.943,1.876 0.847,1.970 L0.145,2.657 C0.049,2.751 0.001,2.865 0.001,3.000 C0.001,3.135 0.049,3.249 0.145,3.343 L2.013,5.171 L2.715,5.858 C2.811,5.952 2.928,5.999 3.066,5.999 C3.204,5.999 3.321,5.952 3.417,5.858 L4.119,5.171 L7.855,1.516 C7.951,1.421 7.999,1.307 7.999,1.172 C7.999,1.037 7.951,0.923 7.855,0.829 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <div class="switch__wrap js-switch">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="sms[]">
+                                                    <div class="switch__item"></div>
+                                                    <span class="switch__bg"></span>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="settings__row settings__row--sb settings__row--border">
                                             <div class="settings__cell settings__cell--big">
                                                 <p>Уведомлять про пересечении границы Украины</p>
                                             </div>
-                                            <label class="tumbler">
-                                                <input type="checkbox" name="sms[]">
-                                                <div class="tumbler__wrap">
-                                                    <div class="tumbler__no">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="8px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"  d="M7.500,6.520 L6.520,7.500 L4.000,4.980 L1.480,7.500 L0.500,6.520 L3.020,4.000 L0.500,1.480 L1.480,0.500 L4.000,3.020 L6.520,0.500 L7.500,1.480 L4.980,4.000 L7.500,6.520 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="tumbler__yes">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                                                                  d="M7.855,0.829 L7.153,0.142 C7.057,0.048 6.940,0.001 6.802,0.001 C6.664,0.001 6.547,0.048 6.451,0.142 L3.066,3.459 L1.549,1.970 C1.453,1.876 1.336,1.829 1.198,1.829 C1.060,1.829 0.943,1.876 0.847,1.970 L0.145,2.657 C0.049,2.751 0.001,2.865 0.001,3.000 C0.001,3.135 0.049,3.249 0.145,3.343 L2.013,5.171 L2.715,5.858 C2.811,5.952 2.928,5.999 3.066,5.999 C3.204,5.999 3.321,5.952 3.417,5.858 L4.119,5.171 L7.855,1.516 C7.951,1.421 7.999,1.307 7.999,1.172 C7.999,1.037 7.951,0.923 7.855,0.829 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <div class="switch__wrap js-switch">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="sms[]">
+                                                    <div class="switch__item"></div>
+                                                    <span class="switch__bg"></span>
+                                                </label>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -335,128 +267,75 @@
                                             <div class="lk-card__tcell settings__cell">e-mail уведомления</div>
 
                                             <div class="settings__cell settings__cell--nowidth">
-                                                Все <label class="tumbler js-all-tumbler">
-                                                <input type="checkbox" name="sms[]">
-                                                <div class="tumbler__wrap">
-                                                    <div class="tumbler__no">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="8px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"  d="M7.500,6.520 L6.520,7.500 L4.000,4.980 L1.480,7.500 L0.500,6.520 L3.020,4.000 L0.500,1.480 L1.480,0.500 L4.000,3.020 L6.520,0.500 L7.500,1.480 L4.980,4.000 L7.500,6.520 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="tumbler__yes">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                                                                  d="M7.855,0.829 L7.153,0.142 C7.057,0.048 6.940,0.001 6.802,0.001 C6.664,0.001 6.547,0.048 6.451,0.142 L3.066,3.459 L1.549,1.970 C1.453,1.876 1.336,1.829 1.198,1.829 C1.060,1.829 0.943,1.876 0.847,1.970 L0.145,2.657 C0.049,2.751 0.001,2.865 0.001,3.000 C0.001,3.135 0.049,3.249 0.145,3.343 L2.013,5.171 L2.715,5.858 C2.811,5.952 2.928,5.999 3.066,5.999 C3.204,5.999 3.321,5.952 3.417,5.858 L4.119,5.171 L7.855,1.516 C7.951,1.421 7.999,1.307 7.999,1.172 C7.999,1.037 7.951,0.923 7.855,0.829 Z"/>
-                                                        </svg>
-                                                    </div>
+                                                Все 
+                                                <div class="switch__wrap js-all-tumbler">
+                                                    <label class="switch">
+                                                        <input type="checkbox" name="sms[]">
+                                                        <div class="switch__item"></div>
+                                                        <span class="switch__bg"></span>
+                                                    </label>
                                                 </div>
-                                            </label>
                                             </div>
                                         </div>
                                         <div class="settings__row settings__row--sb settings__row--border">
                                             <div class="settings__cell settings__cell--big">
                                                 <p>Получать последние новости</p>
                                             </div>
-                                            <label class="tumbler">
-                                                <input type="checkbox" name="sms[]">
-                                                <div class="tumbler__wrap">
-                                                    <div class="tumbler__no">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="8px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"  d="M7.500,6.520 L6.520,7.500 L4.000,4.980 L1.480,7.500 L0.500,6.520 L3.020,4.000 L0.500,1.480 L1.480,0.500 L4.000,3.020 L6.520,0.500 L7.500,1.480 L4.980,4.000 L7.500,6.520 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="tumbler__yes">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                                                                  d="M7.855,0.829 L7.153,0.142 C7.057,0.048 6.940,0.001 6.802,0.001 C6.664,0.001 6.547,0.048 6.451,0.142 L3.066,3.459 L1.549,1.970 C1.453,1.876 1.336,1.829 1.198,1.829 C1.060,1.829 0.943,1.876 0.847,1.970 L0.145,2.657 C0.049,2.751 0.001,2.865 0.001,3.000 C0.001,3.135 0.049,3.249 0.145,3.343 L2.013,5.171 L2.715,5.858 C2.811,5.952 2.928,5.999 3.066,5.999 C3.204,5.999 3.321,5.952 3.417,5.858 L4.119,5.171 L7.855,1.516 C7.951,1.421 7.999,1.307 7.999,1.172 C7.999,1.037 7.951,0.923 7.855,0.829 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <div class="switch__wrap js-switch">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="sms[]">
+                                                    <div class="switch__item"></div>
+                                                    <span class="switch__bg"></span>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="settings__row settings__row--sb settings__row--border">
                                             <div class="settings__cell settings__cell--big">
                                                 <p>Уведомлять про последние акции</p>
                                             </div>
-                                            <label class="tumbler">
-                                                <input type="checkbox" name="sms[]">
-                                                <div class="tumbler__wrap">
-                                                    <div class="tumbler__no">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="8px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"  d="M7.500,6.520 L6.520,7.500 L4.000,4.980 L1.480,7.500 L0.500,6.520 L3.020,4.000 L0.500,1.480 L1.480,0.500 L4.000,3.020 L6.520,0.500 L7.500,1.480 L4.980,4.000 L7.500,6.520 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="tumbler__yes">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                                                                  d="M7.855,0.829 L7.153,0.142 C7.057,0.048 6.940,0.001 6.802,0.001 C6.664,0.001 6.547,0.048 6.451,0.142 L3.066,3.459 L1.549,1.970 C1.453,1.876 1.336,1.829 1.198,1.829 C1.060,1.829 0.943,1.876 0.847,1.970 L0.145,2.657 C0.049,2.751 0.001,2.865 0.001,3.000 C0.001,3.135 0.049,3.249 0.145,3.343 L2.013,5.171 L2.715,5.858 C2.811,5.952 2.928,5.999 3.066,5.999 C3.204,5.999 3.321,5.952 3.417,5.858 L4.119,5.171 L7.855,1.516 C7.951,1.421 7.999,1.307 7.999,1.172 C7.999,1.037 7.951,0.923 7.855,0.829 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <div class="switch__wrap js-switch">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="sms[]">
+                                                    <div class="switch__item"></div>
+                                                    <span class="switch__bg"></span>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="settings__row settings__row--sb settings__row--border">
                                             <div class="settings__cell settings__cell--big">
                                                 <p>Уведомлять про начисление бонусов</p>
                                             </div>
-                                            <label class="tumbler">
-                                                <input type="checkbox" name="sms[]">
-                                                <div class="tumbler__wrap">
-                                                    <div class="tumbler__no">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="8px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"  d="M7.500,6.520 L6.520,7.500 L4.000,4.980 L1.480,7.500 L0.500,6.520 L3.020,4.000 L0.500,1.480 L1.480,0.500 L4.000,3.020 L6.520,0.500 L7.500,1.480 L4.980,4.000 L7.500,6.520 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="tumbler__yes">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                                                                  d="M7.855,0.829 L7.153,0.142 C7.057,0.048 6.940,0.001 6.802,0.001 C6.664,0.001 6.547,0.048 6.451,0.142 L3.066,3.459 L1.549,1.970 C1.453,1.876 1.336,1.829 1.198,1.829 C1.060,1.829 0.943,1.876 0.847,1.970 L0.145,2.657 C0.049,2.751 0.001,2.865 0.001,3.000 C0.001,3.135 0.049,3.249 0.145,3.343 L2.013,5.171 L2.715,5.858 C2.811,5.952 2.928,5.999 3.066,5.999 C3.204,5.999 3.321,5.952 3.417,5.858 L4.119,5.171 L7.855,1.516 C7.951,1.421 7.999,1.307 7.999,1.172 C7.999,1.037 7.951,0.923 7.855,0.829 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <div class="switch__wrap js-switch">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="sms[]">
+                                                    <div class="switch__item"></div>
+                                                    <span class="switch__bg"></span>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="settings__row settings__row--sb settings__row--border">
                                             <div class="settings__cell settings__cell--big">
                                                 <p>Уведомлять про отправление посылки из США</p>
                                             </div>
-                                            <label class="tumbler">
-                                                <input type="checkbox" name="sms[]">
-                                                <div class="tumbler__wrap">
-                                                    <div class="tumbler__no">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="8px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"  d="M7.500,6.520 L6.520,7.500 L4.000,4.980 L1.480,7.500 L0.500,6.520 L3.020,4.000 L0.500,1.480 L1.480,0.500 L4.000,3.020 L6.520,0.500 L7.500,1.480 L4.980,4.000 L7.500,6.520 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="tumbler__yes">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                                                                  d="M7.855,0.829 L7.153,0.142 C7.057,0.048 6.940,0.001 6.802,0.001 C6.664,0.001 6.547,0.048 6.451,0.142 L3.066,3.459 L1.549,1.970 C1.453,1.876 1.336,1.829 1.198,1.829 C1.060,1.829 0.943,1.876 0.847,1.970 L0.145,2.657 C0.049,2.751 0.001,2.865 0.001,3.000 C0.001,3.135 0.049,3.249 0.145,3.343 L2.013,5.171 L2.715,5.858 C2.811,5.952 2.928,5.999 3.066,5.999 C3.204,5.999 3.321,5.952 3.417,5.858 L4.119,5.171 L7.855,1.516 C7.951,1.421 7.999,1.307 7.999,1.172 C7.999,1.037 7.951,0.923 7.855,0.829 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <div class="switch__wrap js-switch">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="sms[]">
+                                                    <div class="switch__item"></div>
+                                                    <span class="switch__bg"></span>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="settings__row settings__row--sb settings__row--border">
                                             <div class="settings__cell settings__cell--big">
                                                 <p>Уведомлять про пересечении границы Украины</p>
                                             </div>
-                                            <label class="tumbler">
-                                                <input type="checkbox" name="sms[]">
-                                                <div class="tumbler__wrap">
-                                                    <div class="tumbler__no">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="8px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"  d="M7.500,6.520 L6.520,7.500 L4.000,4.980 L1.480,7.500 L0.500,6.520 L3.020,4.000 L0.500,1.480 L1.480,0.500 L4.000,3.020 L6.520,0.500 L7.500,1.480 L4.980,4.000 L7.500,6.520 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="tumbler__yes">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px">
-                                                            <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-                                                                  d="M7.855,0.829 L7.153,0.142 C7.057,0.048 6.940,0.001 6.802,0.001 C6.664,0.001 6.547,0.048 6.451,0.142 L3.066,3.459 L1.549,1.970 C1.453,1.876 1.336,1.829 1.198,1.829 C1.060,1.829 0.943,1.876 0.847,1.970 L0.145,2.657 C0.049,2.751 0.001,2.865 0.001,3.000 C0.001,3.135 0.049,3.249 0.145,3.343 L2.013,5.171 L2.715,5.858 C2.811,5.952 2.928,5.999 3.066,5.999 C3.204,5.999 3.321,5.952 3.417,5.858 L4.119,5.171 L7.855,1.516 C7.951,1.421 7.999,1.307 7.999,1.172 C7.999,1.037 7.951,0.923 7.855,0.829 Z"/>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </label>
+                                            <div class="switch__wrap js-switch">
+                                                <label class="switch">
+                                                    <input type="checkbox" name="sms[]">
+                                                    <div class="switch__item"></div>
+                                                    <span class="switch__bg"></span>
+                                                </label>
+                                            </div>
                                         </div>
 
                                     </div>

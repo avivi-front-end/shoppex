@@ -427,7 +427,7 @@ function adresspageRedact() {
 function allTumblerLogic(){
     $(document).on('change', '.js-all-tumbler input', function () {
         var prop = $(this).prop('checked');
-        var group = $(this).closest('.js-all-tumbler-group').find('.tumbler:not(.js-all-tumbler) input');
+        var group = $(this).closest('.js-all-tumbler-group').find('.js-switch:not(.js-all-tumbler) input');
         group.each(function () {
             $(this).prop('checked', prop);
         });
