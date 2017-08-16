@@ -1,4 +1,3 @@
-
 function headerSearch() {
     var container = $('.js-search');
     if(!container.length)return;
@@ -236,7 +235,7 @@ function styledSelect(){
     var select = $('.styled__select select');
     if (select.length > 0){
         select.styler({
-            selectSmartPositioning:false
+            selectSmartPositioning:true
         });
     }
     var select2 = $('.form_input select');
@@ -433,10 +432,66 @@ function allTumblerLogic(){
         });
     })
 }
+function showFilter(){
+    var btn = $('.js-open-filter');
+    var filterWrap = $('.score-date__wrap');
+
+    btn.click(function(){
+        filterWrap.slideToggle();
+    });
+}
+function datePick(){
+    var dateFormat = "mm/dd/yy",
+      from = $( "#js-from" )
+        .datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 1,
+            showOn: "button",
+            buttonImage: "images/calendar.svg",
+            buttonText: ""
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#js-to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1,
+        showOn: "button",
+        buttonImage: "images/calendar.svg",
+        buttonText: ""
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+      return date;
+    }
+}
+function scrollTo(){
+    $('.js-scroll-to').click( function(){ // ловим клик по ссылке с классом go_to
+        var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
+        if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
+        $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); // анимируем скроолинг к элементу scroll_el
+    }
+        return false; // выключаем стандартное действие
+    });
+}
 $(document).ready(function () {
     $(document).on('change', '.js-input-file input',function(){
         readURL(this);
     });
+    scrollTo();
+    datePick();
+    showFilter();
     allTumblerLogic();
     adresspageRedact();
     showTooltip();
