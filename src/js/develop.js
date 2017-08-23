@@ -485,10 +485,41 @@ function scrollTo(){
         return false; // выключаем стандартное действие
     });
 }
+function shops__itemHover(){
+    var items = $('.shops__item');
+    if(items.length > 0){
+        items.each(function () {
+            $(this).find('.itemhover').removeClass('itemhover--left');
+            var middle = (($(this).parent().width())/2) - 20;
+            var posX = $(this).offset().left - $(this).parent().offset().left + (($(this).width())/2);
+            if (posX > middle ){
+                $(this).find('.itemhover').addClass('itemhover--left');
+            }
+        });
+    }
+}
+function shops__itemClick() {
+
+    $(document).on('click', '.shops__item', function () {
+        var items = $('.shops__item');
+        items.removeClass('active');
+        $(this).addClass('active');
+    });
+    $(document).on('click touchstart',function (event){
+        var items = $('.shops__item');
+        var container = $('.itemhover');
+        if (!items.is(event.target) && items.has(event.target).length === 0 && !container.is(event.target) && container.has(event.target).length === 0){
+            items.removeClass('active');
+        }
+    });
+}
+
 $(document).ready(function () {
     $(document).on('change', '.js-input-file input',function(){
         readURL(this);
     });
+    shops__itemHover();
+    shops__itemClick();
     scrollTo();
     datePick();
     showFilter();
