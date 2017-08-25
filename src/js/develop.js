@@ -513,11 +513,25 @@ function shops__itemClick() {
         }
     });
 }
-
+function dataToolTips() {
+    var items = $('[data-title]');
+    if (items.length > 0){
+        items.each(function () {
+            var text = $(this).attr('data-title');
+            var type = $(this).attr('data-title-type');
+            var div = document.createElement('div');
+            $(div).addClass('tooltip');
+            if(type == 'onerow')$(div).addClass('tooltip--onerow');
+            $(div).text(text);
+            $(this).append(div);
+        });
+    }
+}
 $(document).ready(function () {
     $(document).on('change', '.js-input-file input',function(){
         readURL(this);
     });
+    dataToolTips();
     shops__itemHover();
     shops__itemClick();
     scrollTo();
@@ -545,3 +559,5 @@ $(document).ready(function () {
     clock();
     inputNumber();
 });
+
+
