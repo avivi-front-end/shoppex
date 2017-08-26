@@ -1,9 +1,3 @@
-.clear{clear:both;font-size:1px;line-height:1px;height:0;overflow:hidden; }
-.cfix:after{content: '';display: block;height: 0;font-size: 1px;line-height: 1px;overflow: hidden;clear: both;}
-.juster{display:inline-block;width:100%;height:0;overflow:hidden;}
-.jfix-after:after{content: '';display: inline-block;width: 100%;height: 0;overflow: hidden;}
-.vfix{height:100%;width:0px;display:inline-block;vertical-align:middle;}
-.vfix-before:before{content: '';height: 100%;width: 0;display: inline-block;vertical-align: middle;}
 .for-tabs-hidden-block,
 .hidden-block{position:absolute;left:-99999em;top:-99999em;}
 *,*:before, *:after{box-sizing:border-box;outline:none;}
@@ -20,21 +14,8 @@ input, textarea{
     &::-moz-placeholder          { font-weight: 300; color: #40434e; font-size: 14px;}
     &:-ms-input-placeholder      { font-weight: 300; color: #40434e; font-size: 14px;}
 }
-@mixin font-face($style-name, $file:$style-name, $weight:normal, $style:normal) {
-    $filepath: "/fonts/" + $file;
-    @font-face {
-        font-family: quote($style-name);
-        src: url($filepath + ".eot");
-        src: url($filepath + ".eot?#iefix") format('embedded-opentype'),
-        url($filepath + ".woff") format('woff'),
-        url($filepath + ".ttf")  format('truetype'),
-        url($filepath + ".svg#" + $style-name + "") format('svg');
-        font-weight: $weight;
-        font-style: $style;
-    }
-}
 .global-wrapper{display: flex; flex-direction: column; min-height: 100vh;}
-.main{flex: 1; position: relative;}
+.main{flex: 1; position: relative; background-color: #efefef;}
 .button{ display: inline-block; border:none; background: none;text-decoration: none; padding: 0;
     span{ display: flex; justify-content: center; align-items: center; height: 32px; padding: 0 40px; background-color: #ffde00; color: #40434e; text-transform: uppercase; font-weight: 700; }
     &:hover span{ background-color: #ffeb29;}
@@ -51,8 +32,6 @@ h1,h2,h3,h4,h5,h6,b,a{ color: #40434e;}
 h2{ font-size: 18px; font-weight: bold; line-height: 1.111;  margin: 2.05em 0; text-transform: uppercase;}
 h3{font-size: 14px; font-weight: bold;  line-height: 1.2;  margin: 2.45em 0 1em; text-transform: uppercase;}
 h4{font-size: 14px; font-weight: bold;  line-height: 1.2;  margin: 2em 0 0;}
-
-
 p{ margin: 0 0 6px;}
 b{ font-weight: 500;}
 table{ width: 100%; text-align: left; font-weight: 700; font-size: 11px; text-transform: uppercase; color: #2d303b; line-height: 1; margin-bottom: 45px;}
@@ -63,6 +42,16 @@ th{ font-size: 13px;vertical-align: middle;padding: 4px 16px 0;}
 td{padding: 4px 16px 0;
     i{ display: inline-block; margin-right: 5px;}
     &>*{ vertical-align: middle;}
+}
+ul.list{ padding: 0; margin: 21px 0;
+    li{ list-style-type: none; margin-bottom: 12px;
+        &:before{ content: ''; width: 8px; height: 8px;border-radius: 50%; background-color: #40434e; display: inline-block; margin-right: 16px; }
+    }
+}
+ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
+    li{ list-style-type: none; margin-bottom: 12px;
+        &:before{ counter-increment: herman; content: counter(herman); width: 20px; height: 20px; background-color: #40434e; color: #fff; font-weight: 500; font-size: 12px; line-height: 20px; text-align: center; display: inline-block; margin-right: 16px;}
+    }
 }
 .header{ background-color: #40434e; position: relative; z-index: 200;
     &__wrap{ height: 95px; display: flex; justify-content: space-between; align-items: center; padding-top: 1px;}
@@ -616,7 +605,7 @@ a.lk-ballancer__drop-title{
         li{ display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 4px;}
         b{ font-size: 12px;}
     }
-    &__showmore{ width: 100%; cursor: pointer; margin-top: 9px;
+    &__showmore{ width: 100%; cursor: pointer; margin-top: 14px;
         span{ width: 100%; height: 14px; text-align: center;
             svg{transform: scaleY(-1); transition: transform 300ms;}
         }
@@ -679,9 +668,7 @@ a.lk-ballancer__drop-title{
         span{ position: absolute; height: 100%; left: 0; top: 0; min-width: 24px; background: repeating-linear-gradient(-45deg, #5fc9d9 0px, #5fc9d9 2px, #74d2df 2px, #74d2df 5px );}
         i{ width: 24px; height: 24px; right: 0; background-color: #40434e; position: absolute; top: -5px; display: flex; justify-content: center; align-items: center;}
     }
-    &__href{ display: flex; justify-content: flex-start; align-items: center;
-        span{white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
-    }
+    &__href{ display: flex; justify-content: flex-start; align-items: center;  }
 
 }
 .lk-paginator{ margin-top: 55px;
@@ -700,7 +687,6 @@ a.lk-ballancer__drop-title{
         &:hover{ color: #ffde00; background-color: #40434e;}
     }
 }
-
 .neworder{ margin-bottom: 10px;
     .lk-card{box-shadow: none;}
     &__title-input{ padding-top: 0;
@@ -1186,7 +1172,7 @@ a.lk-ballancer__drop-title{
     .shops__item:last-child{ margin-left: 1px;}
 }
 .important{ width: 100%; border:2px solid #ff3030; display: flex; justify-content: flex-start; align-items: center;margin: -6px 0 16px; padding: 14px 55px 14px 12px; position: relative;
-    &__close{ position: absolute; right: 15px; top: 50%; transform:translateY(-50%);}
+    &__close{ position: absolute; right: 15px; top: 50%; transform:translateY(-50%); cursor: pointer;}
     i{ margin-right: 32px;}
     b{ color: #ff3030; text-transform: uppercase; display: block; text-align: left; margin-bottom: 6px;}
 }
@@ -1231,4 +1217,55 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
         h3,
         .newspost__title{ margin: 0;}
     }
+}
+.socinfo{ color: #40434e; display: flex; justify-content: space-between; align-items: center; background-color: #f3f3f3; margin: 21px 0 10px;    padding: 9px 16px;
+    &__hrefs{ display: flex; justify-content: flex-start; align-items: center;
+        span{ margin-right: 22px;}
+    }
+    &__who{ display: flex; justify-content: flex-end; align-items: center;}
+    &__txt{ text-align: right;
+        b{ display: inline-block; margin-bottom: 5px;}
+        p{ margin: 0;}
+    }
+    &__img{ width: 46px; height: 46px; border-radius: 50%; position: relative; overflow: hidden; margin-left: 16px;
+        img{ max-width:none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+    }
+}
+.gallery{ width: 100%;
+    &__top{ height: 436px; width: 100%; margin-bottom: 14px;
+        img{ width: 100%; height: 100%; object-fit: cover;}
+    }
+    &__slide{ padding: 0 8px;
+        &.slick-current .gallery__slide-wrpap{border:3px solid #ffc800;}}
+    &__slide-wrpap{ height:130px; width: 100%; cursor: pointer;
+        img{ width: 100%; height: 100%; object-fit: cover;}
+    }
+    &__bott{ position: relative; padding: 0 22px;}
+}
+.jsg-arrow{ width: 12px; height: 12px; border-top:2px solid #40434e;  border-right:2px solid #40434e; cursor: pointer; background-color: transparent; position: absolute; top: calc(50% - 8px); z-index: 99;}
+.jsg-next{transform: rotate(45deg); right: 3px;}
+.jsg-prev{transform: rotate(-135deg); left: 3px;}
+.faq{box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13); background-color: #fff;     padding: 24px 15px 16px; margin-bottom: 32px;
+    &__title{ background-color: #40434e; font-weight: 700; font-size: 13px; color: #fff; text-transform: uppercase;  line-height: 1.538; padding: 6px 12px 5px; margin-bottom: 18px;}
+    &__main{ font-weight: 700; font-size: 13px; text-transform: uppercase; color: #2d303b; position: relative; cursor: pointer;
+        &:before{ content: ''; width: 6px; height: 6px; background-color: transparent; border-top:1px solid #2d303b; border-right:1px solid #2d303b; transform: rotate(135deg); display: block; position: absolute; top: 3px; left: -19px;}
+    }
+    &__search{ max-width: 376px; width: 100%;  background-color: #fff; position: relative; margin: 0 auto 20px;
+        input{border: 1px solid #cbcfd5; height: 38px; width: 100%; padding: 0 53px 0 15px;}
+        button{ height: 38px; width: 38px; background-color: #ffde00; position: absolute; right: 0; top: 0; border:none;}
+    }
+    &__hide{ display: none;     padding: 25px 0 21px;}
+    &__box{ margin-bottom: 20px;}
+    &__item{padding: 5px 50px 9px;
+        &.active{ background-color: #f3f3f3;
+            .faq__main:before{transform:rotate(-45deg); top: 6px;}
+            .dotted-underline{
+                color: #a9a9a9;
+                border-bottom: 1px dotted transparent;
+            }
+        }
+    }
+}
+.f404{ text-align: center;
+    p{ font-size: 24px; font-weight: 400; color: #40434e;}
 }
