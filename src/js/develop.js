@@ -562,12 +562,17 @@ function acordeon() {
        $(document).on('click','.jsfaq-accord-butt', function () {
            var container = $(this).closest('.jsfaq-accord');
            var box = container.find('.jsfaq-accord-box');
-           container.toggleClass('active');
            if(container.hasClass('active')){
-               box.stop().slideDown();
-           }else{
                box.stop().slideUp();
+               container.removeClass('active');
+           }else{
+               $('.jsfaq-accord-box').stop().slideUp();
+               $('.jsfaq-accord').removeClass('active');
+               container.addClass('active');
+               box.stop().slideDown();
            }
+
+
 
        })
     }
