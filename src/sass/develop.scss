@@ -145,7 +145,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
         }
         a{ width: 100%; text-transform: uppercase; font-weight: 700; color: #2d303b; font-size: 16px;  position: relative; text-decoration: none; display: inline-flex; justify-content: center; align-items: center; height: 50px; padding-top: 3px;
            span{ position: relative;
-               &:before{ width: 100%; position: absolute; top: -19px; left: 0; height: 3px; background-color: #fff; content: ''; opacity: 0; transition: all 100ms;}
+               &:before{ width: 100%; position: absolute; top: -17px; left: 0; height: 3px; background-color: #fff; content: ''; opacity: 0; transition: all 100ms;}
            }
             &:hover,
             &.active{
@@ -329,6 +329,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
         &:before{ width: 38px; height: 4px; position: absolute; content: ''; left: 0; top: 0; bottom: 0; right: 0; margin:auto; background-color: #ffc800;}
     }
     &__spec-wrap{position: absolute; top: -3px; left: -3px;
+        &.hovvv,
         &:hover{ height: 100%; width: 100%;
             .shops__spechover{ opacity: 1; pointer-events: all;}
         }
@@ -347,6 +348,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
     }
 
 }
+.hovvv .itemhover{ transform: scaleX(1); opacity: 1;}
 .itemhover{ width: calc(200% + 14px); min-height: 217px; position: absolute; top: -3px; left: calc(100% + 3px); background-color: #fff; z-index: 100; transition:transform 200ms, opacity 0ms; box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13); transform-origin: 0 50%; transform: scaleX(0); opacity: 0;
     &__top{ display: flex; justify-content: space-between; align-items: stretch; background-color: #f3f3f3;padding: 14px 22px;}
     &__left{ padding-right: 16px; width: 230px;
@@ -1183,6 +1185,9 @@ a.lk-ballancer__drop-title{
 .catalog{margin: 9px 0 20px;
     &__wrap{ display: flex; justify-content: flex-start; align-items: flex-start; flex-wrap: wrap;}
     .lk-paginator{margin-top: 29px;}
+    .shops__item{ flex-grow: 0;
+        &.hovvv{}
+    }
     .shops__item:first-child,
     .shops__item:last-child{ margin-left: 1px;}
 }
@@ -1322,7 +1327,7 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
         .styled{margin: 0 14px; padding-top: 3px;}
     }
 }
-.support{background-color: rgb(255, 255, 255); box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);     padding: 15px 14px 20px; margin-bottom: 13px; display: flex; justify-content: space-between; align-items: stretch;
+.support{background-color: rgb(255, 255, 255); box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);     padding: 15px 14px 20px; display: flex; justify-content: space-between; align-items: stretch;
     &__left{ width: 458px; padding-top: 6px;}
     &__right{ width: 361px; position: relative; padding-bottom: 32px;
         h6{ text-transform: uppercase; font-size: 18px; margin: 0; padding-left: 15px; margin-bottom: 5px;}
@@ -1339,9 +1344,30 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
         a{ font-weight: 700; color: #40434e; text-transform: uppercase; text-decoration: none; display: inline-flex; justify-content: flex-end; align-items: flex-start; margin: 1px 8px 0px 0;}
     }
 }
-.history{background-color: rgb(255, 255, 255); box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);     padding: 15px 14px 20px; margin-bottom: 13px;
-    &__table{font-weight: 700; color: #40434e; text-transform: uppercase; }
-    &__head{ font-size: 13px; display: flex; justify-content: flex-start; align-items: stretch;}
-    &__row{ font-size: 11px; color: #40434e; text-decoration: none; cursor: pointer; display: flex; justify-content: flex-start; align-items: stretch;}
-    &__cell{}
+.history{background-color: rgb(255, 255, 255); box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);     padding: 13px 14px 20px; margin-bottom: 13px;
+    &__table{font-weight: 700; color: #40434e; text-transform: uppercase; display: flex; flex-direction: column;}
+    &__head{ font-size: 13px; display: flex; justify-content: flex-start; align-items: stretch; background-color: #ffde00; padding: 7px 0;}
+    &__row{ font-size: 11px; color: #40434e; text-decoration: none; cursor: pointer; display: flex; justify-content: flex-start; align-items: center; border-bottom: 2px solid #efefef; width: 100%; padding: 14px 0 12px;
+        &:hover{ background-color: #efefef;}
+    }
+    &__cell{ padding-left:11px; position: relative;
+        &--num{ width: 55px;}
+        &--date{ width: 115px;}
+        &--cat{ width: 112px;}
+        &--subcat{ width: 197px;}
+        &--deliv{ width: 195px;}
+        &--status{ width: 157px; display: flex; justify-content: space-between; align-items: center;
+            i{ width: 18px; height: 18px; background-color: #efefef; display: block; position: relative;
+                &:before{ position: absolute; content:''; width: 8px; height: 8px; background-color: transparent; border-top:1px solid #40434e; border-right:1px solid #40434e; transform: rotate(45deg); top: 5px; left: 3px;}
+            }
+            span{ display: inline-block; height: 18px; width: 95px; text-align: center; padding-top: 3px;}
+        }
+    }
+    .lk-paginator{ margin-top: 15px;}
+}
+.succpop{ text-align: center; padding: 0; max-width: 534px; width: 100%; padding-top: 45px;
+    h3{ font-size: 24px; font-weight: 400; text-transform: none; margin: 16px 0 0;}
+    p{font-size: 13px;}
+    h4{ font-weight: 700; font-size: 14px; text-transform: uppercase; margin: 0;}
+    &__bottom{ background-color: #f3f3f3; margin-top: 40px; padding: 23px 0 20px;}
 }

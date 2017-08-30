@@ -612,3 +612,4 @@ $(document).ready(function () {
 });
 
 
+if($('.product-tabs__head').css('display') == 'block'){}
