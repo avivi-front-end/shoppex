@@ -264,7 +264,7 @@ function styledSelect(){
     var select = $('.styled__select select');
     if (select.length > 0){
         select.styler({
-            selectSmartPositioning:true
+            selectSmartPositioning:false
         });
     }
     var select2 = $('.form_input select');

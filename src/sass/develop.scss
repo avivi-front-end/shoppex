@@ -17,7 +17,7 @@ input, textarea{
 .global-wrapper{display: flex; flex-direction: column; min-height: 100vh;}
 .main{ flex:1; position: relative; }
 .button{ display: inline-block; border:none; background: none;text-decoration: none; padding: 0;
-    span{ display: flex; justify-content: center; align-items: center; height: 32px; padding: 0 40px; background-color: #ffde00; color: #40434e; text-transform: uppercase; font-weight: 700; }
+    span{ display: flex; justify-content: center; align-items: center; height: 32px; padding: 3px 40px 0; background-color: #ffde00; color: #40434e; text-transform: uppercase; font-weight: 700; }
     &:hover span{ background-color: #ffeb29;}
     &:active span{ background-color: #ffcc00;}
     &.disabled{
@@ -56,7 +56,6 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
 .flex-none {
     flex: none;
 }
-
 .header{ background-color: #40434e; position: relative; z-index: 200;
     &__wrap{ height: 95px; display: flex; justify-content: space-between; align-items: center; padding-top: 1px;}
     &__left{ display: flex; justify-content: space-between; align-items: center;width: 277px;}
@@ -1300,13 +1299,13 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     &__plane{max-height: 526px; overflow-y: scroll; }
     &__day{ font-weight: 700; font-size: 13px; text-transform: uppercase; color: #2d303b; text-align: center; width: 100%; position: relative; margin-bottom: 21px;
         span{ background-color: #fff; position: relative; z-index: 10;}
-        &:before{ content: ''; width: 100%; height: 1px; position: absolute; left: 0; top: 50%; z-index: 0; background-color: #ececec;}
+        &:before{ content: ''; width: calc(100% - 18px); height: 1px; position: absolute; left: 0; top: 50%; z-index: 0; background-color: #ececec;}
     }
     &__message{ width: 100%; display: flex; justify-content: space-between; align-items: flex-start;margin-bottom: 28px;}
     &__body{ display: flex; justify-content: space-between; align-items: flex-start;}
     &__user{ display: flex; justify-content: flex-start; align-items: center; flex-direction: column; }
     &__img{ width: 64px; height: 64px; border-radius: 50%; position: relative; overflow: hidden; background-color: #40434e; margin-bottom: 9px;
-        img{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+        img{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);  max-width: none;}
     }
     &__name{ font-size: 12px; text-align: center;}
     &__text{ background-color: #fbf8e3; position: relative; margin-left: 30px; padding: 15px 23px 12px;
@@ -1341,7 +1340,9 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     &__bttns{ text-align: right;}
     &__tofaq{ position: absolute; right: -6px; bottom: 3px;
         i{ display: inline-block;margin: 1px 6px 0px 0;}
-        a{ font-weight: 700; color: #40434e; text-transform: uppercase; text-decoration: none; display: inline-flex; justify-content: flex-end; align-items: flex-start; margin: 1px 8px 0px 0;}
+        a{ font-weight: 700; color: #40434e; text-transform: uppercase; text-decoration: none; display: inline-flex; justify-content: flex-end; align-items: flex-start; margin: 1px 8px 0px 0;
+            &:hover{color: #9194a6;}
+        }
     }
 }
 .history{background-color: rgb(255, 255, 255); box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);     padding: 13px 14px 20px; margin-bottom: 13px;
@@ -1370,4 +1371,58 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     p{font-size: 13px;}
     h4{ font-weight: 700; font-size: 14px; text-transform: uppercase; margin: 0;}
     &__bottom{ background-color: #f3f3f3; margin-top: 40px; padding: 23px 0 20px;}
+}
+.calculator{background-color: rgb(255, 255, 255); box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);     padding: 24px 0 0; margin-bottom: 13px;
+    &__top{ display: flex; justify-content: space-between; align-items: flex-start;     padding: 0 17px;}
+    &__place{ width: 555px;}
+    &__placerow{ display: flex; justify-content: flex-start; align-items: center; margin-bottom: 19px;
+        .styled{ margin-right: 16px; font-size: 12px;}
+    }
+    &__form{
+        &.styled__select .jq-selectbox__select{border:1px solid #cbcfd5;}
+        input{ width: 100%; height: 37px; line-height: 37px; border:1px solid #cbcfd5;}
+    }
+    &__box{ width: 470px; margin-top: -9px;
+        .styled{ font-size: 12px;}
+    }
+    &__boxrow{ display: flex; justify-content: flex-start; align-items: flex-start; margin-top: 18px;
+        .tumbler{ margin-top: 30px;}
+    }
+    &__weight{ display: flex; justify-content: flex-start; align-items: center; margin-bottom: 13px;
+        .calculator__subtitle{ width: 158px;}
+        .calculator__form{ width: 117px; margin-right: 18px;}
+    }
+    &__subtitle{ color: #69758b; font-size: 13px; letter-spacing: 0.7px; width: 150px; flex-shrink: 0;}
+    &__mid{ padding: 0 17px; background-color: #f3f3f3; display: flex; justify-content: space-between; align-items: center;
+        .important{border: none; padding:6px 0; width: 555px; margin: 0; line-height: 1;
+            b,p{ margin-bottom: 0;}
+        }
+    }
+    &__bot{ padding: 23px 17px; display: flex; justify-content: space-between; align-items: center;
+        h5{ text-transform: uppercase; font-weight: 700; font-size: 14px; margin: 0;}
+        h6{ margin: 0;
+            b{ font-weight: 500; font-size: 16px; color: #000;}
+            span{ font-size: 13px; color: #69758b; margin-left: 12px;}
+        }
+    }
+    &__botcell{ display: flex; justify-content: space-between; align-items: center; width: 384px;}
+    &__botsub{ display: flex; justify-content: space-between; align-items: center; width: 567px;}
+    &__cell{ width: 180px; padding-right: 15px;
+        &--start{ width: 158px;}
+        &--gabx{ width: 65px; padding-right: 13px; position: relative;
+            &:before{content: 'x'; position: absolute; font-size: 13px; right: 3px; bottom: 12px;}
+        }
+        &--gab{ width: 65px; padding-right: 13px;}
+    }
+    &__text{padding: 6px 15px 21px;
+        p{ margin-bottom: 10px;}
+    }
+}
+.tumbler{ display: flex;
+    &__decor{ width: 30px; height: 10px;border-radius: 5px; background-color: #ffde00; display: block; position: relative;    margin: 0 11px;
+        &:before{width: 17px; height: 17px;  border-radius: 50%;  background-color: rgb(255, 255, 255);  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.29);  position: absolute; top: -4px; left: 50%;content: ''; }
+    }
+    label{ color: #cbcfd5; font-weight: 400; font-size: 12px;}
+    input:checked + label{ color: #40434e;}
+    input:checked + label + .tumbler__decor:before{ left: 0;}
 }
