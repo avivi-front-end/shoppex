@@ -9,15 +9,15 @@ img{vertical-align:bottom;border:0;max-width:100%;}
 .mbox:after{content:"";clear:both;font-size:1px;line-height:1px;height:0;overflow:hidden;display:block;}
 .footer{overflow:hidden;}
 input, textarea{
-    &::-webkit-input-placeholder { font-weight: 300; color: #40434e; font-size: 14px;}
-    &:-moz-placeholder           { font-weight: 300; color: #40434e; font-size: 14px;}
-    &::-moz-placeholder          { font-weight: 300; color: #40434e; font-size: 14px;}
-    &:-ms-input-placeholder      { font-weight: 300; color: #40434e; font-size: 14px;}
+    &::-webkit-input-placeholder { font-weight: 300; color: #69758b; font-size: 14px;}
+    &:-moz-placeholder           { font-weight: 300; color: #69758b; font-size: 14px;}
+    &::-moz-placeholder          { font-weight: 300; color: #69758b; font-size: 14px;}
+    &:-ms-input-placeholder      { font-weight: 300; color: #69758b; font-size: 14px;}
 }
 .global-wrapper{display: flex; flex-direction: column; min-height: 100vh;}
 .main{ flex:1; position: relative; }
 .button{ display: inline-block; border:none; background: none;text-decoration: none; padding: 0;
-    span{ display: flex; justify-content: center; align-items: center; height: 32px; padding: 3px 40px 0; background-color: #ffde00; color: #40434e; text-transform: uppercase; font-weight: 700; }
+    span{ display: flex; justify-content: center; align-items: center; height: 32px; padding: 2px 40px 0; background-color: #ffde00; color: #40434e; text-transform: uppercase; font-weight: 700; }
     &:hover span{ background-color: #ffeb29;}
     &:active span{ background-color: #ffcc00;}
     &.disabled{
@@ -442,7 +442,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
 
     }
     input[type=radio]{ display: none;}
-    input[type=radio] + i{ display: inline-block; width: 21px; height: 21px;border: 1px solid #cbcfd5; position: relative; vertical-align: middle; margin-right: 10px; border-radius:50%;
+    input[type=radio] + i{ display: inline-block; width: 21px; height: 21px;border: 1px solid #cbcfd5; position: relative; vertical-align: middle; margin-right: 10px; border-radius:50%; flex-shrink: 0;
         &:before{content: ''; width: 9px; height: 9px; background: #40434e;   position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; display: none;border-radius:50%;}
     }
     input[type=radio]:checked + i:before{ display: block;}
@@ -1373,8 +1373,12 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
 .calculator{background-color: rgb(255, 255, 255); box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);     padding: 24px 0 0; margin-bottom: 13px;
     &__top{ display: flex; justify-content: space-between; align-items: flex-start;     padding: 0 17px;}
     &__place{ width: 555px;}
-    &__placerow{ display: flex; justify-content: flex-start; align-items: center; margin-bottom: 19px;
-        .styled{ margin-right: 16px; font-size: 12px;}
+    &__placerow{ display: flex; justify-content: flex-start; align-items: flex-start; margin-bottom: 19px;
+        &>span{ display: inline-block; margin-top: 2px;}
+        .styled{ margin-right: 16px; font-size: 12px;
+            &:nth-child(2){ white-space: nowrap;    }
+            &:last-child{ margin-right: 0;}
+        }
     }
     &__form{
         &.styled__select .jq-selectbox__select{border:1px solid #cbcfd5;}
@@ -1410,7 +1414,7 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     &__cell{ width: 180px; padding-right: 15px;
         &--start{ width: 158px;}
         &--gabx{ width: 65px; padding-right: 13px; position: relative;
-            &:before{content: 'x'; position: absolute; font-size: 13px; right: 3px; bottom: 12px;}
+            &:before{content: 'x'; position: absolute; font-size: 13px; right: 3px; bottom: 11px;}
         }
         &--gab{ width: 65px; padding-right: 13px;}
     }
@@ -1418,7 +1422,7 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
         p{ margin-bottom: 10px;}
     }
 }
-.tumbler{ display: flex;
+.tumbler{ display: flex; justify-content: flex-start; align-items: center;
     &__decor{ width: 30px; height: 10px;border-radius: 5px; background-color: #ffde00; display: block; position: relative;    margin: 0 11px;
         &:before{width: 17px; height: 17px;  border-radius: 50%;  background-color: rgb(255, 255, 255);  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.29);  position: absolute; top: -4px; left: 50%;content: ''; }
     }
@@ -1427,3 +1431,42 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     input:checked + label + .tumbler__decor:before{ left: 0;}
 }
 object{ display: inline-block;}
+.graybg{ padding-bottom: 28px;}
+.whitebg{ background-color: #fff; padding-bottom: 28px; box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);
+    .sale{ background-color: #fff;
+    h3{ background-color: #fff;}
+  }
+    .sale__buttons{ background-color: #fff;}
+}
+.saleban{ display: flex; justify-content: space-between; align-items: flex-start;
+    &__left{ width: 780px;}
+    &__right{ width: 360px;}
+    &__top{}
+    &__bot{}
+    &__bg{ height: 308px; width: 100%; position: relative;
+        &--small{ height: 154px;}
+        img{ width: 100%; height: 100%; object-fit: cover;}
+        &:before{ content: ''; opacity: 0.5; background-color: #394560; position: absolute; width: 100%; height: 100%; z-index: 10; left: 0; top: 0;}
+    }
+    &__text{  position: absolute; left: 67px; top: 65px; z-index: 20; color: #fff; width: calc(100% - 134px); min-height: 188px;
+        h2{ margin: 0; font-weight: 700; text-transform: uppercase; color: #ffde00; margin-bottom: 30px; font-size: 30px;}
+        p{ margin:0; font-weight: 300; text-transform: uppercase; line-height: 1.3;}
+        b{ font-weight: 400; color: #fff;}
+        img{ margin: 0 14px;display: inline;vertical-align: middle;}
+        .button{ position: absolute; bottom: 0; left: 0;}
+        &--small{ min-height: 111px; top: 16px;}
+    }
+    &__item{ position: relative; width: 100%;
+        p{ }
+        h2{ margin-bottom: 0;}
+    }
+}
+.salesubscribe{ background-color: #fff; box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13); display: flex; justify-content: space-between; align-items: center; margin-top: 35px;padding: 17px 21px; margin-bottom: 44px;
+    &__left{ display: flex; justify-content: flex-start; align-items: center; width: 420px;
+        b{ text-transform: uppercase;}
+        img{ margin-right: 31px;}
+    }
+    &__right{ display: flex; justify-content: flex-end; align-items: flex-start;
+        input{ height: 32px; border:1px solid #cbcfd5; border-right: 0; padding:0 10px; width: 388px;}
+    }
+}

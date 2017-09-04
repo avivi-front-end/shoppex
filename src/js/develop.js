@@ -67,10 +67,10 @@ function slidersInit() {
 
         });
         $(document).on('click', '.js-sale-next', function () {
-            slider2.slick('slickNext');
+            $(this).closest('section').find('.js-sale-slider').slick('slickNext');
         });
         $(document).on('click', '.js-sale-prev', function () {
-            slider2.slick('slickPrev');
+            $(this).closest('section').find('.js-sale-slider').slick('slickPrev');
         });
     }
     var slider3 = $('.gallery__slider');
