@@ -100,7 +100,6 @@ function slidersInit() {
                 that.slick('slickPrev');
             });
         });
-
     }
 }
 function startTime(clock) {
