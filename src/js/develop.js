@@ -45,7 +45,7 @@ function slidersInit() {
             fade: true,
             cssEase: 'linear',
             autoplay: true,
-            autoplaySpeed: 5000,
+            autoplaySpeed: 5000
         });
         $(document).on('click', '.js-fade-next', function () {
             slider.slick('slickNext');
@@ -66,6 +66,7 @@ function slidersInit() {
             slidesToScroll: 1
 
         });
+
         $(document).on('click', '.js-sale-next', function () {
             $(this).closest('section').find('.js-sale-slider').slick('slickNext');
         });
@@ -576,8 +577,16 @@ function acordeon() {
        })
     }
 }
+function chatScroll() {
+    var item = $('.chat__plane');
+    if(item.length > 0){
+        item.scrollTop(item[0].scrollHeight);
+    }
+
+}
 $(document).ready(function () {
     acordeon();
+    chatScroll();
     $(document).on('change', '.js-input-file input',function(){
         readURL(this);
     });
