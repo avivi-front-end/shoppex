@@ -7,7 +7,7 @@ body{min-height:100%;width:100%;min-width:320px;font-family: 'Roboto', sans-seri
 img{vertical-align:bottom;border:0;max-width:100%;}
 .mbox{max-width:1170px;width:100%;margin:0 auto;position:relative; padding: 0 15px;}
 .mbox:after{content:"";clear:both;font-size:1px;line-height:1px;height:0;overflow:hidden;display:block;}
-.footer{overflow:hidden;}
+//.footer{overflow:hidden;}
 input, textarea{
     &::-webkit-input-placeholder { font-weight: 300; color: #69758b; font-size: 14px;}
     &:-moz-placeholder           { font-weight: 300; color: #69758b; font-size: 14px;}
@@ -313,13 +313,14 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
     }
 
     &__item-wrap{ display: block;text-decoration: none;color: #69758b; }
-    &__heart{ position: absolute; right: 11px; top: 9px;
+    &__heart{ position: absolute; right: 11px; top: 9px; z-index: 9;
+        svg{ position: absolute; right: 0; top: 0;}
         &.active{
-            .svg-hover{fill-opacity: 1;}
-            &:hover .svg-hover{fill-opacity: 0;}
+            .svg-hover{opacity: 1;}
+            &:hover .svg-hover{opacity: 0;}
         }
-        .svg-hover{fill-opacity: 0;}
-        &:hover .svg-hover{fill-opacity: 1;}
+        .svg-hover{opacity: 0;}
+        &:hover .svg-hover{opacity: 1;}
     }
     &__img{ height: 103px; width: 100%; display: flex; justify-content: center; align-items: center;
         img{ max-width: 100px;}
@@ -333,6 +334,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
              .shops__spechover{ opacity: 1; z-index: 10;}
         }
     }
+    &__icon{ width: 25px; height: 25px;}
     &__spechover{ position: absolute; top: 0; left:0; background-color: rgba(64,67,78,0.87); width: calc(100% + 6px); height: calc(100% + 6px); z-index: -1; padding: 0 14px; opacity: 0;
         h6 { font-size: 13px; font-weight: 700; text-transform: uppercase; margin: 0; color: #ffc800; text-align: center; line-height: 1.2; padding: 12px 0 10px;
         }
@@ -1293,7 +1295,14 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     &__wrap{ padding-bottom: 41px;}
 }
 .chat{ background-color: rgb(255, 255, 255); box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);     padding: 17px 16px 15px; margin-bottom: 13px;
-    &__top{}
+    &__file{ cursor: pointer;
+        i{ display: inline-block; vertical-align: middle; margin-right: 8px;}
+    }
+    &__title{ min-height: 30px; color: #fff; display: flex; background-color: #40434e; width: 100%; font-size: 13px; font-weight: 700; text-transform: uppercase; padding: 6px 12px; display: flex; justify-content: flex-start; align-items: center; margin-bottom: 20px; line-height: 13px;}
+    &__file-item{ display: flex; justify-content:flex-end; align-items: center; flex-wrap: wrap;}
+    &__uploaded{ position: relative; padding: 7px 40px 7px 0; margin-right: 12px;
+        .preloadfile{transform: translate(0, -43%); left: auto; right: 0; }
+    }
     &__plane{max-height: 526px; overflow-y: scroll; }
     &__day{ font-weight: 700; font-size: 13px; text-transform: uppercase; color: #2d303b; text-align: center; width: 100%; position: relative; margin-bottom: 21px;
         span{ background-color: #fff; position: relative; z-index: 10;}
@@ -1304,7 +1313,7 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     }
     &__body{ display: flex; justify-content: space-between; align-items: flex-start;}
     &__user{ display: flex; justify-content: flex-start; align-items: center; flex-direction: column; width: 64px;}
-    &__img{ width: 64px; height: 64px; border-radius: 50%; position: relative; overflow: hidden; background-color: #40434e; margin-bottom: 9px; z-index: 0;
+    &__img{ width: 64px; height: 64px; border-radius: 50%; position: relative; overflow: hidden; background-color: #40434e; margin-bottom: 9px; z-index: 0; background-image: url(../images/userbg.png); background-size: cover;
         img{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);  max-width: none;}
     }
     &__name{ font-size: 12px; text-align: center;}

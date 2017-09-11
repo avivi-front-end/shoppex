@@ -305,8 +305,30 @@ function trackLogick() {
         }
     } );
 }
+function readFile(input) {
+    var preloader ='<div class="preloadfile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preloadfile__svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="rgb(255,222,0)" stroke-width="5" fill="transparent"    /><circle cx="12" cy="12" r="10"  stroke="rgb(79,82,95)" stroke-width="5" class="preloadfile__circle"/></svg><div class="preloadfile__del"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="14px" height="14px"><path fill-rule="evenodd"  fill="rgb(64, 67, 78)" d="M7.000,-0.000 C3.150,-0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,-0.000 7.000,-0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/></svg></div></div>';
+    if (input.files && input.files[0]) {
+        var nt = document.createElement('input');
+        nt.setAttribute("type", "file");
+        var index = $(input).closest('.chat__buttons').find('.chat__uploaded').length + 1;
+        nt.setAttribute("name", 'files['+index+'][]');
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var fileName = $(input).val().split('/').pop().split('\\').pop();
+            var div = document.createElement('div');
+            var span = document.createElement('span');
+            $(span).text(fileName);
+            $(div).addClass('chat__uploaded');
+            $(div).append(span);
+            $(div).append(preloader);
+            $(input).closest('.chat__buttons').find('.chat__file-item').prepend(div);
+        }
+        reader.readAsDataURL(input.files[0]);
+
+    }
+}
 function readURL(input) {
-    var preloader ='<div class="preloadfile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preloadfile__svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="rgb(255,222,0)" stroke-width="5" fill="transparent"    /><circle cx="12" cy="12" r="10"  stroke="rgb(79,82,95)" stroke-width="5" class="preloadfile__circle"/></svg><div class="preloadfile__del"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="14px" height="14px"><path fill-rule="evenodd"  fill="rgb(64, 67, 78)" d="M7.000,-0.000 C3.150,-0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,-0.000 7.000,-0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/></svg></div></div>'
+    var preloader ='<div class="preloadfile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preloadfile__svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="rgb(255,222,0)" stroke-width="5" fill="transparent"    /><circle cx="12" cy="12" r="10"  stroke="rgb(79,82,95)" stroke-width="5" class="preloadfile__circle"/></svg><div class="preloadfile__del"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="14px" height="14px"><path fill-rule="evenodd"  fill="rgb(64, 67, 78)" d="M7.000,-0.000 C3.150,-0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,-0.000 7.000,-0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/></svg></div></div>';
     if (input.files && input.files[0]) {
         var nt = document.createElement('input');
         nt.setAttribute("type", "file");
@@ -334,6 +356,7 @@ function readURL(input) {
 function delFileFromInput() {
     $(document).on('click', '.preloadfile__del', function () {
         $(this).closest('.neworder__uploaded').remove();
+        $(this).closest('.chat__uploaded').remove();
     });
 }
 function lkRadioLogic() {
@@ -362,8 +385,6 @@ function lkRadioLogic() {
             var val;
             var name = $(this).attr('name');
             var container = $(this).closest('.js-for-radio-next').next('.editinfo__change');
-
-
                 $('.js-check-for-show[name='+name+']').each(function () {
                     if($(this).prop('checked') == true){ val = $(this).val()}
                 });
@@ -584,11 +605,15 @@ function chatScroll() {
     }
 
 }
+
 $(document).ready(function () {
     acordeon();
     chatScroll();
     $(document).on('change', '.js-input-file input',function(){
         readURL(this);
+    });
+    $(document).on('change', '.js-input-fileName input',function(){
+        readFile(this);
     });
     dataToolTips();
     shops__itemHover();
@@ -618,6 +643,42 @@ $(document).ready(function () {
     clock();
     inputNumber();
 });
+(function(window, document) {
+    'use strict';
+    var file = 'images/sprite.svg'; // путь к файлу спрайта на сервере
 
+    if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) return true;
+    var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+        request,
+        data,
+        insertIT = function() {
+            document.body.insertAdjacentHTML('afterbegin', data);
+        },
+        insert = function() {
+            if (document.body) insertIT();
+            else document.addEventListener('DOMContentLoaded', insertIT);
+        };
+    if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
+        data = localStorage.getItem('inlineSVGdata');
+        if (data) {
+            insert();
+            return true;
+        }
+    }
+    try {
+        request = new XMLHttpRequest();
+        request.open('GET', file, true);
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400) {
+                data = request.responseText;
+                insert();
+                if (isLocalStorage) {
+                    localStorage.setItem('inlineSVGdata', data);
+                    localStorage.setItem('inlineSVGrev', revision);
+                }
 
-if($('.product-tabs__head').css('display') == 'block'){}
+            }
+        }
+        request.send();
+    } catch (e) {}
+}(window, document));
