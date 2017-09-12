@@ -78,7 +78,7 @@ function slidersInit() {
     if(slider3.length > 0){
         slider3.each(function () {
             var that = $(this);
-           $(this).slick({
+            $(this).slick({
                 dots: false,
                 arrows: false,
                 infinite: true,
@@ -87,10 +87,10 @@ function slidersInit() {
             });
             $(this).on('afterChange', function(event, slick, currentSlide){
                 var src = $(this).find('.slick-current').find('img').attr('src');
-               $(this).closest('.gallery').find('.gallery__top').find('img').attr('src', src);
+                $(this).closest('.gallery').find('.gallery__top').find('img').attr('src', src);
             });
             $(this).find('.gallery__slide').on('click', function(){
-                 var  i = $(this).attr('data-slick-index');
+                var  i = $(this).attr('data-slick-index');
                 that.slick('slickGoTo', i);
                 that.slick('setPosition');
             });
@@ -213,9 +213,9 @@ function inputNumber() {
         return val;
     }
     $(document).on('keypress', '.js-input-number', function (evt) {
-            var charCode = (evt.which) ? evt.which : evt.keyCode;
-            if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) return false;
-            return true;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+        return true;
     })
     $(document).on('keypress', 'input[name$="[price]"]', function (evt) {
         var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -305,13 +305,14 @@ function trackLogick() {
         }
     } );
 }
+var preloaderFile ='<div class="preloadfile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preloadfile__svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="rgb(255,222,0)" stroke-width="5" fill="transparent"    /><circle cx="12" cy="12" r="10"  stroke="rgb(79,82,95)" stroke-width="5" class="preloadfile__circle"/></svg><div class="preloadfile__del"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="14px" height="14px"><path fill-rule="evenodd"  fill="rgb(64, 67, 78)" d="M7.000,-0.000 C3.150,-0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,-0.000 7.000,-0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/></svg></div></div>';
 function readFile(input) {
-    var preloader ='<div class="preloadfile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preloadfile__svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="rgb(255,222,0)" stroke-width="5" fill="transparent"    /><circle cx="12" cy="12" r="10"  stroke="rgb(79,82,95)" stroke-width="5" class="preloadfile__circle"/></svg><div class="preloadfile__del"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="14px" height="14px"><path fill-rule="evenodd"  fill="rgb(64, 67, 78)" d="M7.000,-0.000 C3.150,-0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,-0.000 7.000,-0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/></svg></div></div>';
+
     if (input.files && input.files[0]) {
         var nt = document.createElement('input');
         nt.setAttribute("type", "file");
         var index = $(input).closest('.chat__buttons').find('.chat__uploaded').length + 1;
-        nt.setAttribute("name", 'files['+index+'][]');
+        nt.setAttribute("name", 'files_'+index+'');
         var reader = new FileReader();
         reader.onload = function (e) {
             var fileName = $(input).val().split('/').pop().split('\\').pop();
@@ -320,15 +321,17 @@ function readFile(input) {
             $(span).text(fileName);
             $(div).addClass('chat__uploaded');
             $(div).append(span);
-            $(div).append(preloader);
-            $(input).closest('.chat__buttons').find('.chat__file-item').prepend(div);
+            var container = $(input).closest('.chat__buttons').find('.chat__file-item');
+            $(div).append(preloaderFile);
+            $(input).closest('label').prepend(nt);
+            $(div).append(input);
+            container.prepend(div);
         }
         reader.readAsDataURL(input.files[0]);
 
     }
 }
 function readURL(input) {
-    var preloader ='<div class="preloadfile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preloadfile__svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="rgb(255,222,0)" stroke-width="5" fill="transparent"    /><circle cx="12" cy="12" r="10"  stroke="rgb(79,82,95)" stroke-width="5" class="preloadfile__circle"/></svg><div class="preloadfile__del"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="14px" height="14px"><path fill-rule="evenodd"  fill="rgb(64, 67, 78)" d="M7.000,-0.000 C3.150,-0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,-0.000 7.000,-0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/></svg></div></div>';
     if (input.files && input.files[0]) {
         var nt = document.createElement('input');
         nt.setAttribute("type", "file");
@@ -344,10 +347,20 @@ function readURL(input) {
             if(input.files[0].type == "application/pdf"){$(img).attr('src', 'images/pdff.jpg');}
             $(img).attr('data-object-fit','');
             $(div).append(img);
-            $(div).append(preloader);
+            $(div).append(preloaderFile);
             $(input).closest('.neworder__filerow').find('.neworder__thumbs').append(div);
-            input.before(nt);
+            $(input).closest('label').prepend(nt);
             $(div).append(input);
+        }
+        reader.readAsDataURL(input.files[0]);
+
+    }
+}
+function changeAvatar(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $(input).closest('.editinfo__cell').find('.editinfo__img img').attr('src', e.target.result);
         }
         reader.readAsDataURL(input.files[0]);
 
@@ -385,19 +398,19 @@ function lkRadioLogic() {
             var val;
             var name = $(this).attr('name');
             var container = $(this).closest('.js-for-radio-next').next('.editinfo__change');
-                $('.js-check-for-show[name='+name+']').each(function () {
-                    if($(this).prop('checked') == true){ val = $(this).val()}
-                });
-                if(val == 0){
-                    container.html($('.for-tabs-hidden-block .id-card').html());
-                }else if(val == 1){
-                    container.html($('.for-tabs-hidden-block .passport').html());
-                }
+            $('.js-check-for-show[name='+name+']').each(function () {
+                if($(this).prop('checked') == true){ val = $(this).val()}
+            });
+            if(val == 0){
+                container.html($('.for-tabs-hidden-block .id-card').html());
+            }else if(val == 1){
+                container.html($('.for-tabs-hidden-block .passport').html());
+            }
 
-                var select = container.find('.js-noinit select');
-                select.styler({
-                    selectSmartPositioning:false
-                });
+            var select = container.find('.js-noinit select');
+            select.styler({
+                selectSmartPositioning:false
+            });
 
 
         })
@@ -471,7 +484,7 @@ function adresspageRedact() {
         $('.js-add-card-adres').removeClass('disabled');
         $('.adresspage__card--start').stop().slideUp(150);
     });
-    
+
 }
 function allTumblerLogic(){
     $(document).on('change', '.js-all-tumbler input', function () {
@@ -492,8 +505,19 @@ function showFilter(){
 }
 function datePick(){
     var dateFormat = "mm/dd/yy",
-      from = $( "#js-from" )
-        .datepicker({
+        from = $( "#js-from" )
+            .datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1,
+                showOn: "button",
+                buttonImage: "images/calendar.svg",
+                buttonText: ""
+            })
+            .on( "change", function() {
+                to.datepicker( "option", "minDate", getDate( this ) );
+            }),
+        to = $( "#js-to" ).datepicker({
             defaultDate: "+1w",
             changeMonth: true,
             numberOfMonths: 1,
@@ -501,37 +525,26 @@ function datePick(){
             buttonImage: "images/calendar.svg",
             buttonText: ""
         })
-        .on( "change", function() {
-          to.datepicker( "option", "minDate", getDate( this ) );
-        }),
-      to = $( "#js-to" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 1,
-        showOn: "button",
-        buttonImage: "images/calendar.svg",
-        buttonText: ""
-      })
-      .on( "change", function() {
-        from.datepicker( "option", "maxDate", getDate( this ) );
-      });
- 
+            .on( "change", function() {
+                from.datepicker( "option", "maxDate", getDate( this ) );
+            });
+
     function getDate( element ) {
-      var date;
-      try {
-        date = $.datepicker.parseDate( dateFormat, element.value );
-      } catch( error ) {
-        date = null;
-      }
-      return date;
+        var date;
+        try {
+            date = $.datepicker.parseDate( dateFormat, element.value );
+        } catch( error ) {
+            date = null;
+        }
+        return date;
     }
 }
 function scrollTo(){
     $('.js-scroll-to').click( function(){ // ловим клик по ссылке с классом go_to
         var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
         if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
-        $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); // анимируем скроолинг к элементу scroll_el
-    }
+            $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); // анимируем скроолинг к элементу scroll_el
+        }
         return false; // выключаем стандартное действие
     });
 }
@@ -580,22 +593,22 @@ function dataToolTips() {
 function acordeon() {
     var items = $('.jsfaq-accord-butt');
     if (items.length > 0){
-       $(document).on('click','.jsfaq-accord-butt', function () {
-           var container = $(this).closest('.jsfaq-accord');
-           var box = container.find('.jsfaq-accord-box');
-           if(container.hasClass('active')){
-               box.stop().slideUp();
-               container.removeClass('active');
-           }else{
-               $('.jsfaq-accord-box').stop().slideUp();
-               $('.jsfaq-accord').removeClass('active');
-               container.addClass('active');
-               box.stop().slideDown();
-           }
+        $(document).on('click','.jsfaq-accord-butt', function () {
+            var container = $(this).closest('.jsfaq-accord');
+            var box = container.find('.jsfaq-accord-box');
+            if(container.hasClass('active')){
+                box.stop().slideUp();
+                container.removeClass('active');
+            }else{
+                $('.jsfaq-accord-box').stop().slideUp();
+                $('.jsfaq-accord').removeClass('active');
+                container.addClass('active');
+                box.stop().slideDown();
+            }
 
 
 
-       })
+        })
     }
 }
 function chatScroll() {
@@ -614,6 +627,9 @@ $(document).ready(function () {
     });
     $(document).on('change', '.js-input-fileName input',function(){
         readFile(this);
+    });
+    $(document).on('change', '.js-input-fileAva input',function(){
+        changeAvatar(this);
     });
     dataToolTips();
     shops__itemHover();

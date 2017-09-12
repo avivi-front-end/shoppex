@@ -849,6 +849,9 @@ a.lk-ballancer__drop-title{
         &--city{ width: 211px; margin-right: 14px;}
         &--number{ width: 176px;}
         &--oblsel{ width: 181px;}
+        &--avatar{ margin: 0 0 43px;}
+        &--avabig{ margin: 0 0 13px;}
+
     }
     &__info{ color: #69758b; font-weight: 300; font-size: 13px;letter-spacing: 0.6px; padding-bottom: 7px; text-transform: none;
         b{ color: #ff3636;font-weight: 700;}
@@ -897,6 +900,10 @@ a.lk-ballancer__drop-title{
     }
     &__woman{
         &:before{ background-image: url(../images/q2.png); }
+    }
+    &__img{width: 66px; height: 66px; border-radius: 50%; position: relative; overflow: hidden; background-color: #40434e; margin:0 auto 13px; z-index: 0; background-image: url(../images/userbg.png); background-size: cover;
+        &--big{}
+        img{ width: 100%; height: 100%; object-fit: cover;}
     }
 }
 .adressbook{
@@ -1302,6 +1309,7 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     &__file-item{ display: flex; justify-content:flex-end; align-items: center; flex-wrap: wrap;}
     &__uploaded{ position: relative; padding: 7px 40px 7px 0; margin-right: 12px;
         .preloadfile{transform: translate(0, -43%); left: auto; right: 0; }
+        input{ display: none;}
     }
     &__plane{max-height: 526px; overflow-y: scroll; }
     &__day{ font-weight: 700; font-size: 13px; text-transform: uppercase; color: #2d303b; text-align: center; width: 100%; position: relative; margin-bottom: 21px;
@@ -1312,9 +1320,9 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
         &--other{ justify-content: flex-end;}
     }
     &__body{ display: flex; justify-content: space-between; align-items: flex-start;}
-    &__user{ display: flex; justify-content: flex-start; align-items: center; flex-direction: column; width: 64px;}
-    &__img{ width: 64px; height: 64px; border-radius: 50%; position: relative; overflow: hidden; background-color: #40434e; margin-bottom: 9px; z-index: 0; background-image: url(../images/userbg.png); background-size: cover;
-        img{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);  max-width: none;}
+    &__user{ display: flex; justify-content: flex-start; align-items: center; flex-direction: column; width: 66px;}
+    &__img{ width: 66px; height: 66px; border-radius: 50%; position: relative; overflow: hidden; background-color: #40434e; margin-bottom: 9px; z-index: 0; background-image: url(../images/userbg.png); background-size: cover;
+        img{ position: absolute; left: 0; top: 0; right: 0; bottom: 0; margin: auto;}
     }
     &__name{ font-size: 12px; text-align: center;}
     &__text{ background-color: #fbf8e3; position: relative; margin-left: 30px; padding: 15px 23px 12px;
@@ -1480,4 +1488,9 @@ object{ display: inline-block;}
     &__right{ display: flex; justify-content: flex-end; align-items: flex-start;
         input{ height: 32px; border:1px solid #cbcfd5; border-right: 0; padding:0 10px; width: 388px;}
     }
+}
+.js-input-fileAva{ text-transform: uppercase; text-align: center;
+    input{ display: none;}
+    label{ cursor: pointer;}
+    i{ display: inline-block; vertical-align: middle; line-height: 1; margin-right: 8px;}
 }
