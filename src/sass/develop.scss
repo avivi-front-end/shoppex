@@ -172,7 +172,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
         }
     }
 }
-.social-icon{ display: inline-block; width: 40px; height: 40px; margin:0 5px; position: relative;
+.social-icon{ display: inline-block; width: 40px; height: 40px; margin:0 3px; position: relative;
     img{width: 100%; height: 100%; object-fit: cover;}
     &:hover{box-shadow: 0 0 5px 0 rgba(255,255,255,0.6);}
     &--light{
@@ -386,7 +386,9 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
 .popup{ padding: 0; margin: 0; max-width: 494px; width: 100%; text-align: center;
     &--small{ max-width: 420px;}
     p{ margin:1em 0 0;}
-    &__title{ background-color: #ffde00; height: 65px; width: 100%; display: flex; justify-content: center; align-items: center; position: relative;}
+    &__title{ background-color: #ffde00; height: 65px; width: 100%; display: flex; justify-content: center; align-items: center; position: relative;
+        h3{ margin: 0;}
+    }
     &__img{ position: absolute; top: 22px; left: 32px;}
     &__row{ font-weight: 700; color: #4b586d; display: flex; justify-content: space-between; align-items: center; margin-bottom: 9px; padding: 0 35px;
         span{text-transform: uppercase;}
@@ -849,9 +851,8 @@ a.lk-ballancer__drop-title{
         &--city{ width: 211px; margin-right: 14px;}
         &--number{ width: 176px;}
         &--oblsel{ width: 181px;}
-        &--avatar{ margin: 0 0 43px;}
+        &--avatar{ margin: 13px 0 30px;}
         &--avabig{ margin: 0 0 13px;}
-
     }
     &__info{ color: #69758b; font-weight: 300; font-size: 13px;letter-spacing: 0.6px; padding-bottom: 7px; text-transform: none;
         b{ color: #ff3636;font-weight: 700;}
@@ -901,8 +902,8 @@ a.lk-ballancer__drop-title{
     &__woman{
         &:before{ background-image: url(../images/q2.png); }
     }
-    &__img{width: 66px; height: 66px; border-radius: 50%; position: relative; overflow: hidden; background-color: #40434e; margin:0 auto 13px; z-index: 0; background-image: url(../images/userbg.png); background-size: cover;
-        &--big{}
+    &__img{width: 66px; height: 66px; border-radius: 50%; position: relative; overflow: hidden;  margin:0 auto 13px; z-index: 0; background-image: url(../images/userbg.png); background-size: cover;
+        &:before{ content: ''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: url('../images/avabg.svg'); background-size: cover; z-index: -1;}
         img{ width: 100%; height: 100%; object-fit: cover;}
     }
 }
@@ -1321,7 +1322,8 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     }
     &__body{ display: flex; justify-content: space-between; align-items: flex-start;}
     &__user{ display: flex; justify-content: flex-start; align-items: center; flex-direction: column; width: 66px;}
-    &__img{ width: 66px; height: 66px; border-radius: 50%; position: relative; overflow: hidden; background-color: #40434e; margin-bottom: 9px; z-index: 0; background-image: url(../images/userbg.png); background-size: cover;
+    &__img{ width: 66px; height: 66px; border-radius: 50%; position: relative; overflow: hidden;  margin-bottom: 9px; z-index: 0;
+        &:before{ content: ''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: url('../images/avabg.svg'); background-size: cover; z-index: -1;}
         img{ position: absolute; left: 0; top: 0; right: 0; bottom: 0; margin: auto;}
     }
     &__name{ font-size: 12px; text-align: center;}
@@ -1388,6 +1390,17 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     p{font-size: 13px;}
     h4{ font-weight: 700; font-size: 14px; text-transform: uppercase; margin: 0;}
     &__bottom{ background-color: #f3f3f3; margin-top: 40px; padding: 23px 0 20px;}
+}
+.ava-popup{ padding: 11px; background-color: #fff;
+    label{ cursor: pointer;
+        input[type=file]{ display: none;}
+    }
+    &__item{border:1px dashed #e7e9ee; min-height: 72px; margin-bottom: 12px; width: 100%; display: flex; align-items: center; justify-content: space-between; text-decoration: none; padding: 0 7px;}
+    &__title h3{ font-weight: 400; font-size: 24px; text-transform: none;}
+    &__buttons{ text-align: right;}
+    &__name{ font-size: 13px; font-weight: 700; text-transform: uppercase; color: #2d303b; display: flex; justify-content: flex-start; align-items: center;
+        i{ width: 73px;}
+    }
 }
 .calculator{background-color: rgb(255, 255, 255); box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);     padding: 24px 0 0; margin-bottom: 13px;
     &__top{ display: flex; justify-content: space-between; align-items: flex-start;     padding: 0 17px;}
@@ -1493,4 +1506,27 @@ object{ display: inline-block;}
     input{ display: none;}
     label{ cursor: pointer;}
     i{ display: inline-block; vertical-align: middle; line-height: 1; margin-right: 8px;}
+}
+.mobile{
+    &__menu{ display: none;}
+    &__butter{ position: relative; width: 25px; height: 20px; cursor: pointer;
+        span{ display: block; width: 26px; height: 3px; position: absolute; left: 0; top: 0; background-color: #fff;
+            &:nth-child(2){ top: 8px;}
+            &:nth-child(3){ top: 16px;}
+        }
+    }
+    &__wrap{ position: absolute;background-color: #ffde00; left: 0; top: 95px; width: 100%; color: #40434e; font-size: 14px; font-weight: 700; text-transform: uppercase;}
+    &__nav{ font-size: 16px; list-style-type: none; padding: 0; margin: 0;}
+    &__lang{ border-bottom:1px solid #ffed75; list-style-type: none; padding: 0; margin: 0;}
+    &__contacts{
+
+    }
+}
+@media screen and (max-width: 1024px){
+    .mobile__menu{ display: block;}
+    .nav,
+    .header__contacts,
+    .header__lang{ display: none;}
+    .header__left,
+    .header__right{ width: auto;}
 }

@@ -157,12 +157,54 @@
         </div>
     </div>
     <div id="ava-popup" class="popup">
-        <div class="popup__title">
+        <div class="popup__title ava-popup__title">
             <h3>Установить аватар</h3>
         </div>
-        <div class="ava-pop">
-            <div class="ava-pop__item">
-                
+        <div class="ava-popup">
+            <label class="ava-popup__item">
+                <input type="file">
+                <span class="ava-popup__name">
+                    <i>
+                        <svg width="42px" height="36px">
+                            <use xlink:href="#avapop01"></use>
+                        </svg>
+                    </i>
+                    <span>загрузить Из своих фотографий</span>
+                </span>
+            </label>
+            <a href="#" class="ava-popup__item">
+                <span class="ava-popup__name">
+                    <i>
+                        <svg width="46px" height="46px">
+                            <use xlink:href="#avapop02"></use>
+                        </svg>
+                    </i>
+                    <span>установить из gravatar</span>
+                </span>
+            </a>
+            <div class="ava-popup__item">
+                <span class="ava-popup__name">
+                     <i>
+                        <svg width="40px" height="40px">
+                            <use xlink:href="#avapop03"></use>
+                        </svg>
+                    </i>
+                    <span>установить из соцсетей</span>
+                </span>
+                <div class="ava-popup__soc">
+                    <a href="#" class="social-icon social-icon--light" ><img data-object-fit src="images/fb.png" alt=""></a>
+                    <a href="#" class="social-icon social-icon--light" ><img data-object-fit src="images/vk.png" alt=""></a>
+                </div>
+            </div>
+            <div class="ava-popup__buttons">
+                <a href="javascript:;" class="neworder__cancel" onclick="$.fancybox.close();">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14px" height="14px">
+                        <path fill-rule="evenodd"  fill="rgb(64, 67, 78)"
+                              d="M7.000,0.000 C3.150,0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,0.000 7.000,0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/>
+                    </svg>
+                    <span>отмена</span>
+                </a>
+                <a href="#" class="button"><span>установить</span></a>
             </div>
         </div>
     </div>
