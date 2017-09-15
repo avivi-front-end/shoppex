@@ -67,7 +67,15 @@ function slidersInit() {
             slidesToShow: 6,
             autoplay: true,
             autoplaySpeed: 2000,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            responsive: [
+                {breakpoint: 1050, settings: {  slidesToShow: 5 } },
+                {breakpoint: 890, settings: {  slidesToShow: 4 } },
+                {breakpoint: 730, settings: {  slidesToShow: 3 } },
+                {breakpoint: 570, settings: {  slidesToShow: 2 } },
+                {breakpoint: 481, settings: {  slidesToShow: 1 } },
+
+            ]
 
         });
 

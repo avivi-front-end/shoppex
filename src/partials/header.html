@@ -3,104 +3,106 @@
     <div class="header">
         <div class="mbox">
             <div class="header__wrap">
-               <div class="header__left">
-                   <div class="header__logo">
+                <div class="header__left">
+                    <div class="header__logo">
                         <a href="#">
                             <img src="images/logo.svg" alt="logo">
                         </a>
                     </div>
-                   <div class="header__lang">
-                       <select class="js-select-lang" name="">
+                    <div class="header__lang">
+                        <select class="js-select-lang" name="">
                            <option value="1" selected="selected">ENG</option>
                            <option value="1">РУС</option>
                            <option value="1">УКР</option>
-                       </select>
-                   </div>
-               </div>
-               <form class="header__search js-search js-dropdown-container">
-                   <div class="header__search-wrap js-dropdown-block">
-                       <button>
-                           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="17px" height="17px">
-                               <path fill-rule="evenodd"  fill="rgb(255, 200, 0)"
-                                     d="M16.997,15.653 L11.980,10.636 C12.813,9.524 13.313,8.150 13.313,6.657 C13.313,2.987 10.327,0.002 6.657,0.002 C2.987,0.002 0.002,2.987 0.002,6.657 C0.002,10.327 2.987,13.313 6.657,13.313 C8.150,13.313 9.524,12.813 10.635,11.980 L15.653,16.998 L16.997,15.653 ZM0.636,6.657 C0.636,3.337 3.337,0.636 6.657,0.636 C9.978,0.636 12.679,3.337 12.679,6.657 C12.679,9.978 9.978,12.679 6.657,12.679 C3.337,12.679 0.636,9.978 0.636,6.657 ZM11.274,11.441 C11.330,11.386 11.386,11.330 11.440,11.274 C11.486,11.226 11.537,11.182 11.581,11.133 L16.101,15.653 L15.653,16.101 L11.133,11.581 C11.182,11.537 11.226,11.487 11.274,11.441 Z"/>
-                               <path fill-rule="evenodd"  fill="rgb(64, 67, 78)" class="svg-hover"
-                                     d="M16.997,15.653 L11.980,10.636 C12.813,9.524 13.313,8.150 13.313,6.657 C13.313,2.987 10.327,0.002 6.657,0.002 C2.987,0.002 0.002,2.987 0.002,6.657 C0.002,10.327 2.987,13.313 6.657,13.313 C8.150,13.313 9.524,12.813 10.635,11.980 L15.653,16.998 L16.997,15.653 ZM0.636,6.657 C0.636,3.337 3.337,0.636 6.657,0.636 C9.978,0.636 12.679,3.337 12.679,6.657 C12.679,9.978 9.978,12.679 6.657,12.679 C3.337,12.679 0.636,9.978 0.636,6.657 ZM11.274,11.441 C11.330,11.386 11.386,11.330 11.440,11.274 C11.486,11.226 11.537,11.182 11.581,11.133 L16.101,15.653 L15.653,16.101 L11.133,11.581 C11.182,11.537 11.226,11.487 11.274,11.441 Z"/>
-                           </svg>
-                       </button>
-                       <input type="text" placeholder="Поиск">
-                       <ul class="header__result">
-                           <li><a href="#1">Macys осенние летние кроссовки</a></li>
-                           <li><a href="#2">Kohls кроссовки  вторая пара в подарок</a></li>
-                           <li><a href="#3">Красный свитер Kohls акция</a></li>
-                       </ul>
-                   </div>
-                    <div class="mobile__search js-dropdown-button nomissclick">
-                        <i>
-                            <svg width="18px" height="18px">
-                                <use xlink:href="#mobilesearch"></use>
-                            </svg>
-                        </i>
-                        <div class="mobile__search--close"><span></span><span></span></div>
-                    </div>
-                </form>
-                <div class="header__right">
-                    <div class="header__contacts">
-                        <a href="#" class="header__item">
-                            <img src="images/ic-cont.png" alt="">
-                            <span>служба поддержки</span>
-                            <span class="header__count"> 10 </span>
-                        </a>
-                    </div>
-                    <!--<div class="header__enter">-->
-                        <!--<a href="#" class="header__item">-->
-                            <!--<img src="images/enter.svg" alt="">-->
-                            <!--<span>вход в кабинет</span>-->
-                        <!--</a>-->
-                    <!--</div>-->
-                    <div class="header__enter--entered header__enter js-dropdown-container">
-                        <div class="header__item header__desctop js-dropdown-button">
-                            <img src="images/man.svg" alt="">
-                            <span>мой кабинет</span>
-                            <div class="header__arrow"></div>
-                            <div class="mobile__user-butt">
-                                <svg width="12px" height="16px">
-                                    <use xlink:href="#mobileuser"></use>
-                                </svg>
-                            </div>
-                        </div>
-                        <ul class="header__dropdown js-dropdown-block">
-                            <li><a href="#">личные данные</a></li>
-                            <li><a href="#">мои заказы</a></li>
-                            <li><a href="#">настройки</a></li>
-                            <li><a href="#">выход</a></li>
-                        </ul>
+                        </select>
                     </div>
                 </div>
-                <div class="mobile__menu js-dropdown-container">
-                    <div class="mobile__butter js-dropdown-button"><span></span><span></span><span></span></div>
-                    <div class="mobile__wrap js-dropdown-block ">
-                        <ul class="mobile__lang">
-                            <li><a href="#"><span>ENG</span></a></li>
-                            <li><a href="#"><span>УКР</span></a></li>
-                            <li><a href="#" class="active"><span>РУС</span></a></li>
-                        </ul>
-                        <ul class="mobile__nav">
-                            <li><a href="#"><span>магазины</span></a></li>
-                            <li><a href="#"><span>распродажи и скидки</span></a></li>
-                            <li><a href="#"><span>как пользоваться</span></a></li>
-                            <li><a href="#"><span>калькулятор</span></a></li>
-                            <li><a href="#"><span>помощь</span></a></li>
-                        </ul>
-                        <div class="mobile__contacts">
-                            <a href="#">
-                                <i>
-                                    <svg width="20px" height="15px">
-                                        <use xlink:href="#ic-cont"></use>
-                                    </svg>
-                                </i>
+                <div class="header__formob">
+                    <form class="header__search js-search js-dropdown-container">
+                        <div class="header__search-wrap js-dropdown-block">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="17px" height="17px">
+                                    <path fill-rule="evenodd"  fill="rgb(255, 200, 0)"
+                                          d="M16.997,15.653 L11.980,10.636 C12.813,9.524 13.313,8.150 13.313,6.657 C13.313,2.987 10.327,0.002 6.657,0.002 C2.987,0.002 0.002,2.987 0.002,6.657 C0.002,10.327 2.987,13.313 6.657,13.313 C8.150,13.313 9.524,12.813 10.635,11.980 L15.653,16.998 L16.997,15.653 ZM0.636,6.657 C0.636,3.337 3.337,0.636 6.657,0.636 C9.978,0.636 12.679,3.337 12.679,6.657 C12.679,9.978 9.978,12.679 6.657,12.679 C3.337,12.679 0.636,9.978 0.636,6.657 ZM11.274,11.441 C11.330,11.386 11.386,11.330 11.440,11.274 C11.486,11.226 11.537,11.182 11.581,11.133 L16.101,15.653 L15.653,16.101 L11.133,11.581 C11.182,11.537 11.226,11.487 11.274,11.441 Z"/>
+                                    <path fill-rule="evenodd"  fill="rgb(64, 67, 78)" class="svg-hover"
+                                          d="M16.997,15.653 L11.980,10.636 C12.813,9.524 13.313,8.150 13.313,6.657 C13.313,2.987 10.327,0.002 6.657,0.002 C2.987,0.002 0.002,2.987 0.002,6.657 C0.002,10.327 2.987,13.313 6.657,13.313 C8.150,13.313 9.524,12.813 10.635,11.980 L15.653,16.998 L16.997,15.653 ZM0.636,6.657 C0.636,3.337 3.337,0.636 6.657,0.636 C9.978,0.636 12.679,3.337 12.679,6.657 C12.679,9.978 9.978,12.679 6.657,12.679 C3.337,12.679 0.636,9.978 0.636,6.657 ZM11.274,11.441 C11.330,11.386 11.386,11.330 11.440,11.274 C11.486,11.226 11.537,11.182 11.581,11.133 L16.101,15.653 L15.653,16.101 L11.133,11.581 C11.182,11.537 11.226,11.487 11.274,11.441 Z"/>
+                                </svg>
+                            </button>
+                            <input type="text" placeholder="Поиск">
+                            <ul class="header__result">
+                                <li><a href="#1">Macys осенние летние кроссовки</a></li>
+                                <li><a href="#2">Kohls кроссовки  вторая пара в подарок</a></li>
+                                <li><a href="#3">Красный свитер Kohls акция</a></li>
+                            </ul>
+                        </div>
+                        <div class="mobile__search js-dropdown-button">
+                            <i>
+                                <svg width="18px" height="18px">
+                                    <use xlink:href="#mobilesearch"></use>
+                                </svg>
+                            </i>
+                            <div class="mobile__search--close"><span></span><span></span></div>
+                        </div>
+                    </form>
+                    <div class="header__right">
+                        <div class="header__contacts">
+                            <a href="#" class="header__item">
+                                <img src="images/ic-cont.png" alt="">
                                 <span>служба поддержки</span>
                                 <span class="header__count"> 10 </span>
                             </a>
+                        </div>
+                        <!--<div class="header__enter">-->
+                        <!--<a href="#" class="header__item">-->
+                        <!--<img src="images/enter.svg" alt="">-->
+                        <!--<span>вход в кабинет</span>-->
+                        <!--</a>-->
+                        <!--</div>-->
+                        <div class="header__enter--entered header__enter js-dropdown-container">
+                            <div class="header__item header__desctop js-dropdown-button">
+                                <img src="images/man.svg" alt="">
+                                <span>мой кабинет</span>
+                                <div class="header__arrow"></div>
+                                <div class="mobile__user-butt">
+                                    <svg width="16px" height="20px">
+                                        <use xlink:href="#mobileuser"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <ul class="header__dropdown js-dropdown-block">
+                                <li><a href="#">личные данные</a></li>
+                                <li><a href="#">мои заказы</a></li>
+                                <li><a href="#">настройки</a></li>
+                                <li><a href="#">выход</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mobile__menu js-dropdown-container">
+                        <div class="mobile__butter js-dropdown-button"><span></span><span></span><span></span></div>
+                        <div class="mobile__wrap js-dropdown-block ">
+                            <ul class="mobile__lang">
+                                <li><a href="#"><span>ENG</span></a></li>
+                                <li><a href="#"><span>УКР</span></a></li>
+                                <li><a href="#" class="active"><span>РУС</span></a></li>
+                            </ul>
+                            <ul class="mobile__nav">
+                                <li><a href="#"><span>магазины</span></a></li>
+                                <li><a href="#"><span>распродажи и скидки</span></a></li>
+                                <li><a href="#"><span>как пользоваться</span></a></li>
+                                <li><a href="#"><span>калькулятор</span></a></li>
+                                <li><a href="#"><span>помощь</span></a></li>
+                            </ul>
+                            <div class="mobile__contacts">
+                                <a href="#">
+                                    <i>
+                                        <svg width="20px" height="15px">
+                                            <use xlink:href="#ic-cont"></use>
+                                        </svg>
+                                    </i>
+                                    <span>служба поддержки</span>
+                                    <span class="header__count"> 10 </span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

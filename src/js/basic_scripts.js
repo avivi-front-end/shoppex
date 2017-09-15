@@ -152,11 +152,9 @@ function animationBlock(item){
         var windowTop = $(window).scrollTop()+($(window).height()/1.5);
         item.each(function(){
            if(windowTop>$(this).offset().top || bottomCheck > $('body').height()*0.98){
-
               var itemSect = $(this);
               var point = 0;
               itemSect.find('.animate-it').addClass('animated');
-
               var timer = setInterval(function(){
                  itemSect.find('.animate-delay').eq(point).addClass('animated');
                  point++;
