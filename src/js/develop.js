@@ -114,6 +114,28 @@ function slidersInit() {
             });
         });
     }
+    var slider4 = $('.js-mobile-slider');
+    if(slider4.length > 0){
+        slider4.slick({
+            dots: false,
+            arrows: false,
+            infinite: true,
+            slidesToShow: 3,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            slidesToScroll: 1,
+            responsive: [
+                {breakpoint: 920, settings: {  slidesToShow: 2 } },
+                {breakpoint: 730, settings: {  slidesToShow: 1 } },
+            ]
+        });
+        $(document).on('click', '.js-shops-next', function () {
+            $(this).closest('.shops__mobile-slider').find('.js-mobile-slider').slick('slickNext');
+        });
+        $(document).on('click', '.js-shops-prev', function () {
+            $(this).closest('.shops__mobile-slider').find('.js-mobile-slider').slick('slickPrev');
+        });
+    }
 }
 function startTime(clock) {
     var today = new Date();
