@@ -161,7 +161,7 @@ function tabs(){
             var tabs = $(this).closest('.js-tab-container').find('.js-tab-but');
             var lists = $(this).closest('.js-tab-container').find('.js-tab-box');
             tabs.removeClass('active');
-            lists.stop().slideUp()
+            lists.stop().slideUp();
             $(this).addClass('active');
             lists.eq(ind).stop().slideDown();
         }
@@ -190,13 +190,22 @@ function generateRow(){
     $(document).on('click', '.js-generate-butt', function () {
         var elem =  $('.js-etalon').clone();
         elem.find('.neworder__trow').addClass('js-one-order-item');
-        elem.find('input[name=name]').attr({'required':'required', 'name':'order['+i+'][name]'});
-        elem.find('input[name=url]').attr({'required':'required', 'name':'order['+i+'][url]'});
-        elem.find('input[name=count]').attr({'required':'required', 'name':'order['+i+'][count]'});
-        elem.find('input[name=price]').attr({'required':'required', 'name':'order['+i+'][price]'});
-        elem.find('input[name=by]').attr({'required':'required', 'name':'order['+i+'][by]'});
+        elem.find('[name *=name]').attr({'required':'required', 'name':'order['+i+'][name]'}).removeClass('etalonn');
+        elem.find('input[name *=url]').attr({'required':'required', 'name':'order['+i+'][url]'});
+        elem.find('input[name *=count]').attr({'required':'required', 'name':'order['+i+'][count]'});
+        elem.find('input[name *=price]').attr({'required':'required', 'name':'order['+i+'][price]'});
+        elem.find('input[name *=by]').attr({'required':'required', 'name':'order['+i+'][by]'});
         var html = elem.html();
         $(this).before(html);
+        var xstyle = $('.js-select2-init.js-noinit select:not(.etalonn)');
+        xstyle.each(function(){
+            if(!$(this).hasClass('select2-hidden-accessible')){
+                $(this).select2({
+                    tags: true,
+                    width:'style'
+                });
+            }
+        });
         i++;
         chexkForDelItem();
     });
@@ -219,9 +228,24 @@ function calculetAllOrders() {
             $('.js-after-calculate input').attr('required','required');
         }
         $('.js-total-price').text(('$'+total));
+        $('.js-total-items-price').text(('$'+total));
         var percent = parseInt($('.js-total-percent').attr('data-percent'));
         var res = (total * percent)/100;
         $('.js-total-percent').text(('$'+res.toFixed(2)));
+        $.ajax({
+            url : 'ajax.php',
+            data: total,
+            method:'POST',
+            success : function(data){
+                console.log(data);
+                if ( data.trim() == 'true') {
+                    $('.js-total-wraper').addClass('red-true');
+                }
+                else {
+                    $('.js-total-wraper').removeClass('red-true');
+                }
+            }
+        });
     }
 }
 function inputNumber() {
@@ -292,15 +316,15 @@ function styledSelect(){
             selectSmartPositioning:false
         });
     }
-    var select = $('.styled__select select');
+    var select = $('.styled__select select:not(.js-order_adres)');
     if (select.length > 0){
         select.styler({
             selectSmartPositioning:false
         });
     }
-    var select2 = $('.form_input select');
-    if (select2.length > 0){
-        select2.styler({
+    var select9 = $('.form_input select');
+    if (select9.length > 0){
+        select9.styler({
             selectSmartPositioning:false
         });
     }
@@ -309,6 +333,30 @@ function styledSelect(){
         select3.styler({
             selectSmartPositioning:false
         });
+    }
+    var select4 = $('.styled__select select.js-order_adres');
+    if (select4.length > 0){
+        select4.styler({
+            selectSmartPositioning:false,
+
+            onFormStyled: function () {
+               $('.js-order_adres .jq-selectbox__dropdown li[data-name]').each(function () {
+                   var text = $(this).attr('data-name');
+                       var p = document.createElement('p');
+                       $(p).text(text);
+                       $(this).prepend(p);
+               });
+            }
+        });
+
+    }
+    var select5 = $('.js-select2-init:not(.js-noinit) select');
+    if (select5.length > 0){
+        select5.select2({
+            tags: true,
+            width:'style'
+        });
+
     }
 }
 function trackLogick() {
@@ -391,7 +439,7 @@ function changeAvatar(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
-            $(input).closest('.editinfo__cell').find('.editinfo__img img').attr('src', e.target.result);
+            $(input).closest('.editinfo__cell--avatar').find('.editinfo__img img').attr('src', e.target.result);
         }
         reader.readAsDataURL(input.files[0]);
 
@@ -649,7 +697,6 @@ function chatScroll() {
     }
 
 }
-
 var ui = {
     search:function () {
       if($('.mobile__search').css('display') == 'none'){
@@ -661,6 +708,7 @@ var ui = {
     }
 
 };
+
 $(window).resize(function() {
     ui.search();
 

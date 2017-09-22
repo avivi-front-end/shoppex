@@ -8,24 +8,9 @@
         <div class="lk-scelet">
             <div class="mbox">
                 <div class="lk-scelet__wrap">
-                    <div class="lk-scelet__left">
-                        //= partials/balance.html
-                        <div class="lk-menu">
-                            <div class="lk-menu__button">
-                                <a href="#" class="button"><span>Новый заказ</span></a>
-                            </div>
-                            <ul>
-                                <li><a href="#" class="active">Мои заказы </a></li>
-                                <li><a href="#">мой адрес в сша</a></li>
-                                <li><a href="#">личные данные</a></li>
-                                <li><a href="#">адресная книга</a></li>
-                                <li><a href="#">действия со счетом</a></li>
-                                <li><a href="#">дополнительные услуги</a></li>
-                                <li><a href="#">избранные магазины</a></li>
-                                <li><a href="#">ограничения транспортировки (опасные грузы)</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <!--left -menu start-->
+                    //= partials/left-menu.html
+                    <!--left -menu end-->
                     <div class="lk-scelet__right">
                         <form class="editinfo">
                             <div class="title title--first">
@@ -35,6 +20,22 @@
                                 <div class="editinfo__content">
                                     <div class="editinfo__row">
                                         <div class="editinfo__tab">
+                                            <div class="editinfo__cell editinfo__cell--avatar mobile">
+                                                <div class="editinfo__img"><img src="#" alt="" data-object-fit></div>
+                                                <div class="neworder__input js-input-fileAva">
+                                                    <label>
+                                                        <input type="file"  name="">
+                                                        <span>
+                                                            <i>
+                                                                <svg width="14" height="14">
+                                                                    <use xlink:href="#pluss"></use>
+                                                                </svg>
+                                                            </i>
+                                                            <b>Установить аватар</b>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
                                             <div class="editinfo__title">личные данные на кириллице</div>
                                             <div class="editinfo__cell">
                                                 <div class="editinfo__info">Имя <b>*</b></div>

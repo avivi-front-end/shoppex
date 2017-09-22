@@ -33,11 +33,16 @@
                                         </div>
                                         <div class="neworder__description">
                                             <div class="neworder__descrow">
-                                                <div class="neworder__desccol">
+                                                <div class="neworder__desccol swapthis">
                                                     <div class="neworder__desccell">
                                                         <div class="neworder__title"><span>Интернет-магазин:<b>*</b></span></div>
-                                                        <div class="neworder__input">
-                                                            <input type="text" placeholder="Введите название магазина" name="order_name" required="required">
+                                                        <div class="neworder__input js-select2-init">
+                                                            <select name="" id="" data-placeholder="Введите название магазина">
+                                                                <option></option>
+                                                                <option>orange</option>
+                                                                <option>white</option>
+                                                                <option>purple</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="neworder__desccell">
@@ -47,7 +52,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="neworder__desccol">
+                                                <div class="neworder__desccol swapthis">
 
                                                     <div class="neworder__desccell">
                                                         <div class="neworder__title">Дата оформления:</div>
@@ -80,8 +85,8 @@
                                                 </div>
                                                 <div class="lk-card__trow neworder__thead">
                                                     <div class="neworder__tcell neworder__tcell--del"></div>
-                                                    <div class="neworder__tcell"><div class="neworder__title"><span>Наименование товара:<b>*</b></span></div></div>
-                                                    <div class="neworder__tcell neworder__tcell--url"><div class="neworder__title"><span>Ссылка на товар:<b>*</b></span></div></div>
+                                                    <div class="neworder__tcell"><div class="neworder__title"><span>Наименование товара<b>*</b></span></div></div>
+                                                    <div class="neworder__tcell neworder__tcell--url"><div class="neworder__title"><span>Ссылка на товар<b>*</b></span></div></div>
                                                     <div class="neworder__tcell neworder__tcell--count"><div class="neworder__title"><span>Шт.<b>*</b></span></div></div>
                                                     <div class="neworder__tcell neworder__tcell--price"><div class="neworder__title"><span>Цена, $<b>*</b></span></div></div>
                                                     <div class="neworder__tcell neworder__tcell--by"><div class="neworder__title"><span>Товар б/у</span></div></div>
@@ -96,13 +101,19 @@
                                                             </div>
                                                         </div>
                                                         <div class="neworder__tcell neworder__tcell-mobile">
-                                                            <div class="neworder__title"><span>Наименование товара:<b>*</b></span></div>
-                                                            <div class="neworder__input">
-                                                                <input type="text" placeholder="Введите товар" name="order[0][name]" required="required">
+                                                            <div class="neworder__title"><span>Наименование товара<b>*</b></span></div>
+
+                                                            <div class="neworder__input js-select2-init js-noinit">
+                                                                <select name="order[0][name]"  data-placeholder="Введите товар" class="etalonn">
+                                                                    <option></option>
+                                                                    <option>orange</option>
+                                                                    <option>white</option>
+                                                                    <option>purple</option>
+                                                                </select>
                                                             </div>
                                                         </div>
                                                         <div class="neworder__tcell neworder__tcell--url neworder__tcell-mobile">
-                                                            <div class="neworder__title"><span>Ссылка на товар:<b>*</b></span></div>
+                                                            <div class="neworder__title"><span>Ссылка на товар<b>*</b></span></div>
                                                             <div class="neworder__input">
                                                                 <input type="text" placeholder="Введите ссылку" name="order[0][url]" required="required">
                                                             </div>
@@ -146,13 +157,18 @@
                                                         </div>
                                                     </div>
                                                     <div class="neworder__tcell neworder__tcell-mobile">
-                                                        <div class="neworder__title"><span>Наименование товара:<b>*</b></span></div>
-                                                        <div class="neworder__input">
-                                                            <input type="text" placeholder="Введите товар" name="order[0][name]" required="required">
+                                                        <div class="neworder__title"><span>Наименование товара<b>*</b></span></div>
+                                                        <div class="neworder__input js-select2-init">
+                                                            <select name="order[0][name]"  data-placeholder="Введите товар">
+                                                                <option></option>
+                                                                <option>orange</option>
+                                                                <option>white</option>
+                                                                <option>purple</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="neworder__tcell neworder__tcell--url neworder__tcell-mobile">
-                                                        <div class="neworder__title"><span>Ссылка на товар:<b>*</b></span></div>
+                                                        <div class="neworder__title"><span>Ссылка на товар<b>*</b></span></div>
                                                         <div class="neworder__input">
                                                             <input type="text" placeholder="Введите ссылку" name="order[0][url]" required="required">
                                                         </div>
@@ -370,15 +386,23 @@
                                                             </ul>
                                                         </span>
                                                     </span>
-                                                    <b>$3.55</b>
+                                                    <b class="js-for-autosum-total">$3.55</b>
                                                 </div>
                                                 <a href="#" class="button"><span>оплатить</span></a>
+                                                <div class="lk-card__nopay">
+                                                    <span>сумма требует уточнения</span>
+                                                    <i data-title="информация">
+                                                        <svg width="12px" height="12px">
+                                                           <use xlink:href="#informer"></use>
+                                                        </svg>
+                                                    </i>
+                                                </div>
                                             </div>
                                             <div class="lk-card__price">
                                                 <div class="lk-card__price-wrap">
                                                     <span>Общая стоимость товаров в посылке:</span>
-                                                    <b style="color: rgb(255, 48, 48);">
-                                                        <span class="lk-card__informer">
+                                                    <b class="js-total-wraper">
+                                                        <span class="lk-card__informer js-red-informer">
                                                             <svg width="15px" height="15px">
                                                                <use xlink:href="#informer02"></use>
                                                             </svg>
@@ -388,7 +412,7 @@
                                                                 <li><span>Дополнительные услуги</span><b>$4.00</b></li>
                                                             </ul>
                                                         </span>
-                                                        $195.00
+                                                        <span class="js-total-items-price">$195.00</span>
                                                         <span class="lk-card__informer">
                                                             <svg width="12px" height="15px">
                                                                <use xlink:href="#informer03"></use>
@@ -407,18 +431,18 @@
                                                     <div class="neworder__title"><span>Адрес доставки:<b>*</b></span></div>
                                                     <div class="styled__select js-show-tooltip">
                                                         <div class="tooltip tooltip--allwidth"></div>
-                                                        <select name="order_adres">
-                                                            <option value="1" selected>г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
-                                                            <option value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
-                                                            <option value="1">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
-                                                            <option value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
-                                                            <option value="1">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
-                                                            <option value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
-                                                            <option value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
-                                                            <option value="1">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
-                                                            <option value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
-                                                            <option value="1">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
-                                                            <option value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
+                                                        <select class="js-order_adres">
+                                                            <option data-name="" value="1" selected="selected">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
+                                                            <option data-name="" value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
+                                                            <option data-name="test" value="1">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
+                                                            <option data-name="" value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
+                                                            <option data-name="" value="1">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
+                                                            <option data-name="test02" value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
+                                                            <option data-name="" value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
+                                                            <option data-name="" value="1">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
+                                                            <option data-name="tets03" value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
+                                                            <option data-name="" value="1">г.Хмельницкий, ул.Пушкина Шиномонтаж</option>
+                                                            <option data-name="" value="1">г.Хмельницкий, ул.Виницкое Шоссе Марися</option>
                                                         </select>
                                                     </div>
                                                     <strong>или</strong>
