@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>PDF</title>
+    <style>
+        *{box-sizing: border-box;}
+        p{ margin: 0;}
+        .main{  border:2px solid #000; font-family: Arial, Helvetica, sans-serif; width: 691px; flex-shrink: 0; font-size: 11px; }
+        .top{ display: flex; justify-content:space-between; align-items: center;  border-bottom:2px solid #000;padding: 6px 0 4px;}
+        .top__start{ text-align: center;font-size: 14px;  font-weight: 900;  padding-left: 2px;}
+        .top__info{ width: 272px; line-height: 15px;}
+        .top__img img{ width: 300px; height: 50px;}
+        .top__info  p{ display: flex; justify-content: flex-start; align-items: center;}
+        .top__info  b{ width: 103px; display: inline-block;}
+        .middle{ border-bottom:2px solid #000; display: flex; justify-content: flex-start; align-items: stretch;}
+        .middle__vert{  width: 41px; display: flex; justify-content: center; align-items: center;  border-right:2px solid #000;}
+        .middle__start{ width: 326px; flex-grow: 1;border-right:2px solid #000; }
+        .middle__end{width: 326px; flex-grow: 1;}
+        .middle__row{ width: 100%; display: flex; justify-content: flex-start; align-items: stretch; border-bottom:2px solid #000;}
+        .middle__cell{ width: 108px; height: 52px; border-right:2px solid #000; flex-grow: 1; display: flex; justify-content: center; align-items: center;}
+        .middle__cell:last-child{ border-right:none;}
+        .middle__cell img{ width: 84px;}
+        .middle__cell i{ font-style: normal; font-weight: bold; font-size: 20px;}
+        .middle__cell--col{ flex-direction: column;}
+        .vertical{transform: rotate(-90deg); white-space: nowrap;}
+        .middle__content { padding: 3px 5px 0;line-height: 15px;}
+        .middle__content  p{ display: flex; justify-content: flex-start; align-items: center; margin-bottom: 7px; padding-top: 0px;}
+        .middle__content  p:last-child{ margin-bottom: 0;}
+        .middle__content  b{ width: 107px; display: inline-block; flex-shrink: 0;}
+        .bottom{ display: flex; justify-content: flex-start; align-items: stretch;}
+        .bottom__row{ display: flex; justify-content: flex-start; align-items: stretch;border-bottom:2px solid #000; height: 44px; width: 100%;}
+        .bottom__row:last-child{ border-bottom:none; height: 119px;}
+        .bottom__row:last-child .bottom__cell:not(.bottom__first){ font-size: 14px;}
+        .bottom__cell{ display: flex; justify-content: center; align-items: center; text-align: center; padding: 0 2px;}
+        .bottom__first{ width: 337px;border-right:2px solid #000; flex-shrink: 0;}
+        .bottom__second{ width: 101px;border-right:2px solid #000; flex-shrink: 0;}
+        .bottom__third{ width: 94px;border-right:2px solid #000; flex-shrink: 0;}
+        .bottom__four{ width: 94px; flex-grow: 1; }
+        .bottom__content{ width: 100%;  }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+            <div class="top__start">
+                <p>1/1</p>
+                <p>pieces</p>
+            </div>
+            <div class="top__img">
+                <img src="images/shtrih.jpg" alt="">
+            </div>
+            <div class="top__info">
+                <p><b>TRACK NUMBER</b><span>NP00000000140280NPI</span></p>
+                <p><b>ORDER NUMBER</b><span>1Z2146Y21082017X6</span></p>
+                <p><b>REGISTRATION DATE</b><span>21.08.2017</span></p>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="middle__vert">
+                <span class="vertical">INTERNATIONAL WAYBILL</span>
+            </div>
+            <div class="middle__start">
+                <div class="middle__row">
+                    <div class="middle__cell middle__cell--col">
+                        <p>origin</p>
+                        <i>US</i>
+                    </div>
+                    <div class="middle__cell">
+                        SHIPPER
+                    </div>
+                    <div class="middle__cell"></div>
+                </div>
+                <div class="middle__content">
+                    <p><b>CONTACT NAME</b><span>Shevchenko Natalia</span></p>
+                    <p><b>COUNTERPARTY</b><span>SHOPPEX.US - NP Shopping USA</span></p>
+                    <p><b>COUNTRY</b><span>United States of America</span></p>
+                    <p><b>CITY</b><span>New Jersey</span></p>
+                    <p style="min-height: 45px;"><b>ADDRESS</b><span>27 Merry Lane</span></p>
+                    <p><b>POST CODE</b><span>07936</span></p>
+                    <p><b>PHONE NUMBER</b><span>+19739476185</span></p>
+                </div>
+            </div>
+            <div class="middle__end">
+                <div class="middle__row">
+                    <div class="middle__cell middle__cell--col">
+                        <p>destiantion</p>
+                        <i>UA</i>
+                    </div>
+                    <div class="middle__cell">
+                        CONSIGNEE
+                    </div>
+                    <div class="middle__cell">
+                        <img src="images/npnp.jpg" alt="">
+                    </div>
+                </div>
+                <div class="middle__content">
+                    <p><b>CONTACT NAME</b><span>Tuzenkov Sergey</span></p>
+                    <p><b>COUNTERPARTY</b><span>Tuzenkov Sergey</span></p>
+                    <p><b>COUNTRY</b><span>Ukraine</span></p>
+                    <p><b>CITY</b><span>c.Kyiv</span></p>
+                    <p style="min-height: 45px;"><b>ADDRESS</b><span>Viddilennia No256(do30kh), Minividdilennia:Stolychneshose, 103 (TRTsAtmosfera)</span></p>
+                    <p><b>POST CODE</b><span>01001</span></p>
+                    <p><b>PHONE NUMBER</b><span>+380503366677</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="middle__vert">
+                <span class="vertical">INVOICE</span>
+            </div>
+            <div class="bottom__content">
+                <div class="bottom__row">
+                    <div class="bottom__cell bottom__first"><b>FULL DESCRIPTION OF SHIPMENT</b></div>
+                    <div class="bottom__cell bottom__second"><b>ACTUAL WEIGHT, KG</b></div>
+                    <div class="bottom__cell bottom__third"><b>NUMBER OF ITEMS</b></div>
+                    <div class="bottom__cell bottom__four"><b>DECLARED VALUE, USD</b></div>
+                </div>
+                <div class="bottom__row">
+                    <div class="bottom__cell bottom__first"><p>broken cell phone for parts - <b>1pc $70.00;</b> broken cell phone for parts - <b></b>1pc $40.00;</p></div>
+                    <div class="bottom__cell bottom__second"><b>0.900</b></div>
+                    <div class="bottom__cell bottom__third"><b>2</b></div>
+                    <div class="bottom__cell bottom__four"><b>110.00</b></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

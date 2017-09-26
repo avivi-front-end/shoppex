@@ -641,11 +641,15 @@ function shops__itemHover(){
     }
 }
 function shops__itemClick() {
-
     $(document).on('click', '.shops__item', function () {
         var items = $('.shops__item');
-        items.removeClass('active');
-        $(this).addClass('active');
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+        }else{
+            items.removeClass('active');
+            $(this).addClass('active');
+        }
+
     });
     $(document).on('click touchstart',function (event){
         var items = $('.shops__item');
@@ -654,6 +658,15 @@ function shops__itemClick() {
             items.removeClass('active');
         }
     });
+}
+function shops__popups() {
+    $(document).on('click', '[data-popup]', function () {
+        var clas = $(this).attr('data-popup');
+        $.fancybox.open({
+            src  : '.'+clas,
+            type : 'inline',
+        });
+    })
 }
 function dataToolTips() {
     var items = $('[data-title]');
@@ -709,14 +722,9 @@ var ui = {
 
 };
 
-$(window).resize(function() {
-    ui.search();
-
-});
-
 $(document).ready(function () {
-
     acordeon();
+    shops__popups();
     chatScroll();
     $(document).on('change', '.js-input-file input',function(){
         readURL(this);
@@ -755,6 +763,27 @@ $(document).ready(function () {
     clock();
     inputNumber();
 });
+var myEfficientFn = debounce(function() {
+    ui.search();
+    shops__itemHover();
+}, 250);
+
+window.addEventListener('resize', myEfficientFn);
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
+
 (function(window, document) {
     'use strict';
     var file = 'images/sprite.svg'; // путь к файлу спрайта на сервере
