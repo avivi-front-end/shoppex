@@ -43,7 +43,7 @@
                         <div class="timer__img"><img src="images/clock.png" alt=""></div>
                         <div class="timer__date">
                             <b class="js-clock">3:35</b>
-                            <p>воскресенье, <span>25.06.2017</span></p>
+                            <p><i class="js-day">воскресенье</i>, <span class="js-date">25.06.2017</span></p>
                         </div>
                     </div>
                     <div class="timer__text">
@@ -59,16 +59,39 @@
             <div class="footer__socials">
                 <span>следите за нами в социальных сетях: </span>
                 <div class="footer__soc-wrap">
-                    <a href="#" class="social-icon"  target="_blank"><img data-object-fit src="images/fb.png" alt=""></a>
-                    <a href="#" class="social-icon"  target="_blank"><img data-object-fit src="images/twitter.png" alt=""></a>
-                    <a href="#" class="social-icon"  target="_blank"><img data-object-fit src="images/vk.png" alt=""></a>
+                    <a href="#" class="social-icon"  target="_blank">
+                        <svg>
+                            <use xlink:href="#ic-vk"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon"  target="_blank">
+                        <svg>
+                            <use xlink:href="#ic-twitter"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon"  target="_blank">
+                        <svg>
+                            <use xlink:href="#ic-tumbler"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon"  target="_blank">
+                        <svg>
+                            <use xlink:href="#ic-instagram"></use>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon"  target="_blank">
+                        <svg>
+                            <use xlink:href="#ic-fb"></use>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
 <script>
-    var revision = 2009171;    // версия спрайта (текущая дата)
+    var revision = 3009172;    // версия спрайта (текущая дата)
+    var timeOffset = -7; // разница в  времени можно отрицательное число указать
 </script>
 <!-- FOOTER -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;subset=cyrillic-ext" rel="stylesheet">

@@ -16,7 +16,7 @@ input, textarea{
 }
 a{ cursor: pointer;}
 .global-wrapper{display: flex; flex-direction: column; min-height: 100vh;}
-.main{ flex:1; position: relative; }
+.main{ flex:1; position: relative;}
 .button{ display: inline-block; border:none; background: none;text-decoration: none; padding: 0;
     span{ display: flex; justify-content: center; align-items: center; height: 32px; padding: 2px 40px 0; background-color: #ffde00; color: #40434e; text-transform: uppercase; font-weight: 700; }
     &:hover span{ background-color: #ffeb29;}
@@ -57,6 +57,10 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
 }
 .flex-none {
     flex: none;
+}
+#ahtung-popup{
+    .popup__body{ padding-bottom: 26px;}
+    .succpop__main{ padding-bottom: 18px;}
 }
 .header{ background-color: #40434e; position: relative; z-index: 200;
     &__wrap{ height: 95px; display: flex; justify-content: space-between; align-items: center; padding-top: 1px;}
@@ -178,6 +182,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
     }
 }
 .social-icon{ display: inline-block; width: 40px; height: 40px; margin:3px; position: relative;
+    svg{width: 40px; height: 40px;}
     img{width: 100%; height: 100%; object-fit: cover;}
     &:hover{box-shadow: 0 0 5px 0 rgba(255,255,255,0.6);}
     &--light{
@@ -197,7 +202,10 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
     &__clock{ display: flex; justify-content: center; align-items: flex-start; margin-bottom: 16px;}
     &__date{ text-align: left; margin-left: 18px;
         b{ font-weight: 100; font-size: 55px; color: #fff;}
-        p{font-weight: 300; margin: -2px 0 0; span{ color: #ffc800;}}
+        p{font-weight: 300; margin: -2px 0 0;
+            i{ font-style: normal;}
+            span{ color: #ffc800;}
+        }
     }
 }
 .top-main{ position: relative;background-color: #efefef;
@@ -241,7 +249,6 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
     .lk-filter__button{ position: absolute; right: 0; top: -3px;
         &:before{ content: ''; width: 25px; height: 100%; position: absolute; right: 100%; background-color: #efefef; top: 0;}
     }
-
 }
 .how-this-work{ padding-bottom: 34px; background-color: #efefef;
     h3{ background-color: #efefef; }
@@ -316,7 +323,6 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
             .itemhover{opacity: 1; transform: scaleX(1);}
         }
     }
-
     &__item-wrap{ display: block;text-decoration: none;color: #69758b; cursor: pointer;}
     &__heart{ position: absolute; right: 11px; top: 9px; z-index: 9;
         svg{ position: absolute; right: 0; top: 0;}
@@ -351,14 +357,26 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
     &__mobile-slider{ display: none; width: calc(100% - 214px); padding: 0 30px;}
     &__mobile-warap{ width: 100%;
         .shops__item{ margin: 0 auto;}
+        .shops__spec-wrap{pointer-events: none;}
+        .shops__spec{pointer-events: all;}
     }
-    &__buttons{ position: absolute; width: 280px; top: 90px; z-index: 40; display: flex; justify-content: space-between; align-items: center; left: calc(50% - 140px);}
+    &__buttons{ position: absolute; width: 280px; top: 90px; z-index: 40; display: flex; justify-content: space-between; align-items: center; left: calc(50% - 140px); pointer-events: none;
+        &>*{pointer-events: all;}
+    }
     &__popover{max-width: 300px;  background-color: rgba(64,67,78,0.87); text-align: center; color: #fff; padding:10px;
         h6 { font-size: 13px; font-weight: 700; text-transform: uppercase; margin: 0; color: #ffc800; text-align: center; line-height: 1.2;  padding: 0 27px 10px;}
         i{ font-weight: 300; font-size: 11px; color: #fff; text-align: center; font-style: normal; display: inline-block; padding: 0 60px;}
-        p{ font-weight: 300; font-size: 11px; text-align: center; margin: 34px 0 8px;}
+        p{ font-weight: 300; font-size: 11px; text-align: center; margin: 34px 0 8px;
+            img{ margin-right: 8px;}
+        }
         .button{ width: 100%;
             span{ width: 100%;}
+        }
+        .fancybox-close-small{ top: 3px; right: 0; width: 37px;
+            &:hover:after,
+            &:after,
+            &:before{ background-color: #fff;}
+
         }
     }
 }
@@ -433,7 +451,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
         img{ vertical-align: middle; margin-right: 12px;}
     }
     &__body{ padding: 34px 35px 31px;
-        p{ margin: 17px 0 0; font-weight: 400; font-size: 24px;line-height: 1.2;}
+        p{ margin: 17px 0 0; font-weight: 300; font-size: 24px;line-height: 1.2;}
     }
 }
 .form_input{ width: 260px;
@@ -1053,7 +1071,9 @@ a.lk-ballancer__drop-title{
     &__group{ width: 100%; margin-bottom: 8px;}
     &__row{ display: flex; justify-content: flex-start; align-items: center; padding: 6px 0;
         &--sb{ justify-content: space-between;}
-        &--fw{ flex-wrap: wrap;}
+        &--fw{ flex-wrap: wrap; margin: 0 -10px;
+            .settings__cell{flex-grow: 1; margin: 0 10px;}
+        }
         &--border{border-bottom: 1px solid #f3f3f3;padding: 6px 15px;}
         &--labled{padding: 15px 15px;
             label{ margin-right: 44px;}
@@ -1083,7 +1103,9 @@ a.lk-ballancer__drop-title{
     &__socall{font-weight: 700; font-size: 13px; text-transform: uppercase; color: #2d303b; border:1px dashed #e7e9ee; width: 100%; cursor: pointer; }
     &__socwrap{ width: 100%; border:1px solid transparent; display: flex; justify-content: flex-start; align-items: center; position: relative; height: 71px; padding: 0 12px;}
     &__socimg{ width: 40px; height: 40px; border-radius: 50%; background-color: #f3f3f3; display: flex; justify-content: center; align-items: center; margin-right: 20px;}
-    &__socclose{ position: absolute; right: 15px; display: none; top: 22px;}
+    &__socclose{ position: absolute; right: 15px; display: none; top: 22px;
+        svg{ width: 25px; height: 25px;}
+    }
 }
 .exit{background-color: #efefef; padding-top: 21px; padding-bottom: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center;min-height: calc(100vh - 522px);
     &__inner{margin: 30px 15px; max-width: 430px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -1265,7 +1287,10 @@ a.lk-ballancer__drop-title{
     &__wrap{ display: flex; justify-content: flex-start; align-items: flex-start; flex-wrap: wrap;}
     .lk-paginator{margin-top: 29px;}
     .shops__item{ display: block; }
-    &__mobile-wrap{ display: none; justify-content: space-around; align-items: flex-start; flex-wrap: wrap;}
+    &__mobile-wrap{ display: none; justify-content: space-around; align-items: flex-start; flex-wrap: wrap;
+        .shops__spec-wrap{pointer-events: none;}
+        .shops__spec{pointer-events: all;}
+    }
     .shops__item:first-child,
     .shops__item:last-child{ margin-left: 1px;}
 }
@@ -1633,8 +1658,10 @@ object{ display: inline-block;}
             &:nth-child(2){ transform: rotate(495deg);}
         }
     }
+
 }
-.ztvor{ background-image: url(../images/ztvorbg.jpg); background-size: cover; background-position: 50%; width: 100%; height: 100vh; position: relative; overflow: hidden;
+.ztvor{  width: 100%; height: 100vh; position: relative; overflow: hidden;
+    [data-object-fit]{ width: 100%; height: 100%; object-fit: cover;}
     &__bottom{ position: absolute; width: 100%; min-height: 165px; background-color: #fff; bottom: 0; left: 0; padding-top: 11px;
         .footer__socials{ color: #4b586d; flex-direction: column; padding: 0 15px;}
         .footer__socials > span{ margin-right: 0; margin-bottom: 8px; white-space: pre-wrap; text-align: center;}
@@ -1657,6 +1684,27 @@ object{ display: inline-block;}
         &:before{ position: absolute; left: 100%; height: 0; width: 0; border-color:transparent transparent transparent rgb(82, 84, 95); border-style: solid; border-width: 58px 30px; content:''; display: block; top: 0;}
     }
 }
+.popmain{ padding: 15px; max-width: 500px; width: 100%; background-color: transparent;
+    &__wrap{ width: 100%; background-color: #fff;}
+    &__img{ width: 100%; height: 58px; display: flex; justify-content: center; align-items: center; background-color: #fff;}
+    &__top{ background-color: #f3f3f3; padding: 12px 15px 15px;
+        p{ display: flex; justify-content: space-between; align-items: center; text-transform: uppercase; font-size: 11px; margin-bottom: 2px;
+            span{ font-size: 14px;}
+        }
+        .button{ width: 100%; margin-top: 20px;
+            span{ width: 100%;}
+        }
+    }
+    &__bottom{ padding: 10px 15px 16px;
+        .itemhover__spec{ margin-top: 12px;}
+        p{ margin-bottom: 10px;}
+        b{ font-size: 11px; text-transform: uppercase;}
+        a:hover{ text-decoration: none; color: #69758b;}
+    }
+    .fancybox-close-small { top: 21px; right: 8px; }
+    .itemhover__spec-item svg{ width: 22px; height: 22px;}
+}
+
 //header and footer --- ↓↓↓↓↓↓
     @media screen and (max-width: 1160px){
         .header__search{ width: 320px;}
@@ -2050,10 +2098,10 @@ object{ display: inline-block;}
 
     }
 //lk-catalog page ------------↑↑↑↑↑↑↑↑↑
-//lk-ztvor page ----------- ↓↓↓↓↓↓↓↓↓
+//ztvor page ----------- ↓↓↓↓↓↓↓↓↓
     @media screen and (max-width: 767px){
         .ztvor{
-            &__bottom{ background-color: transparent; text-shadow: 0 0 8px #fff;min-height: 124px; }
+            &__bottom{ min-height: 124px; }
             &__downtext{   padding:0 15px;    bottom: calc(10% + 120px);
                 i{ padding-left:5px;}
                 br:first-child{ display: inline;}
@@ -2077,7 +2125,7 @@ object{ display: inline-block;}
     }
     @media screen and (max-height: 600px){
         .ztvor{
-            &__bottom{ background-color: transparent; text-shadow: 0 0 8px #fff;min-height: 124px; }
+            &__bottom{ min-height: 124px; }
             &__downtext{   padding:0 15px;    bottom: calc(10% + 120px);
                 i{ padding-left:5px;}
                 br:first-child{ display: inline;}
@@ -2101,5 +2149,24 @@ object{ display: inline-block;}
             &__top{     top: calc((100% - 202px)/2 - 60px);}
         }
     }
+    @media screen and (orientation: portrait) {
+        body,
+        .ztvor {
+            height: 100%;
+            /*!important;*/
+        }
+    }
+    @media screen and (orientation: landscape) {
+        body,
+        .ztvor {
+            height: 100%;
+            /*!important;*/
+        }
+    }
+//ztvor page ------------↑↑↑↑↑↑↑↑↑
+//lk-settings page ----------- ↓↓↓↓↓↓↓↓↓
+    @media screen and (max-width: 1024px){
 
-//lk-ztvor page ------------↑↑↑↑↑↑↑↑↑
+    }
+
+//lk-settings page ------------↑↑↑↑↑↑↑↑↑

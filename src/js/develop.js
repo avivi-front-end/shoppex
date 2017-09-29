@@ -134,21 +134,36 @@ function slidersInit() {
         });
     }
 }
-function startTime(clock) {
+function startTime() {
     var today = new Date();
+    today.setUTCHours(today.getUTCHours() + timeOffset);
     var h = today.getHours();
     var m = today.getMinutes();
+    var day = today.getDay();
+    var date = today.getDate();
+    var month = today.getMonth();
+    var year = today.getFullYear()
+    h = checkTime(h);
     m = checkTime(m);
-    clock.text(h + ":" + m);
+    date = checkTime(date);
+    month = checkTime(month+1);
+    checkDay(day);
+    $('.js-clock').text(h + ":" + m );
+    $('.js-date').text(date + "." + month + "." + year);
+    $('.js-day').text(localStorage.currentday);
+    var t = setTimeout(startTime,10000);
 }
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};
-    return i;
-}
+function checkTime(i) {  return i < 10 ? "0"+i : i; }
 function clock() {
     var clock = $('.js-clock');
-    if(clock.length > 0){ startTime(clock);}
+    if(clock.length > 0){ startTime();}
 }
+function checkDay(i) {
+    $.getJSON("response.json", function(json) {
+        localStorage.setItem('currentday', json.clock.days[i]);
+    });
+}
+
 function tabs(){
     var init = $('.js-tab-but.active');
     if (init.length > 0){
@@ -721,9 +736,47 @@ var ui = {
     }
 
 };
+function catalogPopups() {
+    $(document).on('click', '[data-popup-action]', function(e){
+        e.preventDefault();
+        var info = $(this).data('popup-action');
+        var popup = $('#magaz-pop');
+        popup.find('h6').text(info.title);
+        popup.find('i').text(info.text);
+        popup.find('.datac').text(info.date);
+        $.fancybox.open({
+            src:"#magaz-pop"
+        })
+    });
+    $(document).on('click', '[data-popup-main]', function(e){
+        e.preventDefault();
+        var img = $(this).find('.shops__img img').attr('src');
+        var info = $(this).data('popup-main');
+        var popup = $('#magaz-pop2');
+        popup.find('.popmain__img img').attr('src', img);
+        popup.find('.pp-total').text(info.total);
+        popup.find('.pp-my').text(info.my);
+        popup.find('.pp-description').text(info.description);
+        var tags = '';
+        for(var i=0; i < info.tags.length; i++){
+            tags += '<a href="'+info.tags[i].href+'">#'+info.tags[i].title+'</a>'
+        }
+        popup.find('.pp-tags').html(tags);
+        var specs = '';
+        for(var i=0; i < info.specs.length; i++){
+            specs += '<div class="itemhover__spec-item"><svg><use xlink:href="#'+info.specs[i].id+'"></use></svg><div class="tooltip">'+info.specs[i].text+'</div></div>'
+        }
+        popup.find('.itemhover__spec-item').remove();
+        popup.find('.itemhover__spec').append(specs);
 
+        $.fancybox.open({
+            src:"#magaz-pop2"
+        })
+    });
+}
 $(document).ready(function () {
     acordeon();
+    catalogPopups();
     shops__popups();
     chatScroll();
     $(document).on('change', '.js-input-file input',function(){

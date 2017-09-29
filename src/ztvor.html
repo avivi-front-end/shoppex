@@ -16,6 +16,7 @@
 </head>
 <body>
 <div class="ztvor">
+    <img src="images/ztvorbg.jpg" alt="" data-object-fit class="big">
     <div class="ztvor__top">
         <div class="ztvor__right">
             <span>Совсем скоро!</span>
@@ -32,24 +33,122 @@
         <div class="footer__socials">
             <span>Следите за обновлениями в социальных сетях:</span>
             <div class="footer__soc-wrap">
-                <a href="#" class="social-icon"  target="_blank"><img data-object-fit src="images/fb.png" alt=""></a>
-                <a href="#" class="social-icon"  target="_blank"><img data-object-fit src="images/twitter.png" alt=""></a>
-                <a href="#" class="social-icon"  target="_blank"><img data-object-fit src="images/vk.png" alt=""></a>
+                <a href="#" class="social-icon"  target="_blank">
+                    <svg>
+                        <use xlink:href="#ic-vk"></use>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon"  target="_blank">
+                    <svg>
+                        <use xlink:href="#ic-twitter"></use>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon"  target="_blank">
+                    <svg>
+                        <use xlink:href="#ic-tumbler"></use>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon"  target="_blank">
+                    <svg>
+                        <use xlink:href="#ic-instagram"></use>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon"  target="_blank">
+                    <svg>
+                        <use xlink:href="#ic-fb"></use>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
 </div>
-
+<script>
+    var revision = 300917;    // версия спрайта (текущая дата)
+</script>
 <link async href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;subset=cyrillic-ext" rel="stylesheet">
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/develop.css">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
 <script>
+    (function ($) {
+        $.fn.bindImageLoad = function (callback) {
+            function isImageLoaded(img) {
+                // Во время события load IE и другие браузеры правильно
+                // определяют состояние картинки через атрибут complete.
+                // Исключение составляют Gecko-based браузеры.
+                if (!img.complete) {
+                    return false;
+                }
+                // Тем не менее, у них есть два очень полезных свойства: naturalWidth и naturalHeight.
+                // Они дают истинный размер изображения. Если какртинка еще не загрузилась,
+                // то они должны быть равны нулю.
+                if (typeof img.naturalWidth !== "undefined" && img.naturalWidth === 0) {
+                    return false;
+                }
+                // Картинка загружена.
+                return true;
+            }
+
+            return this.each(function () {
+                var ele = $(this);
+                if (ele.is("img") && $.isFunction(callback)) {
+                    ele.one("load", callback);
+                    if (isImageLoaded(this)) {
+                        ele.trigger("load");
+                    }
+                }
+            });
+        };
+    })(jQuery);
     $(document).ready(function () {
-        setTimeout(function () {$('.ztvor__right').addClass('animate'); },1000);
-        setTimeout(function () {$('.ztvor__left').addClass('animate'); },1200);
-        setTimeout(function () {$('.ztvor__downtext').addClass('animate'); },1800);
+        $("img.big").bindImageLoad(function () {
+            setTimeout(function () {$('.ztvor__right').addClass('animate'); },1000);
+            setTimeout(function () {$('.ztvor__left').addClass('animate'); },1200);
+            setTimeout(function () {$('.ztvor__downtext').addClass('animate'); },1800);
+        });
+
     });
+
+    (function(window, document) {
+        'use strict';
+        var file = 'images/sprite.svg'; // путь к файлу спрайта на сервере
+
+        if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) return true;
+        var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+            request,
+            data,
+            insertIT = function() {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            },
+            insert = function() {
+                if (document.body) insertIT();
+                else document.addEventListener('DOMContentLoaded', insertIT);
+            };
+        if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
+            data = localStorage.getItem('inlineSVGdata');
+            if (data) {
+                insert();
+                return true;
+            }
+        }
+        try {
+            request = new XMLHttpRequest();
+            request.open('GET', file, true);
+            request.onload = function() {
+                if (request.status >= 200 && request.status < 400) {
+                    data = request.responseText;
+                    insert();
+                    if (isLocalStorage) {
+                        localStorage.setItem('inlineSVGdata', data);
+                        localStorage.setItem('inlineSVGrev', revision);
+                    }
+
+                }
+            }
+            request.send();
+        } catch (e) {}
+    }(window, document));
 </script>
 </body>
 </html>
