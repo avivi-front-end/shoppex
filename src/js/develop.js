@@ -581,7 +581,8 @@ function adresspageRedact() {
 
 }
 function allTumblerLogic(){
-    $(document).on('change', '.js-all-tumbler input', function () {
+    $(document).on('change', '.js-all-tumbler input', function (event) {
+        event.stopPropagation();
         var prop = $(this).prop('checked');
         var group = $(this).closest('.js-all-tumbler-group').find('.js-switch:not(.js-all-tumbler) input');
         group.each(function () {
@@ -700,7 +701,8 @@ function dataToolTips() {
 function acordeon() {
     var items = $('.jsfaq-accord-butt');
     if (items.length > 0){
-        $(document).on('click','.jsfaq-accord-butt', function () {
+        $(document).on('click','.jsfaq-accord-butt', function (e) {
+
             var container = $(this).closest('.jsfaq-accord');
             var box = container.find('.jsfaq-accord-box');
             if(container.hasClass('active')){
@@ -713,7 +715,7 @@ function acordeon() {
                 box.stop().slideDown();
             }
 
-
+            e.preventBubble();
 
         })
     }

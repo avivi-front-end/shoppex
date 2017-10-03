@@ -10,19 +10,19 @@
             <div class="form_row popup__row">
                 <span>e-mail:</span>
                 <div class="form_input">
-                    <input type="text" name="contact_name" required="required" value="">
+                    <input type="text" name="email" required="required"  class="validate-email" value="">
                 </div>
             </div>
             <div class="form_row popup__row">
                 <span>Пароль:</span>
                 <div class="form_input">
-                    <input type="password"  name="pass" value="" required="required">
+                    <input type="password"  name="password" value="" required="required">
                 </div>
             </div>
             <div class="form_row popup__row">
                 <span>Повторить пароль:</span>
                 <div class="form_input">
-                    <input type="password"  name="repass" value="" required="required">
+                    <input type="password"  name="repassword" value="" required="required">
                 </div>
             </div>
             <div class="form_row popup__row">
@@ -37,8 +37,8 @@
                     </select>
                 </div>
             </div>
-            <div class="popup__row">
-                <p><label class="styled"><input type="checkbox" required="required"><i></i>Я ознакомлен и согласен с </label><a href="#">Условиями сервиса</a></p>
+            <div class="popup__row form_row">
+                <p><label class="styled form_input"><input type="checkbox" name="agree" id="agree" checked required="required"><i></i>Я ознакомлен и согласен с </label><a href="#">Условиями сервиса</a></p>
             </div>
             <button type="submit" class="button">
                 <span>создать личный кабинет</span>

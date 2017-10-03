@@ -1,7 +1,7 @@
 .for-tabs-hidden-block,
 .hidden-block{position:absolute;left:-99999em;top:-99999em;}
 *,*:before, *:after{box-sizing:border-box;outline:none;}
-*,body,html{-webkit-text-size-adjust: none;-webkit-appearance: none;max-height: 9001em;}
+*,body,html{-webkit-text-size-adjust: none;-webkit-appearance: none;max-height: 9001em; opacity: 1;}
 html{height:100%;}
 body{min-height:100%;width:100%;min-width:320px;font-family: 'Roboto', sans-serif;background-color: #efefef;color:#69758b;position:relative;font-size: 14px;line-height: 1.286; font-weight: 300;}
 img{vertical-align:bottom;border:0;max-width:100%;}
@@ -454,7 +454,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
         p{ margin: 17px 0 0; font-weight: 300; font-size: 24px;line-height: 1.2;}
     }
 }
-.form_input{ width: 260px;
+.form_input{ width: 260px; position: relative;
     input{ width: 100%; height: 37px; line-height: 37px; color: #000; border: 1px solid #cbcfd5; padding-left: 20px; font-weight: 400;}
     select{ width: 100%;}
     .jq-selectbox{ width: 100%;}
@@ -466,8 +466,8 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
     .jq-selectbox ul{max-height: 145px; }
     .jq-selectbox ul li{ padding-right: 20px; text-align: left;}
 }
-.styled{ font-weight: 400; cursor: pointer;
-    input[type=checkbox]{ display: none;}
+.styled{ font-weight: 400; cursor: pointer; position: relative;
+    input[type=checkbox]{ opacity: 0; position: absolute; left: 0; top: 0;}
     input[type=checkbox] + i{flex-shrink: 0; display: inline-block; width: 22px; height: 22px;border: 1px solid #cbcfd5; position: relative; vertical-align: middle; margin-right: 10px;
         &:before{content: ''; width: 14px; height: 7px; background: transparent; border-left:2px solid #40434e; border-bottom:2px solid #40434e; transform: rotate(-45deg);  position: absolute; top: 3px; left: 3px; display: none;}
     }
@@ -1106,6 +1106,7 @@ a.lk-ballancer__drop-title{
     &__socclose{ position: absolute; right: 15px; display: none; top: 22px;
         svg{ width: 25px; height: 25px;}
     }
+    &__mob-but{display: none;}
 }
 .exit{background-color: #efefef; padding-top: 21px; padding-bottom: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center;min-height: calc(100vh - 522px);
     &__inner{margin: 30px 15px; max-width: 430px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -1704,7 +1705,7 @@ object{ display: inline-block;}
     .fancybox-close-small { top: 21px; right: 8px; }
     .itemhover__spec-item svg{ width: 22px; height: 22px;}
 }
-
+.errorText{color:red; position: absolute; top: 100%; font-size: 12px;   }
 //header and footer --- ↓↓↓↓↓↓
     @media screen and (max-width: 1160px){
         .header__search{ width: 320px;}
@@ -2165,8 +2166,36 @@ object{ display: inline-block;}
     }
 //ztvor page ------------↑↑↑↑↑↑↑↑↑
 //lk-settings page ----------- ↓↓↓↓↓↓↓↓↓
-    @media screen and (max-width: 1024px){
-
+    @media screen and (max-width: 610px){
+        .settings__mob-warp{ margin-bottom: 4px; position: relative; cursor: pointer;
+            &:before{content: ''; width: 8px; height: 8px; background-color: transparent; border-top:1px solid #fff; border-left:1px solid #fff; position: absolute; left: 16px; top: 9px; transform:rotate(-135deg);}
+            &.active:before{transform:rotate(45deg); top: 13px;}
+            .lk-card__thead{ padding:0 15px 0 38px;}
+            .settings__group{
+                &.jsfaq-accord-box{ display: none;}
+                .lk-card__thead{ display: none;}
+            }
+        }
+        .settings__mob-but{ display: block;}
+        .neworder__submit.settings__row--sb{ flex-direction: column-reverse;
+            .settings__row{flex-direction: column-reverse;}
+            .neworder__cancel{ margin-top: 12px; margin-right: 0;}
+        }
+        .settings__social{ margin-top: 4px; margin-bottom: 4px;}
+        .settings__row.settings__row--sb.settings__row--email{ flex-direction: column; padding: 17px 0px 8px;
+            .settings__cell{ width: 100%;}
+            .settings__cell--big{ margin-bottom: 15px;}
+        }
+        .settings__row.settings__row--labled{ flex-direction: column; align-items: flex-start;padding: 14px 0 0;
+            label{ margin-right: 0; margin-bottom: 17px;}
+        }
     }
-
 //lk-settings page ------------↑↑↑↑↑↑↑↑↑
+//calculator page ----------- ↓↓↓↓↓↓↓↓↓
+    @media screen and (max-width: 1100px){
+        .calculator{
+            &__boxrow{flex-wrap: wrap;}
+            &__cell--start{ width: 100%;}
+        }
+    }
+//calculator page ------------↑↑↑↑↑↑↑↑↑
