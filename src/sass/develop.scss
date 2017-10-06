@@ -55,6 +55,52 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
         &:before{ counter-increment: herman; content: counter(herman); width: 20px; height: 20px; background-color: #40434e; color: #fff; font-weight: 500; font-size: 12px; line-height: 20px; text-align: center; display: inline-block; margin-right: 16px;}
     }
 }
+.js-input{ position: relative;
+    &--checkbox{
+        .error-placement{
+            .js-notvalid,
+            .js-valid{ right: -20px; top: 3px;}
+        }
+        .error-placement-text{ top: 30px;
+            &:before{ left: 4px; right: auto; top: -12px;}
+        }
+    }
+    &--select{
+        .error-placement{
+            .js-notvalid,
+            .js-valid{ right: -5px;}
+        }
+
+    }
+    &-pass{
+        .error-placement{
+            .js-notvalid,
+            .js-valid{ right: 10px;}
+        }
+
+    }
+}
+.error-placement{ position: absolute; width: 100%; top: 0; left: 0;  cursor: pointer; z-index: 99999;
+    svg{ width: 15px; height: 15px;}
+    .js-notvalid,
+    .js-valid{ display: none; position: absolute; right: 9px; top: 11px;}
+}
+.error-placement-text{ position: absolute; width: 100%; right: 0; top:44px; background: #ff3030; z-index: 999; color: #fff; font-weight: 300; font-size: 13px; padding: 7px 10px;box-shadow: 0px 2px 16px 0px rgba(255, 48, 48, 0.57); display: none; min-width: 100px;
+    &:before{ right: 10px; top: -12px; content: ''; border-style: solid; border-color:transparent transparent #ff3030 transparent; border-width: 6px; position: absolute; width: 0; height: 0; }
+}
+.valid{
+    .js-valid{ display: block;}
+    .styled input[type=checkbox] + i{border-color: #3ed12f;}
+    .editinfo__select .jq-selectbox__select{border-color: #3ed12f;}
+    .editinfo__select .jq-selectbox.focused .jq-selectbox__select{border-color: #3ed12f;}
+}
+.error{
+    .error-placement:hover .error-placement-text{ display: block;}
+    .js-notvalid{ display: block;}
+    .styled input[type=checkbox] + i{border-color: #ff3030;}
+    .editinfo__select .jq-selectbox__select{border-color: #ff3030;}
+    .editinfo__select .jq-selectbox.focused .jq-selectbox__select{border-color: #ff3030;}
+}
 .flex-none {
     flex: none;
 }
@@ -454,8 +500,14 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
         p{ margin: 17px 0 0; font-weight: 300; font-size: 24px;line-height: 1.2;}
     }
 }
-.form_input{ width: 260px; position: relative;
+.form_input{ width: 260px;
     input{ width: 100%; height: 37px; line-height: 37px; color: #000; border: 1px solid #cbcfd5; padding-left: 20px; font-weight: 400;}
+    &.error{
+        input{border-color: #ff3030;}
+    }
+    &.valid{
+        input{border-color: #3ed12f;}
+    }
     select{ width: 100%;}
     .jq-selectbox{ width: 100%;}
     .jq-selectbox__select{background: transparent; border: 1px solid #cbcfd5; border-radius: 0; height: 37px; line-height: 37px;text-shadow: none; box-shadow: none;}
@@ -799,8 +851,12 @@ a.lk-ballancer__drop-title{
         }
         &--norequired{
             input{ border: 1px solid #cbcfd5;}
+            &.valid{
+                &.neworder__input:before{ display: none;}
+                input.valid{ border: 1px solid #cbcfd5;}
+            }
         }
-        &.error:before{content:''; background-image: url(../images/error.svg); width: 15px; height: 15px; display: block; position: absolute; right: 9px; top: 11px;}
+
         &.valid:before{content:''; background-image: url(../images/valid.svg); width: 15px; height: 15px; display: block; position: absolute; right: 9px; top: 11px;}
 
     }

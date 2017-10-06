@@ -7,27 +7,27 @@
             <h3>Регистрация</h3>
         </div>
         <form action="ajax.php" class="popup__form">
-            <div class="form_row popup__row">
+            <div class=" popup__row">
                 <span>e-mail:</span>
-                <div class="form_input">
-                    <input type="text" name="email" required="required"  class="validate-email" value="">
+                <div class="form_input js-input">
+                    <input type="text" name="email" required="required" value="">
                 </div>
             </div>
-            <div class="form_row popup__row">
+            <div class="popup__row">
                 <span>Пароль:</span>
-                <div class="form_input">
+                <div class="form_input js-input">
                     <input type="password"  name="password" value="" required="required">
                 </div>
             </div>
-            <div class="form_row popup__row">
+            <div class="popup__row">
                 <span>Повторить пароль:</span>
-                <div class="form_input">
+                <div class="form_input js-input">
                     <input type="password"  name="repassword" value="" required="required">
                 </div>
             </div>
-            <div class="form_row popup__row">
+            <div class="popup__row">
                 <span>Страна:</span>
-                <div class="form_input">
+                <div class="form_input js-input">
                     <select name="">
                         <option value="1">Mordor</option>
                         <option value="1">Moria</option>
@@ -37,8 +37,8 @@
                     </select>
                 </div>
             </div>
-            <div class="popup__row form_row">
-                <p><label class="styled form_input"><input type="checkbox" name="agree" id="agree" checked required="required"><i></i>Я ознакомлен и согласен с </label><a href="#">Условиями сервиса</a></p>
+            <div class="popup__row">
+                <p class="js-input js-input--checkbox"><label class="styled"><input type="checkbox" name="agree"   required="required"><i></i>Я ознакомлен и согласен с </label><a href="#">Условиями сервиса</a></p>
             </div>
             <button type="submit" class="button">
                 <span>создать личный кабинет</span>
@@ -64,16 +64,16 @@
             <h3>Войти в кабинет</h3>
         </div>
         <form action="ajax.php" class="popup__form">
-            <div class="form_row popup__row">
+            <div class="popup__row">
                 <span>e-mail:</span>
-                <div class="form_input">
-                    <input type="text" name="contact_name" required="required" value="">
+                <div class="form_input js-input">
+                    <input type="text" name="email" required="required"  value="">
                 </div>
             </div>
-            <div class="form_row popup__row">
+            <div class="popup__row">
                 <span>Пароль:</span>
-                <div class="form_input">
-                    <input type="password"  name="pass" value="" required="required">
+                <div class="form_input js-input">
+                    <input type="password"  name="password" value="" required="required">
                 </div>
             </div>
             <div class="popup__row">
