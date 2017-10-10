@@ -163,7 +163,6 @@ function checkDay(i) {
         localStorage.setItem('currentday', json.clock.days[i]);
     });
 }
-
 function tabs(){
     var init = $('.js-tab-but.active');
     if (init.length > 0){
@@ -290,7 +289,13 @@ function inputNumber() {
     $(document).on('keypress', 'input[name$="[price]"]', function (evt) {
         var charCode = (evt.which) ? evt.which : evt.keyCode;
         if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) return false;
+        var price = $(this).val().replace(/,/, '.');
+        $(this).val(price);
         return true;
+    });
+    $(document).on('focusout', 'input[name$="[price]"]', function (evt) {
+        var price = $(this).val().replace(/,/, '.');
+        $(this).val(price);
     });
     $(document).on('keyup', 'input[name$="[price]"], input[name$="[count]"]', function () {
         calculetAllOrders();
@@ -312,7 +317,6 @@ function chexkForDelItem(){
         $('.js-delete-item').addClass('disabled');
     }
 }
-/* scripts for add new item    END*/
 function autosumDopService(){
     $(document).on('change', '.js-for-autosum input[type=checkbox]', function () {
         var total = 0;
@@ -384,7 +388,7 @@ function trackLogick() {
         }
     });
     $(document).on('click', '.js-track-checkbox', function () {
-        console.log($(this).prop('checked'));
+
         if($(this).prop('checked') != true){
             $('.js-track-checkbox').prop('checked', false);
             $('.js-track-input').closest('.neworder__desccell').removeClass('disabled');
@@ -393,7 +397,8 @@ function trackLogick() {
             $('.js-track-checkbox').prop('checked', false);
             $(this).prop('checked', true);
             $('.js-track-input').closest('.neworder__desccell').addClass('disabled');
-            $('.js-track-input').removeAttr('required');
+            $('.js-track-input').removeAttr('required').attr('aria-invalid','false').removeClass('error');
+            $('.js-track-input').closest('.js-input').removeClass('error valid').find('.error-placement').remove();
             $('.js-track-input').val('');
 
         }
@@ -466,6 +471,7 @@ function delFileFromInput() {
         $(this).closest('.chat__uploaded').remove();
     });
 }
+/* scripts for add new item    END*/
 function lkRadioLogic() {
     var inpt = $('.js-check-for-show');
     if(inpt.length > 0){
@@ -511,8 +517,8 @@ function lkRadioLogic() {
     }
 }
 function maskedInput(){
-    if($('.tel-mask')){  $('.tel-mask').mask('+38(999) 999-99-99 '); }
-    if($('.tel-mask-ru')){  $('.tel-mask-ru').mask('+7(999) 999-99-99 '); }
+    if($('.tel-mask')){  $('.tel-mask').mask('+38(999) 999-99-99'); }
+    if($('.tel-mask-ru')){  $('.tel-mask-ru').mask('+7(999) 999-99-99'); }
 }
 function copyToClipboard() {
     $(document).on('click', '.js-cc-btn', function() {
@@ -776,11 +782,54 @@ function catalogPopups() {
         })
     });
 }
+(function(window, document) {
+    'use strict';
+    var file = 'images/sprite.svg'; // путь к файлу спрайта на сервере
+
+    if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) return true;
+    var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
+        request,
+        data,
+        insertIT = function() {
+            document.body.insertAdjacentHTML('afterbegin', data);
+        },
+        insert = function() {
+            if (document.body) insertIT();
+            else document.addEventListener('DOMContentLoaded', insertIT);
+        };
+    if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
+        data = localStorage.getItem('inlineSVGdata');
+        if (data) {
+            insert();
+            return true;
+        }
+    }
+    try {
+        request = new XMLHttpRequest();
+        request.open('GET', file, true);
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400) {
+                data = request.responseText;
+                insert();
+                if (isLocalStorage) {
+                    localStorage.setItem('inlineSVGdata', data);
+                    localStorage.setItem('inlineSVGrev', revision);
+                }
+
+            }
+        }
+        request.send();
+    } catch (e) {}
+}(window, document));
+
 $(document).ready(function () {
     acordeon();
     catalogPopups();
     shops__popups();
     chatScroll();
+    $(document).on('copy paste', '.select2-search__field',function(e){
+        e.preventDefault();
+    });
     $(document).on('change', '.js-input-file input',function(){
         readURL(this);
     });
@@ -839,42 +888,3 @@ function debounce(func, wait, immediate) {
     };
 };
 
-(function(window, document) {
-    'use strict';
-    var file = 'images/sprite.svg'; // путь к файлу спрайта на сервере
-
-    if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect) return true;
-    var isLocalStorage = 'localStorage' in window && window['localStorage'] !== null,
-        request,
-        data,
-        insertIT = function() {
-            document.body.insertAdjacentHTML('afterbegin', data);
-        },
-        insert = function() {
-            if (document.body) insertIT();
-            else document.addEventListener('DOMContentLoaded', insertIT);
-        };
-    if (isLocalStorage && localStorage.getItem('inlineSVGrev') == revision) {
-        data = localStorage.getItem('inlineSVGdata');
-        if (data) {
-            insert();
-            return true;
-        }
-    }
-    try {
-        request = new XMLHttpRequest();
-        request.open('GET', file, true);
-        request.onload = function() {
-            if (request.status >= 200 && request.status < 400) {
-                data = request.responseText;
-                insert();
-                if (isLocalStorage) {
-                    localStorage.setItem('inlineSVGdata', data);
-                    localStorage.setItem('inlineSVGrev', revision);
-                }
-
-            }
-        }
-        request.send();
-    } catch (e) {}
-}(window, document));

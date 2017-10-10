@@ -12,16 +12,16 @@
                     //= partials/left-menu.html
                     <!--left -menu end-->
                     <div class="lk-scelet__right">
-                        <form action="" class="neworder">
+                        <form action="ajax.php" class="neworder" id="neworder">
                             <div class="title title--first">
                                 <h1>Создать заказ</h1>
                             </div>
                             <div class="neworder__wraper">
                                 <div class="lk-card">
                                     <div class="lk-card__left">
-                                        <div class="lk-card__black-t neworder__title-input">
+                                        <div class="lk-card__black-t neworder__title-input js-input">
                                             <label>
-                                                <input type="text" class="js-placeholder">
+                                                <input type="text" class="js-placeholder" name="itemname">
                                                 <span class="placeholder">Введите название посылки<b>*</b></span>
                                             </label>
                                         </div>
@@ -36,8 +36,8 @@
                                                 <div class="neworder__desccol swapthis">
                                                     <div class="neworder__desccell">
                                                         <div class="neworder__title"><span>Интернет-магазин:<b>*</b></span></div>
-                                                        <div class="neworder__input js-select2-init">
-                                                            <select name="" id="" data-placeholder="Введите название магазина">
+                                                        <div class="neworder__input js-select2-init js-input">
+                                                            <select name="" id="" data-placeholder="Введите название магазина" required="required">
                                                                 <option></option>
                                                                 <option>orange</option>
                                                                 <option>white</option>
@@ -47,8 +47,8 @@
                                                     </div>
                                                     <div class="neworder__desccell">
                                                         <div class="neworder__title"><span>Трек номер:<b>*</b></span></div>
-                                                        <div class="neworder__input">
-                                                            <input type="text" placeholder="Введите трек-номер" name="order_track" required="required" class="js-track-input">
+                                                        <div class="neworder__input js-input">
+                                                            <input type="text" placeholder="Введите трек-номер" name="tracknumber" required="required" class="js-track-input">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -102,8 +102,7 @@
                                                         </div>
                                                         <div class="neworder__tcell neworder__tcell-mobile">
                                                             <div class="neworder__title"><span>Наименование товара<b>*</b></span></div>
-
-                                                            <div class="neworder__input js-select2-init js-noinit">
+                                                            <div class="neworder__input js-select2-init js-noinit js-input">
                                                                 <select name="order[0][name]"  data-placeholder="Введите товар" class="etalonn">
                                                                     <option></option>
                                                                     <option>orange</option>
@@ -114,8 +113,8 @@
                                                         </div>
                                                         <div class="neworder__tcell neworder__tcell--url neworder__tcell-mobile">
                                                             <div class="neworder__title"><span>Ссылка на товар<b>*</b></span></div>
-                                                            <div class="neworder__input">
-                                                                <input type="text" placeholder="Введите ссылку" name="order[0][url]" required="required">
+                                                            <div class="neworder__input js-input">
+                                                                <input type="text" placeholder="Введите ссылку" name="order[0][url]">
                                                             </div>
                                                         </div>
                                                         <div class="neworder__tcell neworder__tcell--count neworder__tcell-mobile">
@@ -126,7 +125,7 @@
                                                                         <use xlink:href="#inminus"></use>
                                                                     </svg>
                                                                 </div>
-                                                                <input type="text" placeholder="" name="order[0][count]" value="1" maxlength="2" required="required">
+                                                                <input type="text" placeholder="" name="order[0][count]" value="1" maxlength="2">
                                                                 <div class="js-number-plus">
                                                                     <svg  width="8px" height="8px">
                                                                         <use xlink:href="#inplus"></use>
@@ -137,7 +136,7 @@
                                                         <div class="neworder__tcell neworder__tcell--price neworder__tcell-mobile">
                                                             <div class="neworder__title"><span>Цена, $<b>*</b></span></div>
                                                             <div class="neworder__input neworder__input--center">
-                                                                <input type="text" placeholder="" name="order[0][price]" maxlength="7" required="required">
+                                                                <input type="text" placeholder="" name="order[0][price]" maxlength="7" >
                                                             </div>
                                                         </div>
                                                         <div class="neworder__tcell neworder__tcell--by neworder__tcell-mobile">
@@ -158,8 +157,8 @@
                                                     </div>
                                                     <div class="neworder__tcell neworder__tcell-mobile">
                                                         <div class="neworder__title"><span>Наименование товара<b>*</b></span></div>
-                                                        <div class="neworder__input js-select2-init">
-                                                            <select name="order[0][name]"  data-placeholder="Введите товар">
+                                                        <div class="neworder__input js-select2-init js-input">
+                                                            <select name="order[0][name]"  data-placeholder="Введите товар" required="required">
                                                                 <option></option>
                                                                 <option>orange</option>
                                                                 <option>white</option>
@@ -169,7 +168,7 @@
                                                     </div>
                                                     <div class="neworder__tcell neworder__tcell--url neworder__tcell-mobile">
                                                         <div class="neworder__title"><span>Ссылка на товар<b>*</b></span></div>
-                                                        <div class="neworder__input">
+                                                        <div class="neworder__input js-input">
                                                             <input type="text" placeholder="Введите ссылку" name="order[0][url]" required="required">
                                                         </div>
                                                     </div>
@@ -221,9 +220,9 @@
                                                     <div class="lk-card__tcell js-total-percent" data-percent="32">0</div>
                                                 </div>
                                             </div>
-                                            <div class="neworder__descrow neworder__descrow--one">
+                                            <div class="neworder__descrow neworder__descrow--one js-input">
                                                 <label class="styled styled--flex js-after-calculate disabled">
-                                                    <input type="checkbox" name="order_acept"><i></i><span>Я проинформирован о том, что необходимо будет оплатить таможенные платежи, согласно законодательству<b>*</b></span>
+                                                    <input type="checkbox" name="agree" required="required"><i></i><span>Я проинформирован о том, что необходимо будет оплатить таможенные платежи, согласно законодательству<b>*</b></span>
                                                 </label>
                                             </div>
                                             <div class="lk-card__table neworder__table">

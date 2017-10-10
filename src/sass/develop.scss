@@ -93,14 +93,17 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
     .styled input[type=checkbox] + i{border-color: #3ed12f;}
     .editinfo__select .jq-selectbox__select{border-color: #3ed12f;}
     .editinfo__select .jq-selectbox.focused .jq-selectbox__select{border-color: #3ed12f;}
+    .select2-container--default .select2-selection--single{border-color: #3ed12f;}
 }
 .error{
     .error-placement:hover .error-placement-text{ display: block;}
     .js-notvalid{ display: block;}
     .styled input[type=checkbox] + i{border-color: #ff3030;}
+    .select2-container--default .select2-selection--single{border-color: #ff3030;}
     .editinfo__select .jq-selectbox__select{border-color: #ff3030;}
     .editinfo__select .jq-selectbox.focused .jq-selectbox__select{border-color: #ff3030;}
 }
+.disabled .neworder__input.valid:before{ display: none;}
 .flex-none {
     flex: none;
 }
@@ -798,7 +801,10 @@ a.lk-ballancer__drop-title{
         .description__row:first-child .description__info p:first-child{ margin-bottom: 10px;}
     }
     &__info{ margin-bottom: 10px;
-        &--img{ vertical-align: middle; margin-right: 8px;  height: 20px; display: inline-flex; justify-content: flex-start; align-items: center;}
+        &--img{ vertical-align: middle; margin-right: 8px;  height: 20px; display: inline-flex; justify-content: flex-start; align-items: center;
+            &.sprite-status svg{ width: 17px; height: 16px; fill:#40434e;}
+        }
+        span{ vertical-align: middle;}
         svg{ vertical-align: middle;}
         p{ margin: 0; text-transform: uppercase; color: #40434e; font-size: 13px; font-weight: 700; min-height: 16px;
             &:first-child{ color: #69758b; text-transform: initial; font-weight: 300;    letter-spacing: 0.7px; margin-bottom: 6px; min-height: 13px;  }
@@ -809,7 +815,8 @@ a.lk-ballancer__drop-title{
     }
     &__timeline{ background-color: #f3f3f3; width: 100%; height: 14px; position: relative; margin: 12px 0;
         span{ position: absolute; height: 100%; left: 0; top: 0; min-width: 24px; background: repeating-linear-gradient(-45deg, #5fc9d9 0px, #5fc9d9 2px, #74d2df 2px, #74d2df 5px );}
-        i{ width: 24px; height: 24px; right: 0; background-color: #40434e; position: absolute; top: -5px; display: flex; justify-content: center; align-items: center;}
+        i{ width: 25px; height: 24px; right: 0; background-color: #40434e; position: absolute; top: -5px; display: flex; justify-content: center; align-items: center;}
+        svg{ width: 17px; height: 16px; fill:#fff;}
     }
     &__href{ display: flex; justify-content: flex-start; align-items: center;  }
 
@@ -1702,6 +1709,7 @@ object{ display: inline-block;}
         a{ display: flex; justify-content: flex-start; align-items: center;}
     }
     &__user-butt{ display: none; padding: 4px; margin-top: 4px;}
+    &__enter-butt{ margin-top: 4px;}
     &__search{ display: none; cursor: pointer;width: 30px; height: 30px;  justify-content: center; align-items: center; position: relative;
         i{ height: 18px;}
         &.active{
@@ -1872,15 +1880,22 @@ object{ display: inline-block;}
     .lk-menu__butter-wrap{ display: flex; flex-grow: 1; padding-left: 15px; min-height: 60px; cursor: pointer;}
     .lk-scelet__wrap{ flex-wrap: wrap;}
     .lk-scelet{ padding-top: 0;}
-    .lk-scelet__left{ width: calc(100% + 30px); display: flex; justify-content: space-between; align-items: stretch; margin: 0 -15px 15px; position: relative; z-index: 100;}
+    .lk-scelet__left{ width: calc(100% + 30px); display: flex; justify-content: space-between; align-items: stretch; margin: 0 -15px 15px; position: relative; z-index: 999999;}
     .lk-scelet__right{ width: 100%; padding-left: 0;}
     .lk-ballancer{ width: 263px; margin-bottom: 0; margin-right: 1px; margin-left: 1px; flex-shrink: 0;}
-    .lk-menu{ display: none; position: absolute; left: 0; top: 100%; z-index: 200;}
+    .lk-menu{ display: none; position: absolute; left: 0; top: 100%; z-index: 200;  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);}
     .lk-menu__mob-button{  background-color: #fff; padding: 10px 15px; flex-grow: 1; display: flex; justify-content: center; align-items: center;
         .button{ width: 100%;}
     }
     .lk-menu__button{ display: none;}
     .lk-paginator{ margin-top: 24px;}
+}
+.test-for-status{ display: flex; justify-content: flex-start; align-items: flex-start;
+    svg{ width: 17px; height: 16px;}
+    ul{ margin: 0; padding: 0;}
+    li{ height: 30px; display: block; margin: 0;
+        i{ position: relative;}
+    }
 }
     @media screen and (max-width: 890px){
     .description__wrap{ flex-direction: column;}
