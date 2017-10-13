@@ -44,6 +44,7 @@ var validationMessages = {
     tracknumber:{required:"Вы пропустили", maxlength: "превышает 200", tracknumber:"латиница и цифры"}
 }
 function validation(form,options) {
+    var valic;
     var setings = {
         submitFunction:null,
     };
@@ -53,7 +54,7 @@ function validation(form,options) {
         $form.on('submit', function (e) {
             e.preventDefault();
         });
-        $form.validate({
+        valic = $form.validate({
             rules:{
                 email:{
                     required: true,
@@ -138,6 +139,19 @@ function validation(form,options) {
             }
         });
     }
+    // var s2 = $(form).find('.js-select2-init select:not(.etalonn)');
+    // s2.each(function () {
+    //     var target = this;
+    //     console.log(target);
+    //     var observer = new MutationObserver(function(mutations) {
+    //         mutations.forEach(function(mutation) {
+    //             console.log(mutation);
+    //            $(target).trigger('blur');
+    //         });
+    //     });
+    //     var config = { attributes: true, childList: true, characterData: true }
+    //     observer.observe(target, config);
+    // });
 
 }
 $.validator.methods.email = function( value, element ) {

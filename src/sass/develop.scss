@@ -14,6 +14,7 @@ input, textarea{
     &::-moz-placeholder          { font-weight: 300; color: #69758b; font-size: 14px;}
     &:-ms-input-placeholder      { font-weight: 300; color: #69758b; font-size: 14px;}
 }
+textarea{ padding: 10px;}
 a{ cursor: pointer;}
 .global-wrapper{display: flex; flex-direction: column; min-height: 100vh;}
 .main{ flex:1; position: relative;}
@@ -114,7 +115,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
 .header{ background-color: #40434e; position: relative; z-index: 200;
     &__wrap{ height: 95px; display: flex; justify-content: space-between; align-items: center; padding-top: 1px;}
     &__left{ display: flex; justify-content: space-between; align-items: center;width: 277px;}
-    &__right{ display: flex; justify-content: space-between; align-items: center;width: 380px; margin-left: 9px;}
+    &__right{ display: flex; justify-content: space-between; align-items: center;width: 380px; margin-left: 17px;}
     &__logo{width: 195px; margin-right: 8px;
         a{display: block;}
     }
@@ -176,13 +177,13 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
     }
     &__item{ text-transform: uppercase; font-weight: 700; color: #fff; font-size: 14px; display: inline-flex; justify-content: flex-start; align-items: flex-start; text-decoration: none; cursor: pointer; white-space: nowrap;
         img{ margin-right: 10px; margin-top: 2px;}
-        span{ margin-top: 3px;}
+        span{ margin-top: 1px;}
         .header__count{ margin-top: -1px;}
         &.active{
             .header__arrow:before{ transform: rotate(225deg); top: 8px; }
         }
     }
-    &__count{ display: inline-flex; height: 21px; font-weight: 700; color: #40434e; background-color: #ffde00; justify-content: flex-start; align-items: center; position: relative; margin-left: 17px; padding: 0 4px;
+    &__count{ display: inline-flex; height: 21px; font-weight: 700; color: #40434e; background-color: #ffde00; justify-content: flex-start; align-items: center; position: relative; margin-left: 9px; padding: 0 4px;
         &:before{content:''; border:4px solid transparent; border-right:4px solid #ffde00; position: absolute; width: 0; height: 0; right: 100%; top: 6px;}
     }
     &__dropdown{ padding: 11px 15px 14px; margin: 0; list-style-type: none; position: absolute; background-color: #fff; right: 0; box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.26);top: calc(100% + 8px); min-width: 194px; display: none;
@@ -321,7 +322,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
 }
 .sale{ background-color: #efefef;
     h3{ background-color: #efefef;}
-    &__content{ margin-bottom: 0; display: flex; flex-wrap: wrap;  }
+    &__content{ margin-bottom: 0;}
     &__content-mbox{max-width: 1200px; width: 100%;  margin: 0 auto;  position: relative; z-index: 1; padding: 0 15px 0 22px; }
     &__item{ width: 165px; height: 216px; overflow: hidden; position: relative; box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.26); margin: 0 10px 10px;
         &>img{object-fit: cover; width: 100%; height: 100%;}
@@ -331,7 +332,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
             }
         }
     }
-    &__slide{ }
+    &__slide{}
     &__brand{ position: absolute; width: 100%; height: 56px; background-color: #fff; display: flex; justify-content: center; align-items: center; bottom: 0; left: 0; z-index: 10; transform:translateZ(10px);
         img{ max-width: 100px;}
     }
@@ -388,14 +389,14 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
     &__decor{ width: 68px; height: 2px; background-color: #e6e8eb; display: inline-block; position: relative; margin: 4px 0 10px;
         &:before{ width: 38px; height: 4px; position: absolute; content: ''; left: 0; top: 0; bottom: 0; right: 0; margin:auto; background-color: #ffc800;}
     }
-    &__spec-wrap{position: absolute; top: -3px; left: -3px; display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; height: 100%; width: 100%; padding: 9px;}
+    &__spec-wrap{position: absolute; top: -3px; left: -3px; display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; height: 100%; width: 100%; padding: 9px 5px;}
     &__spec{ display: block; margin: 3px;
         &:hover{
              .shops__spechover{ opacity: 1; z-index: 10;}
         }
     }
-    &__icon{ width: 25px; height: 25px;}
-    &__spechover{ position: absolute; top: 0; left:0; background-color: rgba(64,67,78,0.87); width: calc(100% + 6px); height: calc(100% + 6px); z-index: -1; padding: 0 14px; opacity: 0;
+    &__icon{ width: 25px; height: 25px; position: relative; z-index: 20;}
+    &__spechover{ position: absolute; top: 0; left:0; background-color: rgba(64,67,78,0.87); width: calc(100% + 6px); height: calc(100% + 6px); z-index: -1; padding: 0 14px 0 35px; opacity: 0;
         h6 { font-size: 13px; font-weight: 700; text-transform: uppercase; margin: 0; color: #ffc800; text-align: center; line-height: 1.2; padding: 12px 0 10px;
         }
         i{ font-weight: 300; font-size: 11px; color: #fff; text-align: center; font-style: normal;}
@@ -693,11 +694,11 @@ a.lk-ballancer__drop-title{
         }
     }
 }
-.lk-card{ width: 100%; display: flex; justify-content: space-between; align-items: flex-start; background-color: #fff; box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13); margin-bottom: 12px;
+.lk-card{ width: 100%; display: flex; justify-content: space-between; align-items: stretch; background-color: #fff; box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13); margin-bottom: 12px;
     &__left{width: calc(100% - 278px);
         .lk-card__hidden{ padding: 9px 15px 6px;}
     }
-    &__right{ width: 278px;
+    &__right{ width: 278px; position: relative;
         .lk-card__hidden{ padding: 21px 17px 6px 0; }
     }
     &__black-t{ background-color: #40434e; color: #fff; font-weight: 700; font-size: 16px; text-transform: uppercase; height: 41px; display: flex; justify-content: flex-start; align-items: center;     padding: 3px 18px 0;
@@ -735,7 +736,11 @@ a.lk-ballancer__drop-title{
         }
         &>span{ margin-top: -4px; margin-right: 8px;}
     }
-    &__glhf{ width: 100%; padding-right: 17px; padding-top: 14px;}
+    &__glhf{ width: 100%; padding-right: 17px; padding-top: 14px;
+        &.fixoid{ position: fixed; top: 0;  background: white;  width: 277px;
+            &.bott{position: absolute; bottom: 0;  top: auto;}
+        }
+    }
     &__informer{ vertical-align: middle; margin: 0 0 0 7px; cursor: pointer;
         svg{ margin-top: 2px;}
         &:hover .lk-card__tip{ display: block;}
@@ -876,14 +881,6 @@ a.lk-ballancer__drop-title{
     &__descrow{ display: flex; justify-content: flex-start; align-items: stretch;
         &--one{ color: #40434e; font-weight: 400; font-size: 12px; margin-bottom: 7px;
             b{ color: #ff3636;font-weight: 700;}
-        }
-        .js-after-calculate.styled{ position: relative;
-            input[type=checkbox]{ display: block; position: absolute; opacity: 0; left: 0; top: 0; -webkit-appearance: checkbox;}
-            input[type=checkbox] + i{border-color:#ffde00;}
-            &.disabled{
-                input[type=checkbox] + i{border-color:#cbcfd5;}
-                b{ display: none;}
-            }
         }
     }
     &__desccell{ width: 100%; margin-bottom: 12px; margin-top: 4px;
@@ -1467,7 +1464,11 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     &__file{ cursor: pointer;
         i{ display: inline-block; vertical-align: middle; margin-right: 8px;}
     }
-    &__title{ min-height: 30px; color: #fff; display: flex; background-color: #40434e; width: 100%; font-size: 13px; font-weight: 700; text-transform: uppercase; padding: 6px 12px; display: flex; justify-content: flex-start; align-items: center; margin-bottom: 20px; line-height: 13px;}
+    &__title{ min-height: 30px; color: #fff; display: flex; background-color: #40434e; width: 100%; font-size: 13px; font-weight: 700; text-transform: uppercase; padding: 6px 12px; display: flex; justify-content: flex-start; align-items: center; margin-bottom: 20px; line-height: 13px;
+        &--mob{ display: none; cursor: pointer; border: none;
+            span{ margin-left: 14px;}
+        }
+    }
     &__file-item{ display: flex; justify-content:flex-end; align-items: center; flex-wrap: wrap;}
     &__uploaded{ position: relative; padding: 7px 40px 7px 0; margin-right: 12px;
         .preloadfile{transform: translate(0, -43%); left: auto; right: 0; }
@@ -1486,6 +1487,7 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     &__img{ width: 66px; height: 66px; border-radius: 50%; position: relative; overflow: hidden;  margin-bottom: 9px; z-index: 0;
         &:before{ content: ''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: url('../images/avabg.svg'); background-size: cover; z-index: -1;}
         img{ position: absolute; left: 0; top: 0; right: 0; bottom: 0; margin: auto;}
+        svg{ width: 66px; height: 66px;}
     }
     &__name{ font-size: 12px; text-align: center;}
     &__text{ background-color: #fbf8e3; position: relative; margin-left: 30px; padding: 15px 23px 12px;
@@ -1505,6 +1507,14 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     &__buttons{ display: flex; justify-content: flex-end; align-items: center; padding-top: 9px;
         .styled{margin: 0 14px; padding-top: 3px;}
     }
+    &-scelet{
+        &__wrap{ width: 100%; display: flex; justify-content: space-between; align-items: flex-start; padding-top: 20px;}
+        &__left{ width: 263px;
+            &.show{ left: auto;}
+        }
+        &__right{width: calc(100% - 263px); padding-left: 15px;}
+    }
+
 }
 .support{background-color: rgb(255, 255, 255); box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);     padding: 15px 14px 20px; display: flex; justify-content: space-between; align-items: stretch;
     &__left{ width: 458px; padding-top: 6px;}
@@ -1518,7 +1528,7 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
         a{ font-weight: 700; font-size: 13px; margin-top: 10px; display: inline-block;}
     }
     &__bttns{ text-align: right;}
-    &__tofaq{ position: absolute; right: -6px; bottom: 3px;
+    &__tofaq{ position: absolute; right: -6px; bottom: 2px;
         i{ display: inline-block;margin: 1px 6px 0px 0;}
         a{ font-weight: 700; color: #40434e; text-transform: uppercase; text-decoration: none; display: inline-flex; justify-content: flex-end; align-items: flex-start; margin: 1px 8px 0px 0;
             &:hover{color: #9194a6;}
@@ -1528,9 +1538,18 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
 .history{background-color: rgb(255, 255, 255); box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);     padding: 13px 14px 20px; margin-bottom: 13px;
     &__table{font-weight: 700; color: #40434e; text-transform: uppercase; display: flex; flex-direction: column;}
     &__head{ font-size: 13px; display: flex; justify-content: flex-start; align-items: stretch; background-color: #ffde00; padding: 7px 0;}
-    &__row{ font-size: 11px; color: #40434e; text-decoration: none; cursor: pointer; display: flex; justify-content: flex-start; align-items: center; border-bottom: 2px solid #efefef; width: 100%; padding: 14px 0 12px;
+    &__row{ font-size: 11px; color: #40434e; text-decoration: none; cursor: pointer; display: flex; justify-content: flex-start; align-items: center; border-bottom: 2px solid #efefef; width: 100%; padding: 14px 0 12px; position: relative;
         &:hover{ background-color: #efefef;}
+        &--button{ position: absolute; right: 12px; top:calc(50% - 8px);
+
+            i{ width: 18px; height: 18px; background-color: #efefef; display: block; position: relative;
+                &:after{ position: absolute; content:''; width: 8px; height: 8px; background-color: transparent; border-top:1px solid #40434e; border-right:1px solid #40434e; transform: rotate(45deg); top: 5px; left: 3px;}
+                span{ display: none;}
+
+            }
+        }
     }
+    &__tdth{ display: none;}
     &__cell{ padding-left:11px; position: relative;
         &--num{ width: 55px;}
         &--date{ width: 115px;}
@@ -1538,9 +1557,7 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
         &--subcat{ width: 197px;}
         &--deliv{ width: 195px;}
         &--status{ width: 157px; display: flex; justify-content: space-between; align-items: center;
-            i{ width: 18px; height: 18px; background-color: #efefef; display: block; position: relative;
-                &:before{ position: absolute; content:''; width: 8px; height: 8px; background-color: transparent; border-top:1px solid #40434e; border-right:1px solid #40434e; transform: rotate(45deg); top: 5px; left: 3px;}
-            }
+
             span{ display: inline-block; height: 18px; width: 95px; text-align: center; padding-top: 3px;}
         }
     }
@@ -1572,6 +1589,7 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
             &:nth-child(2){ white-space: nowrap;    }
             &:last-child{ margin-right: 0;}
         }
+        &--mob{ min-height: 40px;}
     }
     &__form{
         &.styled__select .jq-selectbox__select{border:1px solid #cbcfd5;}
@@ -1580,7 +1598,7 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     &__box{ width: 470px; margin-top: -9px;
         .styled{ font-size: 12px;}
     }
-    &__boxrow{ display: flex; justify-content: flex-start; align-items: flex-start; margin-top: 18px;
+    &__boxrow{ display: flex; justify-content: flex-start; align-items: flex-start; margin-top: 36px;
         .tumbler{ margin-top: 30px;}
     }
     &__weight{ display: flex; justify-content: flex-start; align-items: center; margin-bottom: 13px;
@@ -1604,12 +1622,12 @@ a.dotted-underline{ position: relative; text-decoration: none; border-bottom: 1p
     }
     &__botcell{ display: flex; justify-content: space-between; align-items: center; width: 384px;}
     &__botsub{ display: flex; justify-content: space-between; align-items: center; width: 567px;}
-    &__cell{ width: 180px; padding-right: 15px;
+    &__cell{ width: 165px; margin-right: 15px;
         &--start{ width: 158px;}
-        &--gabx{ width: 65px; padding-right: 13px; position: relative;
+        &--gabx{ width: 65px; padding-right: 13px; position: relative; margin-right: 0;
             &:before{content: 'x'; position: absolute; font-size: 13px; right: 3px; bottom: 11px;}
         }
-        &--gab{ width: 65px; padding-right: 13px;}
+        &--gab{ width: 50px;}
     }
     &__text{padding: 6px 15px 21px;
         p{ margin-bottom: 10px;}
@@ -1770,6 +1788,13 @@ object{ display: inline-block;}
     .itemhover__spec-item svg{ width: 22px; height: 22px;}
 }
 .errorText{color:red; position: absolute; top: 100%; font-size: 12px;   }
+.test-for-status{ display: flex; justify-content: flex-start; align-items: flex-start;
+    svg{ width: 17px; height: 16px;}
+    ul{ margin: 0; padding: 0;}
+    li{ height: 30px; display: block; margin: 0;
+        i{ position: relative;}
+    }
+}
 //header and footer --- ↓↓↓↓↓↓
     @media screen and (max-width: 1160px){
         .header__search{ width: 320px;}
@@ -1890,13 +1915,6 @@ object{ display: inline-block;}
     .lk-menu__button{ display: none;}
     .lk-paginator{ margin-top: 24px;}
 }
-.test-for-status{ display: flex; justify-content: flex-start; align-items: flex-start;
-    svg{ width: 17px; height: 16px;}
-    ul{ margin: 0; padding: 0;}
-    li{ height: 30px; display: block; margin: 0;
-        i{ position: relative;}
-    }
-}
     @media screen and (max-width: 890px){
     .description__wrap{ flex-direction: column;}
     .description__col1{ width: 100%;}
@@ -1918,6 +1936,7 @@ object{ display: inline-block;}
     .lk-card__left{ width: 100%;}
     .lk-card__right{ width: 100%; display: flex; flex-direction: column;}
     .lk-card__glhf{ padding: 15px; order:2;}
+    .lk-card__glhf.fixoid {  position: relative;  top: auto; background: white; width: 100%; }
     .lk-card__yellow-t{ display: none;}
     .lk-card__right .lk-card__hidden{ padding: 15px;}
     .lk-card__mob-title{ display: flex;}
@@ -2255,18 +2274,159 @@ object{ display: inline-block;}
         .settings__social{ margin-top: 4px; margin-bottom: 4px;}
         .settings__row.settings__row--sb.settings__row--email{ flex-direction: column; padding: 17px 0px 8px;
             .settings__cell{ width: 100%;}
-            .settings__cell--big{ margin-bottom: 15px;}
+            .settings__cell--big{ margin-bottom: 0;}
         }
         .settings__row.settings__row--labled{ flex-direction: column; align-items: flex-start;padding: 14px 0 0;
             label{ margin-right: 0; margin-bottom: 17px;}
         }
+        .settings__cell{ line-height: 1.25;}
     }
 //lk-settings page ------------↑↑↑↑↑↑↑↑↑
 //calculator page ----------- ↓↓↓↓↓↓↓↓↓
     @media screen and (max-width: 1100px){
         .calculator{
-            &__boxrow{flex-wrap: wrap;}
-            &__cell--start{ width: 100%;}
+            &__cell{ margin-bottom: 3px;}
+            &__boxrow{flex-wrap: wrap; margin-top: 13px;}
+            &__cell--start{ width: 100%; margin-bottom: 4px;}
+            &__botcell{ width: 555px; flex-direction: column; align-items: flex-start;}
+            &__botsub{ width: 397px; flex-direction: column; align-items: flex-start;}
+            &__placerow--mob{flex-wrap: wrap; margin-bottom: 16px; min-height: 74px;
+                .calculator__subtitle{ width: 100%; margin-top: 7px; margin-bottom: 12px;}
+            }
+            &__weight{flex-wrap: wrap; margin-bottom: 11px;
+                .calculator__subtitle{ width: 100%; margin-bottom: 4px;}
+            }
+            &__form{ margin-top: 5px;}
+            &__box{ margin-top: 0; width: 397px;}
+            &__placerow{flex-wrap: wrap;}
+
+            &__cell--gabx{ margin-right: 0;}
+
         }
     }
+    @media screen and (max-width: 800px){
+        .calculator {
+            &__top { flex-direction: column; }
+            &__box { margin-bottom: 15px; width: 100%; }
+            &__botcell { width: 100%; }
+            &__botsub { width: 100%; }
+            &__place{ width: 100%; }
+            &__mid{ flex-direction: column; padding: 10px 17px;
+                .important{ width: 100%; margin-bottom: 8px;}
+            }
+        }
+    }
+    @media screen and (max-width: 480px){
+        .calculator{padding-top: 10px;
+            &__subtitle{ width: 100%; margin-top: 0; margin-bottom: 11px;}
+            &__top{ padding:0 10px;}
+            &__cell{ width: 100%; margin-right: 0; margin-bottom: 6px;}
+            &__cell--gab,
+            &__cell--gabx{ width: 52px; padding-right: 0; margin-right: 4px;
+                &:before{ display: none;}
+            }
+            &__placerow{ margin-bottom: 0;
+                .styled{ margin-bottom: 10px;}
+            }
+            &__box{ padding-top: 8px;}
+            &__mid{    padding: 18px 11px;
+                .important{ margin-bottom: 25px;
+                    i{ margin-right: 16px;}
+                }
+            }
+            &__bot{ flex-direction: column-reverse;
+                h5{ margin-bottom: 10px;}
+            }
+            &__botsub{ margin-bottom: 34px;}
+            &__text {
+                padding: 13px 0px 17px;
+            }
+        }
+        .tumbler__decor{ margin: 0 3px;}
+    }
 //calculator page ------------↑↑↑↑↑↑↑↑↑
+//chat2 page ----------- ↓↓↓↓↓↓↓↓↓
+    @media screen and (max-width: 800px){
+        .support__left{ width: 300px;}
+        .history{
+            &__tdth{ display: block; font-size: 13px; margin-bottom: 3px;}
+            &__head{ display: none;}
+            &__row{flex-wrap: wrap; align-items: flex-start;}
+            &__cell{ margin-bottom: 19px;
+                &--subcat{ width: 250px;}
+                &--deliv{ width: 282px;}
+                &--status{ flex-direction: column; align-items: flex-start;}
+            }
+        }
+    }
+    @media screen and (max-width: 700px){
+        .support{flex-wrap: wrap; padding: 15px 0 20px;
+            &__left{ width: 100%; padding: 6px 14px 0;}
+            &__right{ width: 100%; text-align: center; padding-top: 25px; padding-bottom: 0;
+                h6{ padding-right: 15px;}
+                .faq__item { padding: 5px 14px 9px; }
+            }
+            &__accordeon{ text-align: left;}
+            &__bttns{ text-align: center;}
+            &__tofaq{ position: relative; bottom:auto; right: auto; display: inline-block; margin-top: 18px;}
+        }
+
+    }
+    @media screen and (max-width: 610px){
+        .history{padding: 13px 11px 20px;
+            &__cell{ padding: 0 6px;
+                &--subcat{ width: 150px;}
+                &--deliv{ width: 60%;}
+                &--status{ width: auto; padding-right: 0; }
+            }
+            &__row{ justify-content: space-between;border-bottom:0px;
+                &--button { width: 100%; position: relative; right: auto;
+                    i { width: 100%; text-align: center; height: 24px;
+                        span { display: inline-block; line-height: 24px; font-style: normal; font-size: 13px; }
+                        &:after { position: relative; display: inline-block; top: auto; margin-right: 8px; }
+                    }
+                }
+            }
+
+        }
+    }
+    @media screen and (max-width: 480px){
+        .history{
+            &__cell{
+                &--num{ width: 45%;}
+                &--date{ width: 55%;}
+                &--cat{ width: 45%;}
+                &--subcat{  width: 55%;}
+                &--deliv{ width: 160px;}
+                &--status{ }
+            }
+
+
+        }
+    }
+//chat2 page ------------↑↑↑↑↑↑↑↑↑
+//chat page ----------- ↓↓↓↓↓↓↓↓↓
+    @media screen and (max-width: 1024px){
+        .chat-scelet__left .lk-menu{ position: relative; left: auto; top: auto; box-shadow: none; display: block;}
+    }
+    @media screen and (max-width: 830px){
+        .chat-scelet__wrap{ display: block;}
+        .chat-scelet__left{ position: absolute; left:-330px; width: 100%; max-width: 320px; box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13); transition: left 200ms; top: 65px;
+            &.show{ left: 0;}
+        }
+        .chat-scelet__right{ width: 100%; padding-left: 0;}
+        .chat__title{ display: none;
+            &--mob{ display: flex;}
+        }
+    }
+    @media screen and (max-width: 600px){
+        .chat__img{ width: 42px; height: 42px;
+            svg{ width: 42px; height: 42px;}
+        }
+        .chat__date{ margin-right: 0; margin-bottom: 4px; margin-left: 0;}
+        .chat__message{ flex-direction: column-reverse;}
+        .chat__name{ position: absolute; top: 0; left: 0;}
+        .chat__body{ position: relative; padding-top: 14px;}
+    }
+
+//chat page ------------↑↑↑↑↑↑↑↑↑
