@@ -1,0 +1,99 @@
+//= partials/head.html
+
+<div class="global-wrapper">
+    <!--header start-->
+    //= partials/header.html
+    <!--header end-->
+    <div class="main">
+        <div class="mbox">
+            <div class="title title--first">
+                <h1>Результат поиска</h1>
+            </div>
+            <div class="ressearch">
+                <div class="ressearch__top">
+                    <div class="ressearch__input">
+                        <b>Вы искали <span>«Красная футболка»</span></b>
+                        <form class="faq__search ressearch__search">
+                            <div class="ressearch__clear" onclick="$(this).next().val('');">
+                                <svg  width="14px" height="14px">
+                                    <use xlink:href="#smallcross"></use>
+                                </svg>
+                            </div>
+                            <input type="text" placeholder="Поиск">
+                            <button type="submit">
+                                <svg  width="17px" height="17px">
+                                    <use xlink:href="#blacksearch"></use>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="ressearch__filter">
+                        <b>всего найдено   (100)</b>
+                    </div>
+                    <div class="ressearch__sort">
+                        <div class="ressearch__radio">
+                            <span>Показывать:</span>
+                            <label class="styled  styled--flexc">
+                                <input type="radio" name="filter" checked="checked" value="1"><i></i><span>Все</span>
+                            </label>
+                            <label class="styled styled--flexc">
+                                <input type="radio" name="filter" value="0" ><i></i><span>Акции</span>
+                            </label>
+                            <label class="styled styled--flexc">
+                                <input type="radio" name="filter" checked="checked" value="1"><i></i><span>Магазины</span>
+                            </label>
+                            <label class="styled styled--flexc">
+                                <input type="radio" name="filter" value="0"><i></i><span>Вопрос-ответ</span>
+                            </label>
+                        </div>
+                        <div class="ressearch__select">
+                            <span>Сортировать по:</span>
+                            <div class="styled__select">
+                                <select name="">
+                                    <option value="00">Релевантности</option>
+                                    <option value="01">Алфавиту по возрастанию</option>
+                                    <option value="02">Aлфавиту по убыванию</option>
+                                    <option value="02">Дате добавления по возрастанию</option>
+                                    <option value="02">Дате добавления по убыванию</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="ressearch__mid">
+                    <li class="ressearch__item">
+                        <div class="ressearch__sale">
+                            <b>Распродажа летней коллекции, <span class="ressearch__rel">футболки</span> , шорты</b>
+                            <p>Покупай товаров на сумму более чем $25 и получи бесплатную доставку</p>
+                            <strong>
+                                <i>
+                                    <svg width="14px" height="13px">
+                                        <use xlink:href="#blackclock"></use>
+                                    </svg>
+                                </i>
+                                Действительна до: 12.09.2017
+                            </strong>
+                        </div>
+                        <div class="ressearch__lcwrap">
+                            <div class="ressearch__logo">
+                                <img src="images/z1.jpg" alt="">
+                            </div>
+                            <div class="ressearch__category">
+                                <a href="#" class="dotted-underline">Акции</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="ressearch__bot"></div>
+            </div>
+        </div>
+    </div>
+    <!--hidden start-->
+    //= partials/hidden-block.html
+    <!--hidden end-->
+    <!--footer start-->
+    //= partials/footer.html
+    <!--footer end-->
+</div>
+</body>
+</html>

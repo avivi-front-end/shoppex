@@ -452,51 +452,95 @@ function trackLogick() {
     } );
 }
 var preloaderFile ='<div class="preloadfile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preloadfile__svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="rgb(255,222,0)" stroke-width="5" fill="transparent"    /><circle cx="12" cy="12" r="10"  stroke="rgb(79,82,95)" stroke-width="5" class="preloadfile__circle"/></svg><div class="preloadfile__del"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="14px" height="14px"><path fill-rule="evenodd"  fill="rgb(64, 67, 78)" d="M7.000,-0.000 C3.150,-0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,-0.000 7.000,-0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/></svg></div></div>';
-function readFile(input) {
-
+function readFile(input) { //chat page
     if (input.files && input.files[0]) {
+        var massImg = ["image/jpeg", "image/jpg", "image/png", "image/gif", "image/bmp"];
+        var massDoc = ["application/pdf", "application/msword", "application/vnd.oasis.opendocument.text", "application/vnd.ms-excel", "application/vnd.oasis.opendocument.spreadsheet", "text/csv", "application/rtf"];
         var nt = document.createElement('input');
         nt.setAttribute("type", "file");
         var index = $(input).closest('.chat__buttons').find('.chat__uploaded').length + 1;
         nt.setAttribute("name", 'files_'+index+'');
+        var accept = '';
+        for(var i=0; i < massImg.length; i++){accept += (massImg[i]+',')}
+        for(var j=0; j < massImg.length; j++){accept += (massDoc[j]+',')}
+        nt.setAttribute("accept", accept);
         var reader = new FileReader();
         reader.onload = function (e) {
             var fileName = $(input).val().split('/').pop().split('\\').pop();
             var div = document.createElement('div');
             var span = document.createElement('span');
-            $(span).text(fileName);
-            $(div).addClass('chat__uploaded');
-            $(div).append(span);
-            var container = $(input).closest('.chat__buttons').find('.chat__file-item');
-            $(div).append(preloaderFile);
-            $(input).closest('label').prepend(nt);
-            $(div).append(input);
-            container.prepend(div);
+            var typec = input.files[0].type;
+            var size = input.files[0].size;
+            function declinetung() {
+                $(input).closest('label').prepend(nt);
+                $(input).remove();
+            }
+            if($.inArray(typec, massImg) == -1 && $.inArray(typec, massDoc) == -1){
+                declinetung();
+            }else if(typec.startsWith('image') && (size > 6100000)) {
+                    declinetung();
+                    alert('max size 4 image 6Mb');
+            } else if(typec.startsWith('application') && (size > 11000000)) {
+                declinetung();
+                alert('max size 4 doc 10Mb');
+            }else{
+                $(span).text(fileName);
+                $(div).addClass('chat__uploaded');
+                $(div).append(span);
+                var container = $(input).closest('.chat__buttons').find('.chat__file-item');
+                $(div).append(preloaderFile);
+                $(input).closest('label').prepend(nt);
+                $(div).append(input);
+                container.prepend(div);
+            }
         }
         reader.readAsDataURL(input.files[0]);
-
     }
 }
-function readURL(input) {
+function readURL(input) { //create-order page
     if (input.files && input.files[0]) {
+        var mass = ["image/jpeg", "image/jpg", "image/png", "image/gif", "application/pdf", "image/bmp"];
         var nt = document.createElement('input');
         nt.setAttribute("type", "file");
         var index = $(input).closest('.neworder__filerow').index() - 1;
         nt.setAttribute("name", 'files['+index+'][]');
-        nt.setAttribute("accept", "image/jpeg,image/png,image/gif,application/pdf");
+        nt.setAttribute("accept", "image/jpeg,image/png,image/gif,application/pdf,image/bmp");
         var reader = new FileReader();
         reader.onload = function (e) {
             var div = document.createElement('div');
             $(div).addClass('neworder__uploaded');
             var img = document.createElement('img');
+            var typec = input.files[0].type;
+            var size = input.files[0].size;
             $(img).attr('src', e.target.result);
-            if(input.files[0].type == "application/pdf"){$(img).attr('src', 'images/pdff.jpg');}
-            $(img).attr('data-object-fit','');
-            $(div).append(img);
-            $(div).append(preloaderFile);
-            $(input).closest('.neworder__filerow').find('.neworder__thumbs').append(div);
-            $(input).closest('label').prepend(nt);
-            $(div).append(input);
+            function acceptung() {
+                $(img).attr('data-object-fit','');
+                $(div).append(img);
+                $(div).append(preloaderFile);
+                $(input).closest('.neworder__filerow').find('.neworder__thumbs').append(div);
+                $(input).closest('label').prepend(nt);
+                $(div).append(input);
+            }
+            function declinetung() {
+                $(input).closest('label').prepend(nt);
+                $(input).remove();
+            }
+            if(typec == "application/pdf"){
+                if(size > 11000000){
+                    declinetung();
+                    alert('max size 4 pdf 10Mb');
+                }else{
+                    $(img).attr('src', 'images/pdff.jpg');
+                    acceptung();
+                }
+            }else if($.inArray(typec, mass) == -1 ){
+                declinetung();
+            }else if(size > 6100000){
+                    declinetung();
+                    alert('max size 4 image 6Mb');
+            }else{
+                acceptung();
+            }
         }
         reader.readAsDataURL(input.files[0]);
 
@@ -570,12 +614,15 @@ function maskedInput(){
 function copyToClipboard() {
     $(document).on('click', '.js-cc-btn', function() {
         $('.hiddentext').remove();
-        var copyTarget = $(this).closest('div').find('.js-cc-target').text();
-        var input = document.createElement('input');
-        input.setAttribute('type','text');
+        var copyTarget = $(this).closest('.adressbook__card').find('.js-cc-target');
+        var text='';
+        copyTarget.each(function(){
+            text += ($(this).text()+'\n');
+        });
+        var input = document.createElement('textarea');
         input.setAttribute('class','hiddentext');
         $('.hidden-block').append(input);
-        $(input).val(copyTarget);
+        $(input).val(text);
         input.select();
         try {
             var successful = document.execCommand('copy');
@@ -867,11 +914,39 @@ function catalogPopups() {
         }
         request.send();
     } catch (e) {}
-}(window, document));
-
+}(window, document)); //sprite script
+function swipeToHide(elem) {
+    var el = document.getElementById(elem);
+    var lastLeft = el.offsetLeft;
+    var lastX ;
+    el.addEventListener("touchstart", function (event) {
+        lastX = event.changedTouches[0].clientX;
+        lastLeft = el.offsetLeft;
+    }, false);
+    el.addEventListener("touchend", function (event) {
+        // if(lastLeft + event.changedTouches[0].clientX - lastX < (el.offsetWidth/2)*(-1)){
+        if(lastLeft + event.changedTouches[0].clientX - lastX < (-100)){
+            $(el).removeAttr('style').removeClass('show');
+            $('.js-chat-menu').removeClass('active');
+        }else{
+            $(el).attr('style','transform:translateX(0px)');
+        }
+    }, false);
+    el.addEventListener("touchmove", function(event){
+        if(Math.abs(event.changedTouches[0].clientX - lastX) > 10){
+            var now = event.changedTouches[0].clientX - lastX;
+            var offset = lastLeft + now;
+            if(offset > 0){
+                $(el).attr('style','transform:translateX(0px)');
+            }else{
+                $(el).attr('style','transform:translateX('+offset+'px)');
+            }
+        }
+    }, false);
+}
 $(document).ready(function () {
     acordeon();
-
+    if($('#js-chat-left-menu').length >0)swipeToHide('js-chat-left-menu');
     chatSkype();
     catalogPopups();
     shops__popups();
@@ -901,7 +976,7 @@ $(document).ready(function () {
     copyToClipboard();
     maskedInput();
     delFileFromInput();
-    trackLogick()
+    trackLogick();
     lkRadioLogic();
     autosumDopService();
     delItemOrder();
@@ -917,12 +992,11 @@ $(document).ready(function () {
     clock();
     inputNumber();
 });
-var myEfficientFn = debounce(function() {
+var betterResize = debounce(function(){
     ui.search();
     shops__itemHover();
 }, 250);
-
-window.addEventListener('resize', myEfficientFn);
+window.addEventListener('resize', betterResize);
 function debounce(func, wait, immediate) {
     var timeout;
     return function() {

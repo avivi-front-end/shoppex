@@ -137,11 +137,9 @@
                 </a>
                 <button class="button"><span>да</span></button>
             </div>
-
-
         </div>
     </div>
-    <div class="delete-acc" id="delete">
+    <form class="delete-acc" id="delete">
         <div class="delete-acc__main">
             <div class="delete-acc__img">
                 <svg width="61px" height="61px">
@@ -152,16 +150,18 @@
             <div class="delete-acc__subtitle">Укажите причину:</div>
             <textarea class="delete-acc__mess"></textarea>
         </div>
-        <div class="neworder__submit delete-acc__bottom">
-            <a href="javascript:;" class="neworder__cancel" onclick="$.fancybox.close();">
-                <svg width="14px" height="14px">
-                    <use  xlink:href="#delbutt"></use>
-                </svg>
-                <span>отмена</span>
-            </a>
-            <button class="button"><span>да</span></button>
+        <div class="popup__footer">
+            <div class="popup__flexcentr">
+                <a href="javascript:;" onclick="$.fancybox.close();" class="neworder__cancel">
+                    <svg width="14px" height="14px">
+                        <use  xlink:href="#delbutt"></use>
+                    </svg>
+                    <span>отмена</span>
+                </a>
+                <button class="button"><span>да</span></button>
+            </div>
         </div>
-    </div>
+    </form>
     <div class="succpop" id="succsess">
         <div class="succpop__main">
             <img src="images/secces.png" alt="">
