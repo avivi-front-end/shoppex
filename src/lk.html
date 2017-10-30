@@ -53,99 +53,146 @@
                                 </div>
                             </div>
                             <div class="lk-filter">
-                                <div class="lk-filter__button">
+                                <div class="lk-filter__button  js-filter-show">
                                     <svg width="26px" height="23px">
                                        <use xlink:href="#filter"></use>
                                     </svg>
                                 </div>
                             </div>
                         </div>
-                        <div class="lk-filter__content">
-                            <div class="lk-filter__col">
-                                <div class="lk-filter__title"><span>Название:</span></div>
-                                <div class="lk-filter__item">
-                                    <div class="lk-filter__subtitle">Посылка:</div>
-                                    <div class="lk-filter__input"><input type="text" value="Все"></div>
+                        <div class="js-filter-box">
+                            <div class="lk-filter__content">
+                                <div class="lk-filter__col">
+                                    <div class="lk-filter__title"><span>Название:</span></div>
+                                    <div class="lk-filter__item">
+                                        <div class="lk-filter__subtitle">Посылка:</div>
+                                        <div class="lk-filter__input"><input type="text" value="Все"></div>
+                                    </div>
+                                    <div class="lk-filter__item">
+                                        <div class="lk-filter__subtitle">Магазин:</div>
+                                        <div class="lk-filter__input">
+                                            <select name="" class="js-select-smart">
+                                                <option value="01">Все</option>
+                                                <option value="01">test02</option>
+                                                <option value="01">tqwe</option>
+                                                <option value="01">teasd03</option>
+                                                <option value="01">tqwe</option>
+                                                <option value="01">test03</option>
+                                                <option value="01">1241dasf</option>
+                                                <option value="01">qweqasd</option>
+                                                <option value="01">qweq1234</option>
+                                                <option value="01">qweq12</option>
+                                                <option value="01">test03</option>
+                                                <option value="01">12e4qd</option>
+                                                <option value="01">test04</option>
+                                                <option value="01">test05</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="lk-filter__item">
-                                    <div class="lk-filter__subtitle">Магазин:</div>
-                                    <div class="lk-filter__input">
-                                        <select name="" class="js-select-smart">
-                                            <option value="01">Все</option>
-                                            <option value="01">test02</option>
-                                            <option value="01">tqwe</option>
-                                            <option value="01">teasd03</option>
-                                            <option value="01">tqwe</option>
-                                            <option value="01">test03</option>
-                                            <option value="01">1241dasf</option>
-                                            <option value="01">qweqasd</option>
-                                            <option value="01">qweq1234</option>
-                                            <option value="01">qweq12</option>
-                                            <option value="01">test03</option>
-                                            <option value="01">12e4qd</option>
-                                            <option value="01">test04</option>
-                                            <option value="01">test05</option>
-                                        </select>
+                                <div class="lk-filter__col">
+                                    <div class="lk-filter__title"><span>Дата создания:</span></div>
+                                    <div class="lk-filter__item">
+                                        <div class="lk-filter__subtitle">От:</div>
+                                        <div class="lk-filter__input lk-filter__input--date">
+                                            <input type="text" class="score-date__input" id="js-from" name="js-from">
+                                        </div>
+                                    </div>
+                                    <div class="lk-filter__item">
+                                        <div class="lk-filter__subtitle">До:</div>
+                                        <div class="lk-filter__input lk-filter__input--date">
+                                            <input type="text" class="score-date__input" id="js-to">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lk-filter__col">
+                                    <div class="lk-filter__title"><span>Стоимость:</span></div>
+                                    <div class="lk-filter__item">
+                                        <div class="lk-filter__subtitle">От:</div>
+                                        <div class="lk-filter__input lk-filter__input--small">
+                                            <select name="" class="js-price-select" data-lang="от/грн">
+                                                <option value="01">от 0 грн</option>
+                                                <option value="01">от 10 грн</option>
+                                                <option value="01">от 100 грн</option>
+                                                <option value="01">от 1000 грн</option>
+                                                <option value="01">от 10 000грн</option>
+                                                <option value="01">от 100 000 грн</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="lk-filter__item">
+                                        <div class="lk-filter__subtitle">До:</div>
+                                        <div class="lk-filter__input lk-filter__input--small">
+                                            <select name="" class="js-price-select" data-lang="до/грн">
+                                                <option value="01">до 10 грн</option>
+                                                <option value="01">до 100 грн</option>
+                                                <option value="01">до 1000 грн</option>
+                                                <option value="01">до 10 000грн</option>
+                                                <option value="01">до 100 000 грн</option>
+                                                <option value="01">до 1 000 000 грн</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lk-filter__col">
+                                    <div class="lk-filter__title"><span>Статус:</span></div>
+                                    <div class="lk-filter__item">
+                                        <div class="lk-filter__input lk-filter__input--small">
+                                            <select name="" class="js-select-styler">
+                                                <option value="01">test0qewd</option>
+                                                <option value="01">test0asd</option>
+                                                <option value="01">test0asd</option>
+                                                <option value="01">test0wqe</option>
+                                                <option value="01">test0qwe</option>
+                                                <option value="01">test0123</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="lk-filter__col">
-                                <div class="lk-filter__title"><span>Дата создания:</span></div>
-                                <div class="lk-filter__item">
-                                    <div class="lk-filter__subtitle">От:</div>
-                                    <div class="lk-filter__input">
-                                        <input type="text" class="score-date__input" id="js-from" name="js-from">
-                                    </div>
+                        </div>
+                        <div class="lk-sorting">
+                            <div class="lk-sorting__title"><span>Сортировать по:</span></div>
+                            <div class="lk-sorting__content">
+                                <div class="lk-sorting__item active">
+                                    <span>Названию посылки</span>
+                                    <i>
+                                        <svg>
+                                            <use xlink:href="#arrowit"></use>
+                                        </svg>
+                                    </i>
                                 </div>
-                                <div class="lk-filter__item">
-                                    <div class="lk-filter__subtitle">До:</div>
-                                    <div class="lk-filter__input">
-                                        <input type="text" class="score-date__input" id="js-to">
-                                    </div>
+                                <div class="lk-sorting__item">
+                                    <span>Названию магазина</span>
+                                    <i>
+                                        <svg>
+                                            <use xlink:href="#arrowit"></use>
+                                        </svg>
+                                    </i>
                                 </div>
-                            </div>
-                            <div class="lk-filter__col">
-                                <div class="lk-filter__title"><span>Стоимость:</span></div>
-                                <div class="lk-filter__item">
-                                    <div class="lk-filter__subtitle">От:</div>
-                                    <div class="lk-filter__input">
-                                        <select name="" class="js-price-select" data-lang="от/грн">
-                                            <option value="01">от 0 грн</option>
-                                            <option value="01">от 10 грн</option>
-                                            <option value="01">от 100 грн</option>
-                                            <option value="01">от 1000 грн</option>
-                                            <option value="01">от 10 000грн</option>
-                                            <option value="01">от 100 000 грн</option>
-                                        </select>
-                                    </div>
+                                <div class="lk-sorting__item">
+                                    <span>Дате создания</span>
+                                    <i>
+                                        <svg>
+                                            <use xlink:href="#arrowit"></use>
+                                        </svg>
+                                    </i>
                                 </div>
-                                <div class="lk-filter__item">
-                                    <div class="lk-filter__subtitle">До:</div>
-                                    <div class="lk-filter__input">
-                                        <select name="" class="js-price-select" data-lang="до/грн">
-                                            <option value="01">до 10 грн</option>
-                                            <option value="01">до 100 грн</option>
-                                            <option value="01">до 1000 грн</option>
-                                            <option value="01">до 10 000грн</option>
-                                            <option value="01">до 100 000 грн</option>
-                                            <option value="01">до 1 000 000 грн</option>
-                                        </select>
-                                    </div>
+                                <div class="lk-sorting__item">
+                                    <span>Стоимости</span>
+                                    <i>
+                                        <svg>
+                                            <use xlink:href="#arrowit"></use>
+                                        </svg>
+                                    </i>
                                 </div>
-                            </div>
-                            <div class="lk-filter__col">
-                                <div class="lk-filter__title"><span>Статус:</span></div>
-                                <div class="lk-filter__item">
-                                    <div class="lk-filter__input">
-                                        <select name="" class="js-select-styler">
-                                            <option value="01">test0qewd</option>
-                                            <option value="01">test0asd</option>
-                                            <option value="01">test0asd</option>
-                                            <option value="01">test0wqe</option>
-                                            <option value="01">test0qwe</option>
-                                            <option value="01">test0123</option>
-                                        </select>
-                                    </div>
+                                <div class="lk-sorting__item">
+                                    <span>Статусу</span>
+                                    <i>
+                                        <svg>
+                                            <use xlink:href="#arrowit"></use>
+                                        </svg>
+                                    </i>
                                 </div>
                             </div>
                         </div>
