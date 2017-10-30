@@ -280,4 +280,156 @@
             </div>
         </div>
     </div>
+    <div class="popup paysys" id="paysys">
+        <div class="popup__title">
+            <div class="popup__img">
+                <svg>
+                    <use xlink:href="#ballance"></use>
+                </svg>
+            </div>
+            <h3>Пополнить счет</h3>
+        </div>
+        <div class="paysys__content">
+            <div class="paysys__top">
+                <div class="paysys__cell">
+                    <div class="paysys__title">Сумма пополнения, $</div>
+                    <div class="form_input js-input">
+                        <input type="text" value="100.00">
+                    </div>
+                </div>
+                <div class="paysys__cell">
+                    <div class="paysys__title">
+                        <span>Курс доллара</span>
+                        <i>25.09.17</i>
+                    </div>
+                    <div class="paysys__curse">
+                        <p><b>НБУ</b><i>26.42</i></p>
+                        <p><b>Privat24</b><i>26.42</i></p>
+                        <p><b>Webmoney WMU</b><i>26.42</i></p>
+                        <p><b>Ощадбанк</b><i>26.42</i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="paysys__bottom">
+                <div class="paysys__title">способы пополнения</div>
+                <!--<div class="paysys__tabbutons">-->
+                    <!--<p class="active">Популярные</p>-->
+                    <!--<p>электронные деньги</p>-->
+                    <!--<p>банковская карта</p>-->
+                <!--</div>-->
+                <div class="paysys__tabs-wrap">
+                    <div class="paysys__tab">
+                        <div class="paysys__tab-item">
+                            <input type="radio" name="tab-item">
+                            <div class="paysys__item">
+                                <div class="paysys__left">
+                                    <div class="paysys__icon">
+                                        <svg width="20px" height="20px">
+                                            <use xlink:href="#paypal"></use>
+                                        </svg>
+                                    </div>
+                                    <p>
+                                        <a href="#">Paypal</a>
+                                        <span data-title="tooltip text">
+                                            <svg  width="12px" height="12px">
+                                               <use xlink:href="#informer"></use>
+                                            </svg>
+                                       </span>
+                                    </p>
+                                </div>
+                                <div class="paysys__right">
+                                    <b>Сумма к оплате:</b>
+                                    <i>$102.1</i>
+                                    <span data-title="tooltip text">
+                                        <svg  width="12px" height="12px">
+                                           <use xlink:href="#informer"></use>
+                                        </svg>
+                                   </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paysys__tab-item">
+                            <input type="radio" name="tab-item">
+                            <div class="paysys__item">
+                                <div class="paysys__left">
+                                    <div class="paysys__icon">
+                                        <svg width="20px" height="20px">
+                                            <use xlink:href="#webmoney"></use>
+                                        </svg>
+                                    </div>
+                                    <p>
+                                        <a href="#">Webmoney</a>
+                                        <span data-title="tooltip text">
+                                            <svg  width="12px" height="12px">
+                                               <use xlink:href="#informer"></use>
+                                            </svg>
+                                       </span>
+                                        <select class="js-siple-select">
+                                            <option value="wmz">wmz</option>
+                                            <option value="wmu">wmu</option>
+                                        </select>
+                                    </p>
+                                </div>
+                                <div class="paysys__right">
+                                    <b>Сумма к оплате:</b>
+                                    <i>$102.1</i>
+                                    <span data-title="tooltip text">
+                                        <svg  width="12px" height="12px">
+                                           <use xlink:href="#informer"></use>
+                                        </svg>
+                                   </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paysys__tab-item">
+                            <input type="radio" name="tab-item">
+                            <div class="paysys__item">
+                                <div class="paysys__left">
+                                    <div class="paysys__icon">
+                                        <svg width="24px" height="18px">
+                                            <use xlink:href="#bankcard"></use>
+                                        </svg>
+                                    </div>
+                                    <p>
+                                        <a href="#">Банковские карты через Liqpay</a>
+                                        <span data-title="tooltip text">
+                                            <svg  width="12px" height="12px">
+                                               <use xlink:href="#informer"></use>
+                                            </svg>
+                                       </span>
+                                    </p>
+                                </div>
+                                <div class="paysys__right">
+                                    <b>Сумма к оплате:</b>
+                                    <i>$102.1</i>
+                                    <span data-title="tooltip text">
+                                        <svg  width="12px" height="12px">
+                                           <use xlink:href="#informer"></use>
+                                        </svg>
+                                   </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup__footer">
+            <div class="popup__flexcentr">
+                <div class="paysys__status">
+                    <span>состояние счета после пополнения: <i>$125.05</i></span>
+                </div>
+                <div class="paysys__bttns">
+                    <a href="javascript:;" onclick="$.fancybox.close();" class="neworder__cancel">
+                        <svg width="14px" height="14px">
+                            <use  xlink:href="#delbutt"></use>
+                        </svg>
+                        <span>отмена</span>
+                    </a>
+                    <button class="button"><span>пополнить</span></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
