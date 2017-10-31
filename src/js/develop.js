@@ -31,10 +31,8 @@ function dropdown() {
                 if (!btn.is(event.target) && btn.has(event.target).length === 0 && !container.is(event.target) && container.has(event.target).length === 0 && !ignore.is(event.target) && ignore.has(event.target).length === 0){
                     btn.removeClass('active');
                     block.stop().slideUp(200);
-
                 }
             }
-
         });
     })
 }

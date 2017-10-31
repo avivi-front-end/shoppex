@@ -16,7 +16,8 @@ input, textarea{
 }
 textarea{ padding: 10px;}
 a{ cursor: pointer;}
-.global-wrapper{display: flex; flex-direction: column; min-height: 100vh;}
+.global-wrapper{display: flex; flex-direction: column; min-height: 100vh;    position: relative;
+    z-index: 0;}
 .main{ flex:1; position: relative;}
 .button{ display: inline-block; border:none; background: none;text-decoration: none; padding: 0;
     span{ display: flex; justify-content: center; align-items: center; min-height: 32px;  padding: 7px 40px 5px; background-color: #ffde00; color: #40434e; text-transform: uppercase; font-weight: 700; }
@@ -641,24 +642,25 @@ a.lk-ballancer__drop-title{
 
     &__content{ display: flex; justify-content: flex-start; align-items: flex-start;background-color: #fff;margin-bottom: 12px; padding-bottom: 8px;
         .score-date__input{border-color: #bdbdbd; padding-left: 36px;}
+        .select2-container--default .select2-selection--single{border-color: #bdbdbd;}
     }
     &__col{ flex-grow: 1;
         &:last-child .lk-filter__item{ padding-right: 16px;}
     }
-    &__title{ background-color: #f3f3f3; color: #40434e; font-size: 13px; text-transform: uppercase; font-weight: 700; text-align: left; padding: 7px 16px 5px; margin-bottom: 15px;}
+    &__title{ background-color: #40434e; color: #fff; font-size: 13px; text-transform: uppercase; font-weight: 700; text-align: left; padding: 7px 16px 5px; margin-bottom: 15px;}
     &__item{ display: flex; justify-content: space-between; align-items: center; padding-left: 16px; margin-bottom: 8px;}
     &__input{ width: 195px; position: relative;
-        input{border:1px solid #bdbdbd;width: 100%; height: 37px; line-height: 37px; color: #000;  padding-left: 20px; font-weight: 400;}
-        button{ position: absolute; left: 0; top: 0; border: none; background: transparent; padding: 9px;}
+        input{border:1px solid #bdbdbd;width: 100%; height: 37px; line-height: 37px; color: #000;  padding-left: 8px; font-weight: 400;}
+        button{ position: absolute; left: 0; top: 0; border: none; background: transparent; padding: 9px; text-align: left; width: 100%;}
         &--date{ width: 168px;}
         &--small{ width: 138px;}
     }
 }
 .lk-sorting{
-    &__title{ background-color: #40434e; color: #fff; font-weight: 700;  font-size: 13px; text-transform: uppercase; padding: 5px 16px 7px;}
+    &__title{ background-color: #40434e; color: #fff; font-weight: 700;  font-size: 13px; text-transform: uppercase; padding: 6px 16px;}
     svg{ width: 12px; height: 17px;}
     &__item{ cursor: pointer; user-select: none; font-weight: 700; color: #ccc; display: inline-flex; justify-content: flex-start; align-items: center; margin-right: 12px;
-        i{ opacity: 0; display: inline-block;  width: 12px; height: 17px; margin-left: 8px;}
+        i{ opacity: 0; display: inline-block;  width: 12px; height: 17px; margin-left: 6px;}
         &.active{ color: #40434e;
             i{ opacity: 1; }
         }
@@ -1324,7 +1326,7 @@ a.lk-ballancer__drop-title{
 
     }
 }
-.ui-datepicker { width: 17em; padding: .2em .2em 0; display: none; background-color: #fff; box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13);
+.ui-datepicker { width: 17em; padding: .2em .2em 0; display: none; background-color: #fff; box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13); z-index: 11;
     .ui-datepicker-header { position:relative; padding:.2em 0; display: flex; justify-content: space-between; align-items: stretch; }
     .ui-datepicker-prev,
     .ui-datepicker-next { cursor: pointer; display: flex; justify-content: center; align-items: center; padding: 0 1em;
@@ -2051,7 +2053,7 @@ object{ display: inline-block;}
         .footer__nav{flex-wrap: wrap;}
 
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .header__logo{ width: 132px;}
         .header__right{ width: 54px; display: flex; justify-content: center; align-items: center;   }
         .footer__socials > span{ margin-right: 0;}
@@ -2156,7 +2158,7 @@ object{ display: inline-block;}
     .lk-card__right .lk-card__hidden{ padding: 15px;}
     .lk-card__mob-title{ display: flex;}
 }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
     .lk-menu__butter-wrap{ justify-content: center;
         b{ display: none;}
     }
@@ -2258,7 +2260,7 @@ object{ display: inline-block;}
         .swapthis:nth-child(1){ order:2;}
 
 }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
     .neworder__cancel{ margin-right: 0; margin-top: 12px;}
     .neworder__submit{ flex-direction: column-reverse;}
     .lk-card__tadd,
@@ -2350,13 +2352,14 @@ object{ display: inline-block;}
             .editinfo__cell--full{    width: 100%; margin-right: 0;}
         }
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .editinfo__radios label {  margin-bottom: 8px; }
     }
 //lk-adresbook page ------------↑↑↑↑↑↑↑↑↑
 //lk-catalog page ----------- ↓↓↓↓↓↓↓↓↓
     @media screen and (max-width: 1190px){
         .catalog__wrap{    width: 100%;  max-width: 646px; margin: 0 auto;}
+        .lk-filter__input{ width: 128px;}
     }
     @media screen and (max-width: 1024px){
         .catalog__menu-spec{
@@ -2381,10 +2384,21 @@ object{ display: inline-block;}
             &__wrap{ max-width:none;}
         }
     }
+    @media screen and (max-width: 750px){
+        .lk-sorting__content{ flex-wrap: wrap;    padding: 8px 16px 9px;}
+        .lk-sorting__item{ margin-bottom: 6px;}
+        .lk-filter__content{ flex-wrap: wrap;}
+        .lk-filter__col{ width: 50%;}
+        .lk-filter__item{ padding-right: 16px; justify-content: flex-start;}
+        .lk-filter__subtitle{ width: 70px;}
+    }
     @media screen and (max-width: 700px){
         .catalog__mobile-wrap{    max-width: 435px; }
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
+        .lk-filter__col{ width: 100%;}
+
+
         .catalog{
             &__mobile-wrap{ flex-direction: column; justify-content: center; align-items: center;
                 .shops__item{ flex-grow: 0;}
@@ -2400,12 +2414,14 @@ object{ display: inline-block;}
             }
             &__page-spec{ padding-top: 0;}
         }
-        .lk-scelet {}
         .title--first.title--filtered{ display: flex; justify-content: space-between; align-items: center;
             h1{ margin: 5px 0; padding: 0;}
             .lk-filter__button{ position: relative; top: auto; right:auto;}
         }
 
+    }
+    @media screen and (max-width: 380px){
+        .lk-sorting__item{ margin-right: 0; width: 100%;}
     }
 //lk-catalog page ------------↑↑↑↑↑↑↑↑↑
 //ztvor page ----------- ↓↓↓↓↓↓↓↓↓
@@ -2426,7 +2442,7 @@ object{ display: inline-block;}
             }
         }
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .ztvor{
             &__downtext{ font-size: 18px; width: 100%; max-width: 320px; left:calc(50% - 160px);
                 span{background-color: rgba(82, 84, 95, 0.9); display: block; width: 100%; line-height: 24px; padding: 5px 0;}
@@ -2535,7 +2551,7 @@ object{ display: inline-block;}
             }
         }
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .calculator{padding-top: 10px;
             &__subtitle{ width: 100%; margin-top: 0; margin-bottom: 11px;}
             &__top{ padding:0 10px;}
@@ -2609,7 +2625,7 @@ object{ display: inline-block;}
 
         }
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .history{
             &__cell{
                 &--num{ width: 45%;}
@@ -2664,7 +2680,7 @@ object{ display: inline-block;}
         }
         .chat__textarea textarea{ height: 40px;}
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .chat-scelet__left{  max-width: none; }
     }
 //chat page ------------↑↑↑↑↑↑↑↑↑
@@ -2683,13 +2699,13 @@ object{ display: inline-block;}
     }
 //popups ------------↑↑↑↑↑↑↑↑↑
 //lk-adress page ----------- ↓↓↓↓↓↓↓↓↓
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .adressbook__row{ flex-direction: column;    padding: 5px 0 5px;}
         .adressbook__cell{ padding-right: 0; font-size: 14px; }
     }
 //lk-adress page ------------↑↑↑↑↑↑↑↑↑
 //lk-forg-pass page ----------- ↓↓↓↓↓↓↓↓↓
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .lk-pass{ padding-bottom: 0;}
         .lk-pass__inner{ flex-direction: column; padding: 10px 0;}
         .lk-pass__row{ width: 100%; padding: 0; margin-bottom: 15px;}
@@ -2745,7 +2761,7 @@ object{ display: inline-block;}
         }
 
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .important{ padding: 50px 12px 14px;
             i{ left: 12px; top: 12px; position: absolute;
                svg{ width: 30px; height: 30px;}
@@ -2762,7 +2778,7 @@ object{ display: inline-block;}
     }
 //ui-kit page ------------↑↑↑↑↑↑↑↑↑
 //faq page ----------- ↓↓↓↓↓↓↓↓↓
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .faq__item { padding: 5px 0 9px; }
     }
 //faq page ------------↑↑↑↑↑↑↑↑↑
@@ -2803,7 +2819,7 @@ object{ display: inline-block;}
             &__faq-title a{ white-space: nowrap; margin-left: 8px;}
         }
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .ressearch{    padding: 14px 14px 31px;
             &__input{ align-items: flex-start;
                 b span{ width: 100%; display: block;}
@@ -2821,7 +2837,7 @@ object{ display: inline-block;}
             &__map{ height: 320px; width: 100%; position: relative;}
         }
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .contacts{
             &__title{ font-size: 11px; padding: 8px 8px 6px;}
             &__aside{ padding: 8px;}
@@ -2875,7 +2891,7 @@ object{ display: inline-block;}
         }
         .paysys__tabbutons p{width: auto;}
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .busines{
             &__img{ margin-right: 0; margin-bottom: 15px;
                 &:before{right: 50%; top:auto; bottom: -5px; transform: translateX(50%) rotate(45deg);}
@@ -2893,7 +2909,7 @@ object{ display: inline-block;}
         .paysys .popup__flexcentr{ flex-direction: column;}
         .paysys__status{ margin-bottom: 12px; text-align: center;}
     }
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 479px){
         .paysys__tabbutons p{width: 100%;}
         .paysys__item{ flex-direction: column;}
     }
