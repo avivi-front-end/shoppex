@@ -1,0 +1,308 @@
+//= partials/head.html
+
+<div class="global-wrapper">
+    <!--header start-->
+    //= partials/header.html
+    <!--header end-->
+    <div class="main">
+        <div class="mbox">
+            <div class="title title--first">
+                <h1>Контакты</h1>
+            </div>
+            <div class="contacts">
+                <div class="contacts__aside">
+                    <div class="contacts__title">Служба поддержки</div>
+                    <div class="contacts__box">
+                        <i>
+                            <svg class="svg-con01">
+                                <use xlink:href="#contact01"></use>
+                            </svg>
+                        </i>
+                        <div class="contacts__text">
+                            <p>Если у вас появились вопросы по работе VeloxBox, то мы предлагаем вам посмотреть раздел <a href="#" class="dotted-underline">"Вопросы и ответы"</a> или обратиться в нашу <a href="#" class="dotted-underline">"Службу поддержки"</a>.</p>
+                        </div>
+                    </div>
+                    <div class="contacts__title">Логистический комплекс VeloxBox</div>
+                    <div class="contacts__box">
+                        <i>
+                            <svg  class="svg-con02">
+                                <use xlink:href="#contact02"></use>
+                            </svg>
+                        </i>
+                        <div class="contacts__text">
+                            <p><span class="dotted-underline js-center-map">26 Merry Ln, East Hanover, NJ, 07936, USA</span></p>
+                        </div>
+
+                    </div>
+                    <div class="contacts__title">По вопросам сотрудничества с VeloxBox</div>
+                    <div class="contacts__box">
+                        <i>
+                            <svg  class="svg-con03">
+                                <use xlink:href="#contact03"></use>
+                            </svg>
+                        </i>
+                        <div class="contacts__text">
+                            <p><a href="mailto:info@veloxbox.us" class="dotted-underline">info@veloxbox.us</a></p>
+                        </div>
+
+                    </div>
+                    <div class="contacts__title">Доставка грузов по всему миру</div>
+                    <div class="contacts__box">
+                        <i>
+                            <svg  class="svg-con04">
+                                <use xlink:href="#contact04"></use>
+                            </svg>
+                        </i>
+                        <div class="contacts__text">
+                            <p>Velox Inernational Shipping, Inc. <br><a href="#" class="dotted-underline">http://www.veloxshipping.com</a></p>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="map" class="contacts__map"></div>
+            </div>
+        </div>
+    </div>
+    <!--hidden start-->
+    //= partials/hidden-block.html
+    <!--hidden end-->
+    <!--footer start-->
+    //= partials/footer.html
+    <!--footer end-->
+    <script async defer  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_wIcAyY8mLhLUook1d2bR4qNdDkF1n-E&callback=initMap"> </script>
+    <script>
+        function initMap() {
+            var uluru = {lat: 40.818313, lng: -74.346041};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: uluru,
+                disableDefaultUI: true,
+                styles: [
+                    {
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#ebe3cd"
+                            }
+                        ]
+                    },
+                    {
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#523735"
+                            }
+                        ]
+                    },
+                    {
+                        "elementType": "labels.text.stroke",
+                        "stylers": [
+                            {
+                                "color": "#f5f1e6"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "administrative",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                            {
+                                "color": "#c9b2a6"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "administrative.land_parcel",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                            {
+                                "color": "#dcd2be"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "administrative.land_parcel",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#ae9e90"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "landscape.natural",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#dfd2ae"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#dfd2ae"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#93817c"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#a5b076"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#447530"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#f5f1e6"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#fdfcf8"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#f8c967"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                            {
+                                "color": "#e9bc62"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway.controlled_access",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#e98d58"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway.controlled_access",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                            {
+                                "color": "#db8555"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.local",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#806b63"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit.line",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#dfd2ae"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit.line",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#8f7d77"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit.line",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [
+                            {
+                                "color": "#ebe3cd"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "transit.station",
+                        "elementType": "geometry",
+                        "stylers": [
+                            {
+                                "color": "#dfd2ae"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                            {
+                                "color": "#b9d3c2"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                            {
+                                "color": "#92998d"
+                            }
+                        ]
+                    }
+                ]
+            });
+            $(document).on('click', '.js-center-map', function () {
+                map.panTo(uluru);
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+                icon:'images/pin.png'
+            });
+        }
+    </script>
+</div>
+</body>
+</html>
