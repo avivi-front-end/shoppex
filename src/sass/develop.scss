@@ -3,7 +3,7 @@
 *,*:before, *:after{box-sizing:border-box;outline:none;}
 *,body,html{-webkit-text-size-adjust: none;-webkit-appearance: none;max-height: 9001em; opacity: 1;}
 html{height:100%;}
-body{min-height:100%;width:100%;min-width:320px;font-family: 'Roboto', sans-serif;background-color: #efefef;color:#69758b;position:relative;font-size: 14px;line-height: 1.286; font-weight: 300;}
+body{min-height:100%;width:100%;min-width:320px;font-family: 'Roboto', sans-serif;background-color: #efefef;color:#69758b;position:relative;font-size: 14px;line-height: 1.286;  font-weight: 300;}
 img{vertical-align:bottom;border:0;max-width:100%;}
 .mbox{max-width:1170px;width:100%;margin:0 auto;position:relative; padding: 0 15px;}
 .mbox:after{content:"";clear:both;font-size:1px;line-height:1px;height:0;overflow:hidden;display:block;}
@@ -617,7 +617,7 @@ ol.list{ counter-reset: herman; padding: 0; margin: 21px 0;
 a.lk-ballancer__drop-title{
     &:hover{color: #9194a6;}
 }
-.lk-tabs{ display: flex; justify-content: space-between; width: calc(100% - 44px); align-items: flex-start; margin-bottom: 18px; position: relative;
+.lk-tabs{ display: flex; justify-content: space-between; width: calc(100% - 44px); align-items: flex-start; position: relative;
     &__wrap{ display: flex; justify-content: space-between; align-items: flex-start; //width:calc(100% - 43px); padding-right: 24px;
           width: 100%;}
     &__tab-warp{  flex-grow: 1; border:1px solid #bdbdbd; width: 266px;
@@ -633,16 +633,38 @@ a.lk-ballancer__drop-title{
     }
     &__container{ display: none; }
 }
+.js-filter-box{ display: none;}
 .lk-filter{ position: absolute; left: 100%;
     &__button{ width: 44px; height: 43px; background-color: #ffde00; cursor: pointer; display: flex; justify-content: center; align-items: center;
         &:hover{background-color: #ffc800;}
     }
-    &__content{ display: flex; justify-content: flex-start; align-items: flex-start;background-color: #fff;}
-    &__col{ flex-grow: 1;}
-    &__title{ background-color: #f3f3f3; color: #40434e; font-size: 13px; text-transform: uppercase; font-weight: 700; text-align: left;}
-    &__item{  display: flex; justify-content: flex-start; align-items: center;}
-    &__subtitle{}
-    &__input{}
+
+    &__content{ display: flex; justify-content: flex-start; align-items: flex-start;background-color: #fff;margin-bottom: 12px; padding-bottom: 8px;
+        .score-date__input{border-color: #bdbdbd; padding-left: 36px;}
+    }
+    &__col{ flex-grow: 1;
+        &:last-child .lk-filter__item{ padding-right: 16px;}
+    }
+    &__title{ background-color: #f3f3f3; color: #40434e; font-size: 13px; text-transform: uppercase; font-weight: 700; text-align: left; padding: 7px 16px 5px; margin-bottom: 15px;}
+    &__item{ display: flex; justify-content: space-between; align-items: center; padding-left: 16px; margin-bottom: 8px;}
+    &__input{ width: 195px; position: relative;
+        input{border:1px solid #bdbdbd;width: 100%; height: 37px; line-height: 37px; color: #000;  padding-left: 20px; font-weight: 400;}
+        button{ position: absolute; left: 0; top: 0; border: none; background: transparent; padding: 9px;}
+        &--date{ width: 168px;}
+        &--small{ width: 138px;}
+    }
+}
+.lk-sorting{
+    &__title{ background-color: #40434e; color: #fff; font-weight: 700;  font-size: 13px; text-transform: uppercase; padding: 5px 16px 7px;}
+    svg{ width: 12px; height: 17px;}
+    &__item{ cursor: pointer; user-select: none; font-weight: 700; color: #ccc; display: inline-flex; justify-content: flex-start; align-items: center; margin-right: 12px;
+        i{ opacity: 0; display: inline-block;  width: 12px; height: 17px; margin-left: 8px;}
+        &.active{ color: #40434e;
+            i{ opacity: 1; }
+        }
+        &.up i{ transform: rotateZ(180deg);}
+    }
+    &__content{ display: flex; justify-content: flex-start; align-items: center;  background-color: #fff;  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.13); padding: 19px 16px 17px; margin-bottom: 14px;}
 }
 .lk-menu{ background-color: #fff; width: 100%; padding: 15px 16px 0;
    &__button{ width: 100%;

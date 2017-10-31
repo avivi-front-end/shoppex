@@ -395,8 +395,6 @@ function autosumDopService(){
     })
 }
 function styledSelect(){
-
-
     var item = $('.js-select-lang');
     if(item.length > 0){
         item.styler({
@@ -460,6 +458,7 @@ function styledSelect(){
     var stylerSelect = $('.js-select-styler');
     if(stylerSelect.length > 0){
         stylerSelect.select2({
+            tags: false,
             width:'style'
         });
     }
@@ -1018,7 +1017,31 @@ function customRadio() {
         $(this).find('input').prop('checked','checked');
     });
 }
+function sortingLk() {
+    $(document).on('click', '.lk-sorting__item', function () {
+       if($(this).hasClass('active')){
+           $(this).toggleClass('up');
+       }else{
+           $('.lk-sorting__item').removeClass('active up');
+           $(this).addClass('active');
+       }
+    });
+
+}
+function showHideFilter(){
+    $(document).on('click', '.js-filter-show', function () {
+        var box = $('.js-filter-box');
+        $(this).toggleClass('active');
+        if($(this).hasClass('active')){
+            box.stop().slideDown();
+        }else{
+            box.stop().slideUp();
+        }
+    });
+}
 $(document).ready(function () {
+    showHideFilter();
+    sortingLk();
     customRadio();
     filterSearch();
     delCrossForInputCheck();
