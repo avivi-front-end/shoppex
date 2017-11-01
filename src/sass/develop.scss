@@ -2397,7 +2397,7 @@ object{ display: inline-block;}
         .catalog__mobile-wrap{    max-width: 435px; }
     }
     @media screen and (max-width: 479px){
-        .lk .lk-filter__subtitle{ width: 70px;}
+        .lk .lk-filter__subtitle{ width: 70px; text-align: right; padding-right: 8px;}
         .lk-filter__col{ width: 100%; }
         .lk-filter__title{ font-size: 11px;}
         .lk-filter__item{ justify-content: center;}
