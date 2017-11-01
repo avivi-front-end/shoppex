@@ -640,11 +640,11 @@ a.lk-ballancer__drop-title{
         &:hover{background-color: #ffc800;}
     }
 
-    &__content{ display: flex; justify-content: flex-start; align-items: flex-start;background-color: #fff;margin-bottom: 12px; padding-bottom: 8px;
+    &__content{ display: flex; justify-content: flex-start; align-items: flex-start;background-color: #fff;margin-bottom: 12px;
         .score-date__input{border-color: #bdbdbd; padding-left: 36px;}
         .select2-container--default .select2-selection--single{border-color: #bdbdbd;}
     }
-    &__col{ flex-grow: 1;
+    &__col{ flex-grow: 1; padding-bottom: 8px;
         &:last-child .lk-filter__item{ padding-right: 16px;}
     }
     &__title{ background-color: #40434e; color: #fff; font-size: 13px; text-transform: uppercase; font-weight: 700; text-align: left; padding: 7px 16px 5px; margin-bottom: 15px;}
@@ -2390,15 +2390,18 @@ object{ display: inline-block;}
         .lk-filter__content{ flex-wrap: wrap;}
         .lk-filter__col{ width: 50%;}
         .lk-filter__item{ padding-right: 16px; justify-content: flex-start;}
-        .lk-filter__subtitle{ width: 70px;}
+        .lk-filter__subtitle{ width: 30px;}
+        .lk-filter__subtitle--big{ width: 70px;}
     }
     @media screen and (max-width: 700px){
         .catalog__mobile-wrap{    max-width: 435px; }
     }
     @media screen and (max-width: 479px){
-        .lk-filter__col{ width: 100%;}
-
-
+        .lk .lk-filter__subtitle{ width: 70px;}
+        .lk-filter__col{ width: 100%; }
+        .lk-filter__title{ font-size: 11px;}
+        .lk-filter__item{ justify-content: center;}
+        .lk .lk-filter__item{ justify-content: flex-start;}
         .catalog{
             &__mobile-wrap{ flex-direction: column; justify-content: center; align-items: center;
                 .shops__item{ flex-grow: 0;}
