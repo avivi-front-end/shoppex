@@ -1863,6 +1863,7 @@ object{ display: inline-block;}
     &__item{ display: flex; justify-content: space-between; align-items: flex-start;
         &--faq{ flex-direction: column;}
         &.hide{ display: none;}
+
     }
     &__sale{font-size: 14px; color: #40434e; width: calc(100% - 303px); padding-right: 33px;
         a{ font-weight: 700; text-transform: uppercase; text-decoration: underline;
