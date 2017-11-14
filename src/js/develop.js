@@ -3,11 +3,44 @@ function headerSearch() {
     if(!container.length)return;
     var input = container.find('input').eq(0);
     var list = container.find('.header__result').eq(0);
+    var handler = false;
     input.focus(function(){
         list.stop().slideDown(200);
     });
     input.blur(function(){
-        list.stop().slideUp();
+        list.stop().slideUp(200);
+        handler = false;
+    });
+    input.on('keyup', function (e) {
+        switch(e.keyCode){
+            case 38:
+                gogo(-1);
+                break;
+            case 40:
+                gogo(1);
+                break;
+            default:;
+
+        }
+    });
+    function gogo(dir){
+        handler = true;
+        if($(list).find('.active').length == 0) $($(list).find('li').eq(0)).addClass('active');
+        var li = $('.header__result li');
+        var length = $('.header__result li').length;
+        var ind = $('.header__result li.active').index() + dir;
+        if(ind == 0) ind = length;
+        if(ind == length) ind = 0;
+        $('.header__result li').removeClass('active');
+        $('.header__result li').eq(ind).addClass('active');
+        console.log(ind + dir);
+    }
+    $(document).on('keydown', function (e) {
+            if(e.keyCode == 13 && handler){
+              window.location = $('.header__result li.active a').attr('href');
+                return false;
+            }
+
     });
 }
 function dropdown() {
