@@ -527,7 +527,7 @@ function trackLogick() {
         }
     } );
 }
-var preloaderFile ='<div class="preloadfile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preloadfile__svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="rgb(255,222,0)" stroke-width="5" fill="transparent"    /><circle cx="12" cy="12" r="10"  stroke="rgb(79,82,95)" stroke-width="5" class="preloadfile__circle"/></svg><div class="preloadfile__del"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="14px" height="14px"><path fill-rule="evenodd"  fill="rgb(64, 67, 78)" d="M7.000,-0.000 C3.150,-0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,-0.000 7.000,-0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/></svg></div></div>';
+var preloaderFile ='<div class="preloadfile"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preloadfile__svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="rgb(255,222,0)" stroke-width="5" fill="#ffffff"    /><circle cx="12" cy="12" r="10"  stroke="rgb(79,82,95)" stroke-width="5" class="preloadfile__circle"/></svg><div class="preloadfile__del"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="14px" height="14px"><path fill-rule="evenodd"  fill="rgb(64, 67, 78)" d="M7.000,-0.000 C3.150,-0.000 -0.000,3.150 -0.000,7.000 C-0.000,10.850 3.150,14.000 7.000,14.000 C10.850,14.000 14.000,10.850 14.000,7.000 C14.000,3.150 10.850,-0.000 7.000,-0.000 ZM10.500,9.520 L9.520,10.500 L7.000,7.980 L4.480,10.500 L3.500,9.520 L6.020,7.000 L3.500,4.480 L4.480,3.500 L7.000,6.020 L9.520,3.500 L10.500,4.480 L7.980,7.000 L10.500,9.520 Z"/></svg></div></div>';
 function readFile(input) { //chat page
     if (input.files && input.files[0]) {
         var massImg = ["image/jpeg", "image/jpg", "image/png", "image/gif", "image/bmp"];
@@ -580,6 +580,10 @@ function readURL(input) { //create-order page
         nt.setAttribute("type", "file");
         var index = $(input).closest('.neworder__filerow').index() - 1;
         nt.setAttribute("name", 'files['+index+'][]');
+        if($(input).data('name')){
+            nt.setAttribute("name", $(input).attr('name'));
+            nt.setAttribute("data-name", true);
+        }
         nt.setAttribute("accept", "image/jpeg,image/png,image/gif,application/pdf,image/bmp");
         var reader = new FileReader();
         reader.onload = function (e) {
@@ -688,10 +692,16 @@ function maskedInput(){
     if($('.tel-mask-ru')){  $('.tel-mask-ru').mask('+7(999) 999-99-99'); }
 }
 function copyToClipboard() {
+    var tooltext = $('.adressbook__card').data('copy');
+    var actiontext = $('.adressbook__card').data('copied');
+    $('.js-cc-btn .tooltip').text(tooltext);
     $(document).on('click', '.js-cc-btn', function() {
         $('.hiddentext').remove();
+        var but = $(this);
         var copyTarget = $(this).closest('.adressbook__card').find('.js-cc-target');
         var text='';
+        var flag = $(this).data('count');
+        if(flag > 0){ copyTarget = $(this).closest('.adressbook__row').find('.js-cc-target'); }
         copyTarget.each(function(){
             text += ($(this).text()+'\n');
         });
@@ -703,11 +713,13 @@ function copyToClipboard() {
         try {
             var successful = document.execCommand('copy');
             var msg = successful ? 'successful' : 'unsuccessful';
-            console.log('Copying text command was ' + msg);
+            $('.js-cc-btn .tooltip').text(tooltext);
+            but.find('.tooltip').text(actiontext);
         } catch (err) {
             console.log('Oops, unable to copy');
         }
     });
+
 }
 function showTooltip() {
     var elem = $('.js-show-tooltip');
