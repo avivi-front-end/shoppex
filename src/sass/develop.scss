@@ -1042,7 +1042,7 @@ a.lk-ballancer__drop-title{
         }
         &.neworder__filerow{
             .js-input-file{ margin-bottom: 12px; display: block; width: 100%;
-                b{ margin-bottom: 10px; ulpdisplay: inline-block; text-transform: uppercase; margin-top: 18px;}
+                b{ margin-bottom: 10px; display: inline-block; text-transform: uppercase; margin-top: 18px;}
                 .button span{ padding: 4px 40px 2px; font-size: 11px; min-height: 1px;}
                 [data-title]{ vertical-align: middle;}
             }
@@ -1373,6 +1373,7 @@ a.lk-ballancer__drop-title{
     .ui-datepicker-buttonpane button { float: right; margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
     .ui-datepicker-buttonpane button.ui-datepicker-current { float:left; }
 }
+[data-message]{ display: none;}
 /* with multiple calendars */
 .ui-datepicker.ui-datepicker-multi { width:auto; }
 .ui-datepicker-multi .ui-datepicker-group { float:left; }
@@ -1408,6 +1409,7 @@ a.lk-ballancer__drop-title{
 }
 [data-title]{ position: relative;
     &:hover .tooltip{ display: block;}
+    &[data-nowrap] .tooltip{ max-width: none; white-space: nowrap;}
 }
 .breadcrumbs{ font-size: 12px; color: #40434e; margin: 10px 0; letter-spacing: 0.2px;
     a{ color: #40434e;}
@@ -1526,7 +1528,7 @@ a.dotted-underline{ position: relative; text-decoration: none;border:none; backg
         span{ background-color: #fff; position: relative; z-index: 10;}
         &:before{ content: ''; width: calc(100% - 18px); height: 1px; position: absolute; left: 0; top: 50%; z-index: 0; background-color: #ececec;}
     }
-    &__message{ width: 100%; display: flex; justify-content: space-between; align-items: flex-start;margin-bottom: 28px;
+    &__message{ width: 100%; display: flex; justify-content: space-between; align-items: flex-start;margin-bottom: 28px; padding: 0 20px;
         &--other{ justify-content: flex-end;}
     }
     &__body{ display: flex; justify-content: space-between; align-items: flex-start;}

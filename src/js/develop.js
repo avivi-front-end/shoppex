@@ -43,7 +43,7 @@ function headerSearch() {
 
     });
 }
-function dropdown() {
+function dropdown(){
     $(document).on('click', '.js-dropdown-button', function () {
         var btn = $(this);
         var container = btn.closest('.js-dropdown-container');
@@ -136,7 +136,6 @@ function slidersInit() {
         });
 
     }
-
     var slider3 = $('.gallery__slider');
     if(slider3.length > 0){
         slider3.each(function () {
@@ -386,14 +385,22 @@ function inputNumber() {
     $(document).on('keypress', 'input[name$="[price]"]', function (evt) {
         var charCode = (evt.which) ? evt.which : evt.keyCode;
         if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) return false;
-        var price = $(this).val().replace(/,/, '.');
-        $(this).val(price);
+        $(this).val(evalute($(this).val()));
         return true;
     });
     $(document).on('focusout', 'input[name$="[price]"]', function (evt) {
-        var price = $(this).val().replace(/,/, '.');
-        $(this).val(price);
+        $(this).val(evalute($(this).val()));
     });
+    function evalute(val) {
+        var price = val.replace(/,/, '.');
+        var mas = price.split('.');
+        var res = mas[0];
+        if(mas.length > 1){
+            res+='.';
+            for(var i = 1; i< mas.length; i++) res+=mas[i];
+        }
+        return res;
+    }
     $(document).on('keyup', 'input[name$="[price]"], input[name$="[count]"]', function () {
         calculetAllOrders();
     })
@@ -547,18 +554,28 @@ function readFile(input) { //chat page
             var span = document.createElement('span');
             var typec = input.files[0].type;
             var size = input.files[0].size;
-            function declinetung() {
+            function declinetung(mesage) {
                 $(input).closest('label').prepend(nt);
                 $(input).remove();
+                if(mesage !== undefined){
+                    $('[data-message='+mesage+']').css('display','block');
+                }
+                $.fancybox.open({
+                    src:'#fileerror',
+                    opts:{
+                        afterClose: function(){
+                            $('form').trigger("reset");
+                            clearTimeout(timer);
+                        }
+                    }
+                });
             }
             if($.inArray(typec, massImg) == -1 && $.inArray(typec, massDoc) == -1){
-                declinetung();
+                declinetung(1);
             }else if(typec.startsWith('image') && (size > 6100000)) {
-                    declinetung();
-                    alert('max size 4 image 6Mb');
+                    declinetung(3);
             } else if(typec.startsWith('application') && (size > 11000000)) {
-                declinetung();
-                alert('max size 4 doc 10Mb');
+                declinetung(2);
             }else{
                 $(span).text(fileName);
                 $(div).addClass('chat__uploaded');
@@ -1042,7 +1059,6 @@ function filterSearch() {
             $('.ressearch__item').removeClass('hide');
             $('.ressearch__item:not([data-radio="'+val+'"])').addClass('hide');
         }
-
     })
 }
 function delCrossForInputCheck() {

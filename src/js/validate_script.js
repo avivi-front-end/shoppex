@@ -1,4 +1,3 @@
-
 var validationMessages = {
     email:{required: "Вы пропустили", maxlength: "превышает 72", email:"невалидный почта", remote:"ответочка от бека"},
     password:{required: "Вы пропустили", minlength: "минимум 6", maxlength: "превышает 72",},
@@ -139,26 +138,10 @@ function validation(form,options) {
             }
         });
     }
-    // var s2 = $(form).find('.js-select2-init select:not(.etalonn)');
-    // s2.each(function () {
-    //     var target = this;
-    //     console.log(target);
-    //     var observer = new MutationObserver(function(mutations) {
-    //         mutations.forEach(function(mutation) {
-    //             console.log(mutation);
-    //            $(target).trigger('blur');
-    //         });
-    //     });
-    //     var config = { attributes: true, childList: true, characterData: true }
-    //     observer.observe(target, config);
-    // });
-
 }
 $.validator.methods.email = function( value, element ) {
     return this.optional( element ) || /[A-z\d]+@[A-z\d]+\.[A-z]{2,6}$/g.test( value );
 }
-
-
 $.validator.addMethod("nameCyr", function(value, element) {
     return this.optional(element) || /^[Є-їҐґ \-']+$/g.test(value);
 }, "Please specify the correct name");
@@ -213,7 +196,6 @@ $.validator.addMethod("birthday", function(value, element){
         }
         return true;
     }
-
 }, "18 old");
 $.validator.addMethod("checkbd", function(value, element){
     var elems = $('.editinfo .js-input-bd').find('select.bd-select:blank');
@@ -238,7 +220,6 @@ $.validator.addMethod("checkbd", function(value, element){
         }
         return true;
     }
-
 }, "dont lie");
 $.validator.addMethod("checkbd14", function(value, element){
     var elems = $('.editinfo .js-input-bd').find('select.bd-select:blank');
@@ -289,7 +270,6 @@ $.validator.addMethod("checkold", function(value, element){
     }
     return true;
 }, "dont lie");
-
 $(document).ready(function(){
     validation('#reg-popup form');
     validation('#enter-popup form');
